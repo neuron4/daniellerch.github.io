@@ -193,9 +193,9 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: #cccccc;
   cursor: pointer;
-  font-family: $helveticaNeue;
+  font-family: 'Courier New', Courier, FreeMono, monospace;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -203,7 +203,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: #cccccc;
   font-size: 16px;
 
   @include mobile {
@@ -226,7 +226,7 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: orange;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -276,7 +276,7 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  background-color: #1c1c1c;
 }
 
 footer {
