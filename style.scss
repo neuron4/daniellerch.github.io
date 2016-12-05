@@ -50,9 +50,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1em 0 15px;
   padding: 0;
 
-  @include mobile {
-    line-height: 1.4;
-  }
 }
 
 h1 {
@@ -172,9 +169,6 @@ img {
   width:725px;
   //border-bottom: 1px solid $lightGray;
 
-  @include mobile {
-    text-align: center;
-  }
 }
 
 .site-avatar {
@@ -183,11 +177,6 @@ img {
   height: 70px;
   margin-right: 15px;
 
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
 
   img {
     border-radius: 5px;
@@ -197,11 +186,7 @@ img {
 .site-info {
   float: left;
 
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
+
 }
 
 .site-name {
@@ -219,9 +204,7 @@ img {
   color: #cccccc;
   font-size: 16px;
 
-  @include mobile {
-    margin: 3px 0;
-  }
+
 }
 
 nav {
@@ -230,12 +213,7 @@ nav {
   font-family: 'Courier New', Courier, FreeMono, monospace;
   font-size: 14px;
 
-  @include mobile {
-    float: none;
-    margin-top: 9px;
-    display: block;
-    font-size: 16px;
-  }
+
 
   a {
     margin-left: 5px;
@@ -245,10 +223,7 @@ nav {
     font-weight: 300;
     letter-spacing: 1px;
 
-    @include mobile {
-      margin: 0 10px;
-      color: orange;
-    }
+  
   }
 }
 
