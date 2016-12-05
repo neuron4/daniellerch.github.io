@@ -167,7 +167,8 @@ img {
 }
 
 .masthead {
-  padding: 10px 0;
+  padding-bottom: 15px;
+  width:740px;
   //border-bottom: 1px solid $lightGray;
 
   @include mobile {
@@ -236,8 +237,8 @@ nav {
   }
 
   a {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     color: orange;
     text-align: right;
     font-weight: 300;
