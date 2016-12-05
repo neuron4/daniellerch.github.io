@@ -18,7 +18,7 @@ html {
 }
 
 body {
-	background: #1c1c1c;
+	background: #000;
   font: 18px/1.4 'Courier New', Courier, FreeMono, monospace;
   color: #cccccc;
 }
@@ -32,6 +32,13 @@ p {
   max-width: 740px;
   padding: 0 10px;
   width: 100%;
+}
+
+.frame {
+  background-color: #1c1c1c;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;	
 }
 
 h1, h2, h3, h4, h5, h6 {
