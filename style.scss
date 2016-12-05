@@ -36,7 +36,7 @@ p {
 
 .frame {
   background-color: #1c1c1c;
-  width: 60%;
+  width: 740px;
   margin: 0 auto;
   padding: 20px;	
 }
@@ -226,7 +226,7 @@ nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: 'Courier New', Courier, FreeMono, monospace;
-  font-size: 18px;
+  font-size: 14px;
 
   @include mobile {
     float: none;
