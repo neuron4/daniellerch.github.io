@@ -7,4 +7,7 @@ title: How not to hide information inside images.
 bla bla bla
 asd
 sa
-$\sum_{i=1}^{\inf}\fraq{1}{i}$
+$$
+\sum_{i=1}^{\inf}\fraq{1}{i}
+$$
+
