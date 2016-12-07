@@ -1,5 +1,6 @@
 ---
 layout: post
-title: How not to hide information inside images: A guide to bad steganography
+title: How not to hide information inside images.
 ---
+
 bla bla bla
