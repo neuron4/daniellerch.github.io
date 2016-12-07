@@ -2,6 +2,9 @@
 layout: post
 title: Publications
 ---
+
+# Publications
+
 - Manifold alignment approach to cover source mismatch in steganalysis. October 2016. 
 Reunión Española de Criptografía y Seguridad XIV
 [[pdf](http://daniellerch.me/doc/dlerch2016ma.pdf)]
