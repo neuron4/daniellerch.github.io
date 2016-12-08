@@ -11,6 +11,9 @@ title: Steganalysis
 - F5: **INSECURE** 
 [[code](http://code.google.com/p/f5-steganography/)]
 [[paper](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)]
+[Attacks 
+[#1](http://ws2.binghamton.edu/fridrich/Research/f5.pdf) 
+[#2](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - HUGO (Highly Undetectable steGO): **INSECURE** 
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
