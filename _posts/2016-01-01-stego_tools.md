@@ -8,7 +8,7 @@ title: Steganalysis
 - ASO (Adaptive Steganography by Oracle): <br>
 [[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
 
-- F5: **INSECURE** <br>
+- F5: ```INSECURE``` <br>
 [[code](http://code.google.com/p/f5-steganography/)]
 [[paper](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)]
 [Attacks 
