@@ -5,17 +5,17 @@ title: Steganalysis
 
 ## Analysis of Image Steganography Tools and Algorithms
 
-- ASO (Adaptive Steganography by Oracle): <br>
+- ASO (Adaptive Steganography by Oracle) <br>
 [[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
 
-- F5: **INSECURE** <br>
+- F5 <br>
 [[code](http://code.google.com/p/f5-steganography/)]
 [[paper](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)]
 [Attacks 
 [#1](http://ws2.binghamton.edu/fridrich/Research/f5.pdf) 
 [#2](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
-- HUGO (Highly Undetectable steGO): **USE-WITH-CAUTION** <br>
+- HUGO (Highly Undetectable steGO) <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
 [[paper](https://hal.archives-ouvertes.fr/hal-00541353/document)]
 [Attacks
@@ -23,38 +23,64 @@ title: Steganalysis
 [#2](http://www.ws.binghamton.edu/fridrich/Research/color-04.pdf)
 [#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
-- JPHIDE and JPSEEK: **INSECURE** <br>
+- JPHIDE and JPSEEK <br>
 [[site](http://linux01.gwdg.de/~alatham/stego.html)]
+[Attacks
+[#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
-- JSTEG: **INSECURE** <br>
+- JSTEG <br>
 [[site](http://zooid.org/~paul/crypto/jsteg/)]
+[Attacks
+[#1](http://users.ece.cmu.edu/~adrian/487-s06/westfeld-pfitzmann-ihw99.pdf)]
 
-- OpenPuff: **INSECURE** <br>
+- OpenPuff <br>
 [[site](http://embeddedsw.net/OpenPuff_Steganography_Home.html)]
+[Attacks
+[#1](http://blog.daniellerch.me/p/openpuff.html)]
 
-- OpenStego: **INSECURE** <br>
+- OpenStego <br>
 [[site](http://www.openstego.info/)]
+[Attacks
+]
 
-- Perturbed Quantization: **INSECURE** <br>
+- Perturbed Quantization <br>
 [[site](http://dde.binghamton.edu/download/pq/)]
+[[paper](http://dde.binghamton.edu/download/pq/Fri05pq.pdf)]
+[Attacks
+[#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
-- Silenteye: **INSECURE** <br>
+- Silenteye <br>
 [[site](http://www.silenteye.org/)]
+[Attacks
+]
 
-- Steghide: **INSECURE** <br>
+- Steghide <br>
 [[site](http://steghide.sourceforge.net/)]
+[Attacks
+[#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
-- StegoBlue: **INSECURE** <br>
+- StegoBlue <br>
 [[site](https://github.com/oni49/stegoBlue)]
+[Attacks
+]
 
-- J-UNIWARD: **USE-WITH-CAUTION** <br>
+- J-UNIWARD <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
+[Attacks
+]
 
-- S-UNIWARD: **USE-WITH-CAUTION** <br>
+- S-UNIWARD <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
+[Attacks
+]
 
-- WOW: **USE-WITH-CAUTION** <br>
+- WOW <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/WOW_linux_make_v10.tar.gz)]
+[[papers](http://dde.binghamton.edu/vholub/pdf/WIFS12_Designing_Steganographic_Distortion_Using_Directional_Filters.pdf)]
+[Attacks
+[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
+[#2](http://www.ws.binghamton.edu/fridrich/Research/color-04.pdf)
+[#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 
 
