@@ -55,7 +55,7 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - Silenteye <br>
-[[site](http://www.silenteye.org/)]
+[[site](http://silenteye.v1kings.io/)]
 [Attacks
 [#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
 [#2](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
