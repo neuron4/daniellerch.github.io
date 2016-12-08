@@ -43,7 +43,9 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 - OpenStego <br>
 [[site](http://www.openstego.info/)]
 [Attacks
-]
+[#1](http://0xword.com/es/libros/64-esteganografia-y-estegoanalisis.html)
+[#2](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
+[#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - Perturbed Quantization <br>
 [[site](http://dde.binghamton.edu/download/pq/)]
@@ -54,7 +56,8 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 - Silenteye <br>
 [[site](http://www.silenteye.org/)]
 [Attacks
-]
+[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
+[#2](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - Steghide <br>
 [[site](http://steghide.sourceforge.net/)]
@@ -64,7 +67,8 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 - StegoBlue <br>
 [[site](https://github.com/oni49/stegoBlue)]
 [Attacks
-]
+[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
+[#2](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - J-UNIWARD <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
