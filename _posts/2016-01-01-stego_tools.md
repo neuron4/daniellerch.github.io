@@ -18,34 +18,34 @@ title: Steganalysis
 [**INSECURE** [site](http://linux01.gwdg.de/~alatham/stego.html)]
 
 - :no_entry_sign: JSTEG
-[**insecure** [site](http://zooid.org/~paul/crypto/jsteg/)]
+[**INSECURE** [site](http://zooid.org/~paul/crypto/jsteg/)]
 
 - :no_entry_sign: OpenPuff
-[**insecure** [site](http://embeddedsw.net/OpenPuff_Steganography_Home.html)]
+[**INSECURE** [site](http://embeddedsw.net/OpenPuff_Steganography_Home.html)]
 
-- :no_entry_sign: OpenStego
-[**insecure** [site](http://www.openstego.info/)]
+- OpenStego
+[**INSECURE** [site](http://www.openstego.info/)]
 
-- :no_entry_sign: Perturbed Quantization
-[**insecure** [site](http://dde.binghamton.edu/download/pq/)]
+- Perturbed Quantization
+[**INSECURE** [site](http://dde.binghamton.edu/download/pq/)]
 
-- :no_entry_sign: Silenteye
-[**insecure** [site](http://www.silenteye.org/)]
+- Silenteye
+[**INSECURE** [site](http://www.silenteye.org/)]
 
-- :no_entry_sign: Steghide
-[**insecure** [site](http://steghide.sourceforge.net/)]
+- Steghide
+[**INSECURE** [site](http://steghide.sourceforge.net/)]
 
-- :no_entry_sign: StegoBlue
-[**inscure** [site](https://github.com/oni49/stegoBlue)]
+- StegoBlue
+[**INSECURE** [site](https://github.com/oni49/stegoBlue)]
 
-- :warning: J-UNIWARD
-[**use with caution** [code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
+- J-UNIWARD
+[**WARNING** [code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
 
-- :warning: S-UNIWARD
-[**use with caution** [code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
+- S-UNIWARD
+[**wARNING** [code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
 
 - :warning: WOW
-[**use with caution** [code](http://dde.binghamton.edu/download/stego_algorithms/download/WOW_linux_make_v10.tar.gz)]
+[**WARNING** [code](http://dde.binghamton.edu/download/stego_algorithms/download/WOW_linux_make_v10.tar.gz)]
 
 
 
