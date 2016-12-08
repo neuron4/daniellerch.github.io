@@ -9,7 +9,7 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 
 [ *Updated on 2016-12-09* ]
 
-<br><br>
+<br>
 
 - ASO (Adaptive Steganography by Oracle) <br>
 [[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
