@@ -5,17 +5,17 @@ title: Steganalysis
 
 ## Analysis of Image Steganography Tools and Algorithms
 
-- ASO (Adaptive Steganography by Oracle) :white_check_mark:
-[[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
+- ASO (Adaptive Steganography by Oracle)
+[SAFE [paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
 
-- F5 :no_entry_sign:  
-[[code](http://code.google.com/p/f5-steganography/)]
+- F5
+[INSECURE [code](http://code.google.com/p/f5-steganography/)]
 
-- HUGO (Highly Undetectable steGO):no_entry_sign: 
-[[code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
+- HUGO (Highly Undetectable steGO)
+[INSECURE [code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
 
-- JPHIDE and JPSEEK :no_entry_sign: 
-[[site](http://linux01.gwdg.de/~alatham/stego.html)]
+- JPHIDE and JPSEEK
+[INSECURE [site](http://linux01.gwdg.de/~alatham/stego.html)]
 
 - :no_entry_sign: JSTEG
 [[site](http://zooid.org/~paul/crypto/jsteg/)]
