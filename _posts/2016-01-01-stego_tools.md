@@ -71,15 +71,10 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 [#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
 [#2](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
-- J-UNIWARD <br>
-[[code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
-[Attacks
-]
-
-- S-UNIWARD <br>
-[[code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
-[Attacks
-]
+- UNIWARD <br>
+[[S-UNIWARD code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
+[[J-UNIWARD code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
+[[paper](http://dde.binghamton.edu/vholub/pdf/EURASIP14_Universal_Distortion_Function_for_Steganography_in_an_Arbitrary_Domain.pdf)]
 
 - WOW <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/WOW_linux_make_v10.tar.gz)]
