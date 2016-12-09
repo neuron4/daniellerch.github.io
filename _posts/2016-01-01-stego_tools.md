@@ -16,7 +16,7 @@ status: **unknown** <br>
 [[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
 
 - F5 <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[code](http://code.google.com/p/f5-steganography/)]
 [[paper](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)]
 [Attacks 
@@ -33,25 +33,25 @@ status: **use-with-caution** <br>
 [#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - JPHIDE and JPSEEK <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](http://linux01.gwdg.de/~alatham/stego.html)]
 [Attacks
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - JSTEG <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](http://zooid.org/~paul/crypto/jsteg/)]
 [Attacks
 [#1](http://users.ece.cmu.edu/~adrian/487-s06/westfeld-pfitzmann-ihw99.pdf)]
 
 - OpenPuff <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](http://embeddedsw.net/OpenPuff_Steganography_Home.html)]
 [Attacks
 [#1](http://blog.daniellerch.me/p/openpuff.html)]
 
 - OpenStego <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](http://www.openstego.info/)]
 [Attacks
 [#1](http://0xword.com/es/libros/64-esteganografia-y-estegoanalisis.html)
@@ -59,27 +59,27 @@ status: **broken** <br>
 [#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - Perturbed Quantization <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](http://dde.binghamton.edu/download/pq/)]
 [[paper](http://dde.binghamton.edu/download/pq/Fri05pq.pdf)]
 [Attacks
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - Silenteye <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](http://silenteye.v1kings.io/)]
 [Attacks
 [#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
 [#2](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - Steghide <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](http://steghide.sourceforge.net/)]
 [Attacks
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - StegoBlue <br>
-status: **broken** <br>
+status: **detectable** <br>
 [[site](https://github.com/oni49/stegoBlue)]
 [Attacks
 [#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
