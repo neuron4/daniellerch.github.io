@@ -12,7 +12,7 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 <br>
 
 - **ASO (Adaptive Steganography by Oracle)** <br>
-status: *unknown* <br>
+status: *unknown* (no implementation available)<br>
 [[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
 
 - **F5** <br>
@@ -90,6 +90,11 @@ status: *use-with-caution* <br>
 [[S-UNIWARD code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
 [[J-UNIWARD code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
 [[paper](http://dde.binghamton.edu/vholub/pdf/EURASIP14_Universal_Distortion_Function_for_Steganography_in_an_Arbitrary_Domain.pdf)]
+[Attacks 
+[#1](http://www.ws.binghamton.edu/fridrich/Research/Improving-SCA-Features-final.pdf)
+[#2](http://www.ws.binghamton.edu/fridrich/Research/Explicit_transforms.pdf)
+[#3](http://www.ws.binghamton.edu/fridrich/Research/SCA_JPEG_final1.pdf)
+]
 
 - **WOW** <br>
 status: *use-with-caution* <br>
@@ -99,7 +104,6 @@ status: *use-with-caution* <br>
 [#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
 [#2](http://www.ws.binghamton.edu/fridrich/Research/color-04.pdf)
 [#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
-
 
 
 
