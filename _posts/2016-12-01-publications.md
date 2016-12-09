@@ -11,11 +11,11 @@ Reunión Española de Criptografía y Seguridad XIV
 [[slides](http://daniellerch.me/doc/dlerch2016ma_slides.pdf)].
 <br><br>
 
-- Unsupervised steganalysis based on artificial training sets.UOC Research Week 2016,18 April 2016
+- Unsupervised steganalysis based on artificial training sets. UOC Research Week 2016,18 April 2016.
 [[slides](http://daniellerch.me/doc/dlerch_UOCRW2016_showcase.pdf)].
 <br><br>
 
-- Unsupervised steganalysis based on artificial training sets, with Megías. D.Engineering Applications of Artificial Intelligence, April 2016
+- Unsupervised steganalysis based on artificial training sets, with Megías. D.Engineering Applications of Artificial Intelligence, April 2016.
 [[10.1016/j.engappai.2015.12.013](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 [[code](https://github.com/daniellerch/ATS)].
 <br><br>
