@@ -47,14 +47,14 @@ status: *detectable* <br>
 
 - **OpenPuff** <br>
 status: *detectable* <br>
-notes: it uses a secret hidding algorithm.<br>
+notes: It uses a secret hiding algorithm.<br>
 [[site](http://embeddedsw.net/OpenPuff_Steganography_Home.html)]
 [Attacks
 [#1](http://blog.daniellerch.me/p/openpuff.html)]
 
 - **OpenStego** <br>
 status: *detectable* <br>
-notes: The program saves non hidden information that allows an easy detection. <br>
+notes: It saves non hidden data that allows an easy detection. <br>
 [[site](http://www.openstego.info/)]
 [Attacks
 [#1](http://0xword.com/es/libros/64-esteganografia-y-estegoanalisis.html)]
@@ -68,7 +68,7 @@ status: *detectable* <br>
 
 - **Silenteye** <br>
 status: *detectable* <br>
-notes: The program uses a two-bit LSB replacement. It can be detected using the RS attack and its variations.
+notes: The program uses a two-bit LSB replacement.<br>
 [[site](http://silenteye.v1kings.io/)]
 [Attacks
 [#1](http://www.ws.binghamton.edu/fridrich/Research/acm_2001_03.pdf)
@@ -81,7 +81,7 @@ status: *detectable* <br>
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - **StegoBlue** <br>
-notes: The program uses +1 embedding. It can be detected using standard steganalysis for LSM Matching.<br>
+notes: The program uses +1 embedding.<br>
 status: *detectable* <br>
 [[site](https://github.com/oni49/stegoBlue)]
 [Attacks
