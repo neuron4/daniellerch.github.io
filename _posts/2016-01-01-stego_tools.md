@@ -47,6 +47,13 @@ status: *detectable* <br>
 [Attacks
 [#1](http://users.ece.cmu.edu/~adrian/487-s06/westfeld-pfitzmann-ihw99.pdf)]
 
+- **MiPOD** <br>
+status: *state-of-the-art* <br>
+[[code](http://dde.binghamton.edu/download/stego_algorithms/download/MiPOD_matlab.zip)]
+[[paper](http://www.ws.binghamton.edu/fridrich/Research/MiPOD.pdf)]
+[Attacks
+[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS_ECSP.pdf)]
+
 - **OpenPuff** <br>
 status: *detectable* <br>
 notes: It uses a secret hiding algorithm.<br>
