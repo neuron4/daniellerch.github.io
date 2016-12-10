@@ -83,8 +83,8 @@ status: *detectable* <br>
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - **StegoBlue** <br>
-notes: The program uses +1 embedding.<br>
 status: *detectable* <br>
+notes: The program uses +1 embedding.<br>
 [[site](https://github.com/oni49/stegoBlue)]
 [Attacks
 [#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
