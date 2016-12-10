@@ -14,14 +14,14 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 - **ASO (Adaptive Steganography by Oracle)** <br>
 status: *unknown* <br>
 notes: no implementation available<br>
-[[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
+[papers
+[#1](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)
+[#2](http://www.eurasip.org/Proceedings/Eusipco/Eusipco2012/Conference/papers/1569585231.pdf)]
 
 - **F5** <br>
 status: *detectable* <br>
 [[code](http://code.google.com/p/f5-steganography/)]
-[papers
-[#1](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)
-[#2](http://www.eurasip.org/Proceedings/Eusipco/Eusipco2012/Conference/papers/1569585231.pdf)]
+[[paper](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)]
 [Attacks 
 [#1](http://ws2.binghamton.edu/fridrich/Research/f5.pdf) 
 [#2](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
