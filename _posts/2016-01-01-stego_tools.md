@@ -12,7 +12,7 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 <br>
 
 - **ASO (Adaptive Steganography by Oracle)** <br>
-status: *unknown* <br>
+status: *state-of-the-art* <br>
 notes: no implementation available<br>
 [papers
 [#1](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)
@@ -27,7 +27,7 @@ status: *detectable* <br>
 [#2](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - **HUGO (Highly Undetectable steGO)** <br>
-status: *use-with-caution* <br>
+status: *state-of-the-art*<br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
 [[paper](https://hal.archives-ouvertes.fr/hal-00541353/document)]
 [Attacks
@@ -91,7 +91,7 @@ status: *detectable* <br>
 [#2](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - **UNIWARD** <br>
-status: *use-with-caution* <br>
+status: *state-of-the-art* <br>
 [[S-UNIWARD code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
 [[J-UNIWARD code](http://dde.binghamton.edu/download/stego_algorithms/download/J-UNIWARD_linux_make_v11.tar.gz)]
 [[paper](http://dde.binghamton.edu/vholub/pdf/EURASIP14_Universal_Distortion_Function_for_Steganography_in_an_Arbitrary_Domain.pdf)]
@@ -101,7 +101,7 @@ status: *use-with-caution* <br>
 [#3](http://www.ws.binghamton.edu/fridrich/Research/SCA_JPEG_final1.pdf)]
 
 - **WOW** <br>
-status: *use-with-caution* <br>
+status: *state-of-the-art* <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/WOW_linux_make_v10.tar.gz)]
 [[papers](http://dde.binghamton.edu/vholub/pdf/WIFS12_Designing_Steganographic_Distortion_Using_Directional_Filters.pdf)]
 [Attacks
