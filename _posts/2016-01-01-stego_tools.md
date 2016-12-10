@@ -54,12 +54,10 @@ notes: it uses a secret hidding algorithm.<br>
 
 - **OpenStego** <br>
 status: *detectable* <br>
-notes: The current RandomLSB plugin can be detected using standard steganalysis for LSM Matching. Anyway, the program saves non hidden information that allows an easy detection. <br>
+notes: The program saves non hidden information that allows an easy detection. <br>
 [[site](http://www.openstego.info/)]
 [Attacks
-[#1](http://0xword.com/es/libros/64-esteganografia-y-estegoanalisis.html)
-[#2](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
-[#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
+[#1](http://0xword.com/es/libros/64-esteganografia-y-estegoanalisis.html)]
 
 - **Perturbed Quantization** <br>
 status: *detectable* <br>
