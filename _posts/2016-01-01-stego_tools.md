@@ -96,8 +96,7 @@ status: *use-with-caution* <br>
 [Attacks 
 [#1](http://www.ws.binghamton.edu/fridrich/Research/Improving-SCA-Features-final.pdf)
 [#2](http://www.ws.binghamton.edu/fridrich/Research/Explicit_transforms.pdf)
-[#3](http://www.ws.binghamton.edu/fridrich/Research/SCA_JPEG_final1.pdf)
-]
+[#3](http://www.ws.binghamton.edu/fridrich/Research/SCA_JPEG_final1.pdf)]
 
 - **WOW** <br>
 status: *use-with-caution* <br>
