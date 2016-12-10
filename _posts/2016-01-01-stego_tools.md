@@ -19,7 +19,9 @@ notes: no implementation available<br>
 - **F5** <br>
 status: *detectable* <br>
 [[code](http://code.google.com/p/f5-steganography/)]
-[[paper](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)]
+[papers
+[#1](http://f5-steganography.googlecode.com/files/F5%20Steganography.pdf)
+[#2](http://www.eurasip.org/Proceedings/Eusipco/Eusipco2012/Conference/papers/1569585231.pdf)]
 [Attacks 
 [#1](http://ws2.binghamton.edu/fridrich/Research/f5.pdf) 
 [#2](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
