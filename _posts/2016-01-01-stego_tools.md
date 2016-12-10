@@ -12,7 +12,8 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 <br>
 
 - **ASO (Adaptive Steganography by Oracle)** <br>
-status: *unknown* (no implementation available)<br>
+status: *unknown* <br>
+notes: no implementation available<br>
 [[paper](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)]
 
 - **F5** <br>
@@ -46,12 +47,14 @@ status: *detectable* <br>
 
 - **OpenPuff** <br>
 status: *detectable* <br>
+notes: it uses a secret hidding algorithm.<br>
 [[site](http://embeddedsw.net/OpenPuff_Steganography_Home.html)]
 [Attacks
 [#1](http://blog.daniellerch.me/p/openpuff.html)]
 
 - **OpenStego** <br>
 status: *detectable* <br>
+notes: The current RandomLSB plugin can be detected using standard steganalysis for LSM Matching. Anyway, the program saves non hidden information that allows an easy detection. <br>
 [[site](http://www.openstego.info/)]
 [Attacks
 [#1](http://0xword.com/es/libros/64-esteganografia-y-estegoanalisis.html)
@@ -67,10 +70,13 @@ status: *detectable* <br>
 
 - **Silenteye** <br>
 status: *detectable* <br>
+notes: The program uses a variation of LSB replacement. It can be detected usin standard steganalysis based on machine learning or even old attacks as RS or SPA.
 [[site](http://silenteye.v1kings.io/)]
 [Attacks
-[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
-[#2](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
+[#1](http://www.ws.binghamton.edu/fridrich/Research/acm_2001_03.pdf)
+[#2](http://www.ece.mcmaster.ca/~sorina/papers/LSBfinalTSP.pdf)
+[#3](http://www.ws.binghamton.edu/fridrich/Research/TIFS2012-SRM.pdf)
+[#4](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 - **Steghide** <br>
 status: *detectable* <br>
@@ -79,6 +85,7 @@ status: *detectable* <br>
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - **StegoBlue** <br>
+notes: The program uses a variation of LSB Matching, adding 1 to the value of the pixel. Therefore it can be detected using standard steganalysis for LSM Matching.<br>
 status: *detectable* <br>
 [[site](https://github.com/oni49/stegoBlue)]
 [Attacks
