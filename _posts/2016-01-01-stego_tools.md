@@ -70,7 +70,7 @@ status: *detectable* <br>
 
 - **Silenteye** <br>
 status: *detectable* <br>
-notes: The program uses a variation of LSB replacement. It can be detected usin standard steganalysis based on machine learning or even old attacks as RS or SPA.
+notes: The program uses a two-bit LSB replacement. It can be detected usin standard steganalysis based on machine learning or even old attacks as RS or SPA.
 [[site](http://silenteye.v1kings.io/)]
 [Attacks
 [#1](http://www.ws.binghamton.edu/fridrich/Research/acm_2001_03.pdf)
@@ -85,7 +85,7 @@ status: *detectable* <br>
 [#1](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)]
 
 - **StegoBlue** <br>
-notes: The program uses a variation of LSB Matching, adding 1 to the value of the pixel. Therefore it can be detected using standard steganalysis for LSM Matching.<br>
+notes: The program uses +1 LSB Matching. It can be detected using standard steganalysis for LSM Matching.<br>
 status: *detectable* <br>
 [[site](https://github.com/oni49/stegoBlue)]
 [Attacks
