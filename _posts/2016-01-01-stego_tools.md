@@ -36,7 +36,8 @@ notes: no implementation available<br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/MiPOD_matlab.zip)]
 [[paper](http://www.ws.binghamton.edu/fridrich/Research/MiPOD.pdf)]
 [Attacks
-[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS_ECSP.pdf)]
+[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS_ECSP.pdf)
+[#2](http://www.ws.binghamton.edu/fridrich/Research/Explicit_transforms.pdf)]
 
 - **UNIWARD** <br>
 [[S-UNIWARD code](http://dde.binghamton.edu/download/stego_algorithms/download/S-UNIWARD_linux_make_v10.tar.gz)]
