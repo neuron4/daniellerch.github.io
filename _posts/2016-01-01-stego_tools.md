@@ -10,6 +10,7 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 [ *Updated on 2016-12-09* ]
 
 <br>
+
 ### State of the art Methods:
 
 - **ASO (Adaptive Steganography by Oracle)** <br>
@@ -50,7 +51,7 @@ notes: no implementation available<br>
 [#3](http://www.sciencedirect.com/science/article/pii/S0952197616000026)]
 
 <br>
-### Detectable or broken steganography:
+### Detectable or broken steganography
 
 - **F5** <br>
 [[code](http://code.google.com/p/f5-steganography/)]
