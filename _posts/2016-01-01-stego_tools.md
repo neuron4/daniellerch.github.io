@@ -19,6 +19,11 @@ notes: no implementation available<br>
 [#1](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)
 [#2](http://www.eurasip.org/Proceedings/Eusipco/Eusipco2012/Conference/papers/1569585231.pdf)]
 
+- **HILL** <br>
+[[paper](http://dx.doi.org/10.1109/ICIP.2014.7025854)]
+[Attacks
+[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS_ECSP.pdf)]
+
 - **HUGO (Highly Undetectable steGO)** <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
 [[paper](https://hal.archives-ouvertes.fr/hal-00541353/document)]
