@@ -22,7 +22,7 @@ notes: no implementation available<br>
 - **HILL** <br>
 [[paper](http://dx.doi.org/10.1109/ICIP.2014.7025854)]
 [Attacks
-[#1](http://www.ws.binghamton.edu/fridrich/Research/TIFS_ECSP.pdf)]
+[#1](http://www.ws.binghamton.edu/fridrich/Research/Explicit_transforms.pdf)]
 
 - **HUGO (Highly Undetectable steGO)** <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
