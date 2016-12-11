@@ -14,7 +14,6 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 ### State of the art Methods:
 
 - **ASO (Adaptive Steganography by Oracle)** <br>
-notes: no implementation available<br>
 [papers
 [#1](http://hal-lirmm.ccsd.cnrs.fr/lirmm-00838993/file/ASO_soumis.pdf)
 [#2](http://www.eurasip.org/Proceedings/Eusipco/Eusipco2012/Conference/papers/1569585231.pdf)]
