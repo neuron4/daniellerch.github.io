@@ -35,8 +35,8 @@ Mayo 2014. Editorial 0xWord, ISBN: 978-84-617-0021-9
 - LSB Matching Steganalysis Based on Patterns of Pixel Differences and Random Embedding, with Megías. 
 D. Computers &amp; Security, February 2013
 [[10.1016/j.cose.2012.11.005](http://dx.doi.org/10.1016/j.cose.2012.11.005)]
-[[code](http://www.daniellerch.me/snippets/stego/ppd_cose.c)]
-[[pdf](http://openaccess.uoc.edu/webapps/o2/bitstream/10609/40841/1/Patterns_O2.pdf)].
+[[arxiv](https://arxiv.org/abs/1703.00817)]
+[[code](http://www.daniellerch.me/snippets/stego/ppd_cose.c)].
 <br><br>
 
 - Steganalytic Methods for the Detection of Histogram Shifting Data Hiding Schemes, with Megías. 
