@@ -11,3 +11,8 @@ $$
 \sum_{i=1}^{\inf}\fraq{1}{i}
 $$
 
+```python
+import numpy as np
+a=np.array()
+print "holas"
+```
