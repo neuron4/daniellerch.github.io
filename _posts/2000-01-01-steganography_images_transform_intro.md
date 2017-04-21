@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How not to hide information inside images.
+comments: true
 ---
 ## How not to hide information inside an image
 
