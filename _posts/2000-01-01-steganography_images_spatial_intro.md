@@ -1,7 +1,6 @@
 ---
 layout: post
 title: How not to hide information inside images.
-comments: false
 ---
 ## Introduction to Image Steganography in the Spatial Domain
 
