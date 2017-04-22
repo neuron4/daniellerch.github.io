@@ -8,9 +8,8 @@ ________________________________________________________________________
 
 ### 1. LSB Replacement
 
-asdas
-asdas
-asdas
+LSB replacement was a popular technique to hide information inside images in the nineties. To hide information using LSB replacement in one pixel of the image we need to replate its least signigicant bit with the bit of the message we want to hide. 
+
 
 ### 2. Visual Attacks
 
