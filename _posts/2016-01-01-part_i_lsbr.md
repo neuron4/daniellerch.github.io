@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Part I: In the Beginning Was LSB Replacement
+title: In the Beginning Was LSB Replacement
 ---
 ## Part I: In the Beginning Was LSB Replacement
 
