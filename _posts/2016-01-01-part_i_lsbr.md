@@ -5,6 +5,33 @@ title: In the Beginning Was LSB Replacement
 ### Practical Image Steganography and Steganalysis in the Spatial Domain
 ### > Part I: In the Beginning Was LSB Replacement <
 
+
+### 1. LSB Replacement
+
+asdas
+asdas
+asdas
+
+### 2. Visual Attacks
+
+asdas
+asdas
+asdas
+
+### 3. Histogram Attack
+
+asdas
+asdas
+asdas
+
+### 4. SPA Attack
+
+asdas
+asdas
+asdas
+
+### xxx
+
 bla bla bla
 asd
 sa
