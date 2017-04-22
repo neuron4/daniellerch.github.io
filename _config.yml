@@ -89,3 +89,4 @@ exclude:
   - CNAME
   
 future: true
+timezone: Europe/Madrid
