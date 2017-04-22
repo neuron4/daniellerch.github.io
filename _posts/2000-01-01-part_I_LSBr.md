@@ -1,8 +1,8 @@
 ---
 layout: post
-title: How not to hide information inside images.
+title: Part I: In the Beginning Was LSB Replacement
 ---
-## Introduction to Image Steganography in the Spatial Domain
+## Part I: In the Beginning Was LSB Replacement
 
 bla bla bla
 asd
