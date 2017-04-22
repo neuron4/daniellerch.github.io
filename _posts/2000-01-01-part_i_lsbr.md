@@ -4,8 +4,8 @@ title: In the Beginning Was LSB Replacement
 ---
 
 ### Practical Image Steganography and Steganalysis in the Spatial Domain
+### Part I: In the Beginning Was LSB Replacement
 ________________________________________________________________________
-## Part I: In the Beginning Was LSB Replacement
 
 ### 1. LSB Replacement
 
