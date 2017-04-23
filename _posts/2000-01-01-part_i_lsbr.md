@@ -1,12 +1,16 @@
 ---
 layout: post
-title: In the Beginning Was LSB Replacement
+title: Practical Image Steganography in the Spatial Domain.
 ---
 
-### Practical Image Steganography and Steganalysis in the Spatial Domain. Part I: In the Beginning Was LSB Replacement
-________________________________________________________________________
+## Practical Image Steganography in the Spatial Domain. 
 
-### 1. LSB Replacement
+[ Updated on 2016-12-11 ]
+
+
+<br>
+
+### Basic information hiding:
 
 LSB replacement was a popular technique to hide information inside images in the nineties. To hide information using LSB replacement in one pixel of the image we need to replate its least signigicant bit with the bit of the message we want to hide. 
 
