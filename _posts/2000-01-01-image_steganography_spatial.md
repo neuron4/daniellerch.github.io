@@ -5,7 +5,7 @@ title: Practical Image Steganography in the Spatial Domain.
 
 ## Practical Image Steganography in the Spatial Domain. 
 
-To hide information in the spatial domain (that is, in the bitmap that represents the image) is usual to modify the least significant bit of some pixels. This technique has evolved significantly over the years, from the now insecure LSB replacement [1](#ref1),[2](#ref2) to the modern techniques based on adaptive schemes. In this article we will see ...
+To hide information in the spatial domain (that is, in the bitmap that represents the image) is usual to modify the least significant bit of some pixels. This technique has evolved significantly over the years, from the now insecure LSB replacement [1](#References),[2](#References) to the modern techniques based on adaptive schemes. In this article we will see ...
 
 [ Updated on 2017-05-01 ]
 
@@ -41,10 +41,10 @@ asdas
 
 ### References
 
-[#ref1]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
+[1]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
 Proc. of the ACM Workshop on Multimedia and Security, Ottawa, Canada, October 5, 2001, pp. 27-30. 
 
-[#ref2]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
+[2]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
 
 ### xxx
 
