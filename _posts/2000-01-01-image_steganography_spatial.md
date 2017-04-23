@@ -5,6 +5,8 @@ title: Practical Image Steganography in the Spatial Domain.
 
 ## Practical Image Steganography in the Spatial Domain. 
 
+To hide information in the spatial domain (that is, in the bitmap that represents the image) is usual to modify the least significant bit of some píxels. 
+
 [ Updated on 2016-12-11 ]
 
 
