@@ -5,7 +5,7 @@ title: Practical Image Steganography in the Spatial Domain.
 
 ## Practical Image Steganography in the Spatial Domain. 
 
-To hide information in the spatial domain (that is, in the bitmap that represents the image) is usual to modify the least significant bit of some píxels. 
+To hide information in the spatial domain (that is, in the bitmap that represents the image) is usual to modify the least significant bit of some pixels. This technique has evolved significantly over the years, from the now insecure LSB replacement [1] to the modern techniques based on adaptive schemes. 
 
 [ Updated on 2016-12-11 ]
 
@@ -14,8 +14,6 @@ To hide information in the spatial domain (that is, in the bitmap that represent
 
 ### Basic information hiding:
 
-LSB replacement was a popular technique to hide information inside images in the nineties. To hide information using LSB replacement in one pixel of the image we need to replate its least signigicant bit with the bit of the message we want to hide. 
-
 Let's suppose that we have the following set of pixels and we want to hide the A letter in ASCII code. 
 
 | 01011011 | 10001011 | 00010011 | 00011010 | 00100101 | 11101011 | 11100101 | 01101010 |
@@ -23,23 +21,27 @@ Let's suppose that we have the following set of pixels and we want to hide the A
 
 
 
-### 2. Visual Attacks
+### 2. Matrix Embedding
 
 asdas
 asdas
 asdas
 
-### 3. Histogram Attack
+### 3. Wet Paper Codes 
 
 asdas
 asdas
 asdas
 
-### 4. SPA Attack
+### 4. Generative Schemes based on Deep Learning
 
 asdas
 asdas
 asdas
+
+### References
+
+[1] 
 
 ### xxx
 
