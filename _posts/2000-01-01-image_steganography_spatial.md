@@ -5,9 +5,9 @@ title: Practical Image Steganography in the Spatial Domain.
 
 ## Practical Image Steganography in the Spatial Domain. 
 
-To hide information in the spatial domain (that is, in the bitmap that represents the image) is usual to modify the least significant bit of some pixels. This technique has evolved significantly over the years, from the now insecure LSB replacement [1,2] to the modern techniques based on adaptive schemes. 
+To hide information in the spatial domain (that is, in the bitmap that represents the image) is usual to modify the least significant bit of some pixels. This technique has evolved significantly over the years, from the now insecure LSB replacement [1,2] to the modern techniques based on adaptive schemes. In this article we will see ...
 
-[ Updated on 2016-12-11 ]
+[ Updated on 2017-05-01 ]
 
 
 <br>
