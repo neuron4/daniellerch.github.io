@@ -45,6 +45,22 @@ p {
   padding: 5px 20px 5px 20px;
 }
 
+
+@media (max-width:632px){
+  .container {
+    margin: 0 auto;
+    max-width: 740px;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .frame {
+    width: 740px;
+    margin: 0 auto;
+    padding: 0px;
+  }	
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Courier New', Courier, FreeMono, monospace;
   color: #cccccc;
