@@ -9,6 +9,11 @@ To hide information in the spatial domain (that is, in the bitmap that represent
 
 [ Updated on 2017-05-01 ]
 
+### 1. Basic information hiding.
+### 2. Matrix Embedding
+### 3. Wet Paper Codes 
+### 4. Generative Schemes based on Deep Learning
+### References
 
 <br>
 
