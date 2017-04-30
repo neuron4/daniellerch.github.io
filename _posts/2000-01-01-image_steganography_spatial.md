@@ -22,6 +22,13 @@ By the other side, the replacement of the LSB is an asymmetrical operation. When
 
 Let's suppose that we have the following set of pixels and we want to hide the A letter in ASCII code. That is, we want to hide the binary number 01000001. 
 
+| P | Q | P * Q |
+| - | - | - |
+| T | T | T |
+| T | F | F |
+| F | T | F |
+| F | F | F |
+
 
 | 01011011 | 10001011 | 00010011 | 00011010 | 00100101 | 11101011 | 11100101 | 01101010 |
 |----------|----------|----------|----------|----------|----------|----------|----------|
