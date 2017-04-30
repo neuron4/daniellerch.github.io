@@ -9,14 +9,13 @@ To hide information in the spatial domain (that is, in the bitmap that represent
 
 [ Updated on 2017-05-01 ]
 
-<br><br>
+<br>
 
 1. [Basic information hiding](#1-basic-information-hiding)
 
 2. [Matrix Embedding](#2-matrix-embedding)
 
 3. [Wet Paper Codes](#3-wet-paper-codes)
-
 4. [Other methods](#4-other-methods)
 
 5. [References](#5-references)
