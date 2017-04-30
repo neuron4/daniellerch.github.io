@@ -11,15 +11,15 @@ To hide information in the spatial domain (that is, in the bitmap that represent
 
 <br><br>
 
-[1. Basic information hiding]()
+1. [Basic information hiding]()
 
-[2. Matrix Embedding]()
+2. [Matrix Embedding]()
 
-[3. Wet Paper Codes]()
+3. [Wet Paper Codes]()
 
-[4. Generative Schemes based on Deep Learning]()
+4. [Generative Schemes based on Deep Learning]()
 
-[References]()
+5. [References]()
 
 <br>
 
@@ -66,7 +66,7 @@ asdas
 asdas
 asdas
 
-### References
+### 5. References
 
 [1]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
 Proc. of the ACM Workshop on Multimedia and Security, Ottawa, Canada, October 5, 2001, pp. 27-30. 
