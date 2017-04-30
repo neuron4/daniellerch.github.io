@@ -298,6 +298,7 @@ footer {
 table {
   padding: 0; 
   color: #000;
+  margin: auto;
 }
 table tr {
     border-top: 1px solid #cccccc;
@@ -309,7 +310,7 @@ table tr {
     table tr th {
       font-weight: bold;
       border: 1px solid #cccccc;
-      border-bottom: 3px solid #cccccc;
+      border-bottom: 3px solid #1c1c1c;
       text-align: left;
       margin: 0;
       padding: 6px 13px; }
