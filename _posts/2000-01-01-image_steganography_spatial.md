@@ -30,22 +30,23 @@ The most basic technique to hide information in the spatial domain is the replac
 
 By the other side, the replacement of the LSB is an asymmetrical operation. When we replace the LSB of an even pixel this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of an odd pixel this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. If we plot an histogram of the pixel intensities we can see the effects of the embedding. This is because the bars that represent the number of pixels of an even value grow, and the bars that represent the number of pixels of an odd value grow. Therefore, if we hide enough data, for example using bitrate 1, the bars tend to have the same height. This is how the Histogram Attack works [[3](#5-references)] and it is the basis for subsequent attacks that knocked out LSB replacement [[1](#5-references),[2](#5-references)]. So, we are not going to use LSB replacement. Instead we are going to use LSB matching. LSB matching is very similar to LSB replacement, our target is to change the value of the LSB. But in LSB matching, instead of replacing the LSB we change it adding or substracting one. The only difference is that we are using an operation with carriage that is symmetrical. These small variation makes LSB matching much harder to detect.
 
-<!--p align="center"><img src="{{ site.baseurl }}/images/baboon.png"></p-->
+Let's consider the Baboon's image in grayscale:
 ![Baboon]({{ site.baseurl }}/images/baboon.png)
 
-Let's suppose that we have the following set of pixels and we want to hide the A letter in ASCII code. That is, we want to hide the binary number 01000001. 
+We extract a block of 3x3 pixels from the upper left corner.
 
-| P | Q | P * Q |
-| - | - | - |
-| T | T | T |
-| T | F | F |
-| F | T | F |
-| F | F | F |
+| 160 | 60 | 53 |
+| 128 | 111 | 43 |
+| 84 | 125 | 51 |
+
+And we obtain its binary code:
+
+| 10100000 | 00111100 | 00110101 |
+| 10000000 | 01101111 | 00101011 |
+| 01010100 | 01111101 | 00110011 |
 
 
-| 01011011 | 10001011 | 00010011 |
-| 00011010 | 00100101 | 11101011 |
-| 11100101 | 01101010 | 01011011 |
+Let's suppose that we want to hide the A letter in ASCII code. That is, we want to hide the binary number 01000001. 
 
 
 
@@ -91,3 +92,9 @@ import numpy as np
 a=np.array()
 print "holas"
 ```
+| P | Q | P * Q |
+| - | - | - |
+| T | T | T |
+| T | F | F |
+| F | T | F |
+| F | F | F |
