@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Practical Image Steganography in the Spatial Domain.
+comments: true
 ---
 
 ## Practical Image Steganography in the Spatial Domain. 
