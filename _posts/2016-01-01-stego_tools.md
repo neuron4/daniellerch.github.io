@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Steganalysis
+comments: true
 ---
 
 ## Analysis of Image Steganography Tools and Algorithms
