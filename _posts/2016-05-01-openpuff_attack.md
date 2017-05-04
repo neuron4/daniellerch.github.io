@@ -28,6 +28,7 @@ software. OpenPuff is 100% free and suitable for highly sensitive data covert tr
 
 This tool has been some time in my list of Image Steganography Tools without security classification, because its hidding algorithm is secret. So I decided to perform a basic analysis to update the list.
 
+<br>
 ### 2. Preparing Data Sets
 
 I used the ATS method, presented in the following paper:
@@ -65,7 +66,7 @@ The procedure to hide information is the same as before.
 
 To prepare the set C we do the same operation, this time we hide information into the images of the set B.
 
-
+<br>
 ### 3. The Attack
 
 A complete example of the ATS attack and the needed software can be found [here](https://github.com/daniellerch/papers_code/blob/master/ATS/README.md).
