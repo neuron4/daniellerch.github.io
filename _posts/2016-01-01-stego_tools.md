@@ -81,7 +81,7 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 notes: It uses a secret hiding algorithm.<br>
 [[site](http://embeddedsw.net/OpenPuff_Steganography_Home.html)]
 [Attacks
-[#1](http://blog.daniellerch.me/p/openpuff.html)]
+[#1](http://pages.daniellerch.me/openpuff_attack)]
 
 - **OpenStego** <br>
 notes: It saves non hidden data that allows an easy detection. <br>
