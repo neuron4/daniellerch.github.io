@@ -8,7 +8,7 @@ comments: true
 
 Here you can find a list of image steganography tools and their kwnown attacks. I maintain this list to be updated about the status of the tools available and the level of security they provide. If you know another tool that should be in the list or a missing attack, please contact with [me](http://daniellerch.me). 
 
-[ *Updated on 2016-12-11* ]
+[ *Updated on 2017-08-24* ]
 
 <br>
 
@@ -22,7 +22,9 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 - **HILL** <br>
 [[paper](http://dx.doi.org/10.1109/ICIP.2014.7025854)]
 [Attacks
-[#1](http://www.ws.binghamton.edu/fridrich/Research/Explicit_transforms.pdf)]
+[#1](http://www.ws.binghamton.edu/fridrich/Research/Explicit_transforms.pdf)
+[#2](http://ieeexplore.ieee.org/document/7444146/)]
+
 
 - **HUGO (Highly Undetectable steGO)** <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/HUGO_bounding_linux_make_v10.tar.gz)]
@@ -46,7 +48,8 @@ Here you can find a list of image steganography tools and their kwnown attacks. 
 [Attacks 
 [#1](http://www.ws.binghamton.edu/fridrich/Research/Improving-SCA-Features-final.pdf)
 [#2](http://www.ws.binghamton.edu/fridrich/Research/Explicit_transforms.pdf)
-[#3](http://www.ws.binghamton.edu/fridrich/Research/SCA_JPEG_final1.pdf)]
+[#3](http://www.ws.binghamton.edu/fridrich/Research/SCA_JPEG_final1.pdf)
+[#4](http://ieeexplore.ieee.org/document/7444146/)]
 
 - **WOW** <br>
 [[code](http://dde.binghamton.edu/download/stego_algorithms/download/WOW_linux_make_v10.tar.gz)]
