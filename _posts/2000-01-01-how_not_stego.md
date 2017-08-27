@@ -26,7 +26,7 @@ hiding a safe behind a picture: it is not exactly the safest option.
 
 6. [Dealing with CSM](#6-dealing-with-csm)
 
-7. [So, what can I do?](#7-so,-what-can-i-do?)
+7. [So, what can I do?](#7-so-what-can-i-do)
 
 5. [References](#5-references)
 
