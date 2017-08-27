@@ -6,8 +6,9 @@ comments: true
 
 ## How Not to Hide Information Inside an Image. 
 
-You can find a lot of tools on Internet to hide information inside an image. Unfortunately, most of them are like 
+You can find a lot of tools on  Internet to hide information inside an image. Unfortunately, most of them are like 
 hiding a safe behind a picture: it is not exactly the safest option. In this article I will try to show which steganographic techniques you should not use. 
+
 
 
 [ Updated on 2017-xx-xx ]
@@ -33,6 +34,9 @@ hiding a safe behind a picture: it is not exactly the safest option. In this art
 <br>
 
 ### 1. Naive techniques
+
+In this section we are going to deal with these techniques too naive to be taken seriously but still they are being used frequently.
+
 
 ### 2. Sequential LSB replacement and the histogram attack
 
