@@ -16,9 +16,9 @@ hiding a safe behind a picture: it is not exactly the safest option. In this art
 
 1. [Naive techniques](#1-naive-techniques)
 
-2. [sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
+2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
 
-3. [random LSB replacement and the SPA attack](#3-random-lsb-replacement-and-the-spa-attack)
+3. [Random LSB replacement and the SPA attack](#3-random-lsb-replacement-and-the-spa-attack)
 
 4. [LSB Matching and Machine Learning](#4-lsb-matching-and-machine-learning)
 
@@ -34,9 +34,9 @@ hiding a safe behind a picture: it is not exactly the safest option. In this art
 
 ### 1. Naive techniques
 
-### 2. sequential LSB replacement and the histogram attack
+### 2. Sequential LSB replacement and the histogram attack
 
-### 3. random LSB replacement and the SPA attack
+### 3. Random LSB replacement and the SPA attack
 
 ### 4. LSB Matching and Machine Learning
 
