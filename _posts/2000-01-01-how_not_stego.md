@@ -35,7 +35,23 @@ hiding a safe behind a picture: it is not exactly the safest option. In this art
 
 ### 1. Naive techniques
 
-In this section we are going to deal with these techniques too naive to be taken seriously but still they are being used frequently.
+In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
+
+One of these techniques is to hide a file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
+
+We can do this in Linux/Mac with:
+
+```bash
+cat file.zip >> file.gif
+```
+
+Or in Windows:
+
+```bash
+copy /B file.gif+file.zip file.gif
+```
+
+
 
 
 ### 2. Sequential LSB replacement and the histogram attack
