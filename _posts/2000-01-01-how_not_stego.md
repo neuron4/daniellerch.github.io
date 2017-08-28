@@ -94,31 +94,37 @@ Other naive technique consist on hiding information into the alpha channel. That
 
 
 
-
+<br>
 ### 2. Sequential LSB replacement and the histogram attack
 
 PENDING...
 
+<br>
 ### 3. Random LSB replacement and the SPA attack
 
 PENDING...
 
+<br>
 ### 4. LSB Matching and Machine Learning
 
 PENDING...
 
+<br>
 ### 5. Minimizing distortion and adaptive algorithms
 
 PENDING...
 
+<br>
 ### 6. Dealing with CSM
 
 PENDING...
 
+<br>
 ### 7. So, what can I do?
 
 PENDING...
 
+<br>
 ### 5. References
 
 PENDING...
