@@ -9,7 +9,7 @@ comments: true
 You can find a lot of tools on the Internet to hide information inside an image. Unfortunately, most of them are like 
 hiding a safe behind a picture: it is not exactly the safest option. In this article I will try to show which steganographic techniques you should not use. 
 
-The criteria for deciding whether a method is adequate is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacking part. Nowadays this is unacceptable. So, the same can be applied to steganography.
+The criteria for deciding whether a method is adequate or not is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacking part. Nowadays this is unacceptable. So, the same can be applied to steganography.
 
 
 <br>
