@@ -27,9 +27,9 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
 2. [LSB replacement and the histogram attack](#2-lsb-replacement-and-the-histogram-attack])
 
-   2.1 [LSB replacement of the pixels](#21-LSB-replacement-of-the-pixels)
+   2.1 [LSB replacement](#21-LSB-replacement)
 
-   2.2 [LSB replacement of the DCT coefficients](#21-lsb-replacement-of-the-dct-coefficients)
+   2.2 [The Histogram Attack](#21-the-histogram-attack)
 
 
 3. [Random LSB replacement and the SPA attack](#3-random-lsb-replacement-and-the-spa-attack)
@@ -181,7 +181,7 @@ The following code reads secret data from file "secret_data.txt" and hide it int
 from scipy import ndimage, misc
 
 f=open('secret_data.txt', 'r')
-blist = list((ord(b) for b in f.read()))
+blist = [ord(b) for b in f.read()]
 
 I = misc.imread('hns_homer.png')
 
@@ -233,13 +233,93 @@ If an attacker performs this operation he/she has enough information to detect a
 
 #### 2.1 LSB replacement of the pixels
 
-A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel. 
+A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel, so the capacity of this method is the eighth part of the number of pixels.
+
+In this example We are going to use the Baboon image:
+
+![baboon]({{ site.baseurl }}/images/hns_baboon.png)
 
 
-PENDING ...
+Let's see how to implement this technique in Python:
+
+```Python
+import sys
+from scipy import ndimage, misc
+
+bits=[]
+f=open('secret_data.txt', 'r')
+blist = [ord(b) for b in f.read()]
+for b in blist:
+    for i in xrange(8):
+        bits.append((b >> i) & 1)
+
+I = misc.imread('hns_baboon.png')
+
+idx=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if idx<len(bits):
+                I[i][j][k]&=0xFE
+                I[i][j][k]+=bits[idx]
+                idx+=1
+
+misc.imsave('hns_baboon_stego.png', I)
+```
+
+The first we do is to get secret data from 'secret_data.txt'. Then we split each pixel into bits and we store this in a list. This bits is what we want to hide in the LSB of the pixels.
+
+Finally we get each pixel and remove the LSB. Then we put into the LSB the bit of the message. This is done by these operations:
+
+```Python
+I[i][j][k]&=0xFE
+I[i][j][k]+=bits[idx]
+```
+
+As a result, we get the following image:
+
+![baboon-stego]({{ site.baseurl }}/images/hns_baboon_stego.png)
+
+As usual, there is no difference for the human eye.
+
+But how can we know if there is a hiden message? we will see in the next section. 
+
+But before, I'm sure you want to know how to extract the message. Here you have the Python code:
 
 
-#### 2.2 LSB replacement of the DCT coefficients
+```Python
+import sys
+from scipy import ndimage, misc
+
+I=misc.imread('hns_baboon_stego.png')
+f = open('output_secret_data.txt', 'w')
+
+idx=0
+bitidx=0
+bitval=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if bitidx==8:
+                f.write(chr(bitval))
+                bitidx=0
+                bitval=0
+            bitval |= (I[i, j, k]%2)<<bitidx
+            bitidx+=1
+
+f.close()
+```
+
+What we do is to extract every pixel reading the LSB. Every time we have 8 bits we save the whole byte into the output file.
+
+
+#### 2.2 The Histogram Attack
+
+LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. So, we have a secure steganongraphic method. Isn't it? 
+
+No!, it is not. LSB replacement is an asymmetric operation.
+
+
 
 PENDING ...
 
