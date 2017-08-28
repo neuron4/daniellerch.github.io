@@ -19,6 +19,8 @@ The main objective of steganalysis is to detect hidden information. If the infor
 1. [Naive techniques](#1-naive-techniques)
 
    1.1. [Append one file to another](#11-append-one-file-to-another)
+   1.2. [Writting text with similar colors](#12-Writting-text with-similar-colors)
+   1.3. [Using the alpha channel](#13-Using-the-alpha-channel)
 
 2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
 
@@ -41,7 +43,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
 <br>
-#### 1.1 Append one file to another
+#### 1.1. Append one file to another
 
 One of these techniques is to hide one file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
 
@@ -86,7 +88,7 @@ The same method can be used using different file formats which could be images o
 
 
 <br>
-#### Writting text with similar colors
+#### 1.2. Writting text with similar colors
 
 Other naive technique consist on writing text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
 
@@ -131,7 +133,7 @@ As you can see in the result image a simple filter can detect the hidden message
 
 
 <br>
-#### Using the alpha channel
+#### 1.3. Using the alpha channel
 
 Other naive technique consist on hiding information into the alpha channel. That is, the channel dedicated to transparency. 
 
