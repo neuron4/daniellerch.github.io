@@ -144,12 +144,74 @@ This example image of Homer has a transparent background:
 
 ![bender]({{ site.baseurl }}/images/hns_homer.png)
 
-If we read, for examle, the data from the upper left corner we can see how the information data is organized:
+If we read, for example, the data from the upper left corner we can see how the information data is organized:
 
 ```python
-import scipy
-
+from scipy import ndimage, misc
+I = misc.imread('hns_homer.png')
+print I[0,0]
 ```
+
+After executing the script we see this:
+
+```bash
+[0, 0, 0, 0]
+```
+
+Every pixel is represented by four values: RGBA. The first byte corresponds to red color, the second byte to green color, the third byte to blue color and the fourth byte represents the alpha channel (the opacity). Zero opacity means a transparent pixel. If the value was 255 the pixel would not be transparent. 
+
+The upper left corner pixel is transparent, so the value of RGB bytes is ignored. This provides an easy way to hide data. 
+
+The following code reads secret data from file "secret_data.txt" and hide it into an image called "hns_homer_stego.png". Every secret byte is hidden in every pixel with zero opacity. In this way we only overwrite invisible pixels. 
+
+```python
+from scipy import ndimage, misc
+
+f=open('secret_data.txt', 'r')
+blist = list((ord(b) for b in f.read()))
+
+I = misc.imread('hns_homer.png')
+
+idx=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if idx<len(blist) and I[i][j][3]==0:
+                I[i][j][k]=blist[idx]
+                idx+=1
+
+misc.imsave('hns_homer_stego.png', I)
+```
+
+As a result, we obtain the following image:
+
+![bender]({{ site.baseurl }}/images/hns_homer_stego.png)
+
+
+We do not se the message. But again, this is not a secure option. We can unhide the data, simply by removing the transparency. This is a very easy operation that can be done with the following script:
+
+```python
+from scipy import ndimage, misc
+I = misc.imread('hns_homer_stego.png')
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        I[i,j][3]=255
+
+misc.imsave('hns_homer_stego_broken.png', I)
+```
+
+As a result, we obtain the following image:
+
+![bender]({{ site.baseurl }}/images/hns_homer_stego_broken.png)
+
+This image has a black background. But there is a section at the begining where we see random colors. This is the result of hidding our secret pixels. This is enough to detect and extract the secret data.
+
+
+
+
+
+
+
 
 
 
