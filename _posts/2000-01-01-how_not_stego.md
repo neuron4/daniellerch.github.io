@@ -27,7 +27,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
 2. [LSB replacement and the SPA attack](#2-lsb-replacement-and-the-spa-attack])
 
-   2.1 [LSB replacement](#21-LSB-replacement)
+   2.1 [LSB replacement](#21-lsb-replacement)
 
    2.2 [The SPA Attack](#21-the-spa-attack)
 
@@ -231,7 +231,7 @@ If an attacker performs this operation he/she has enough information to detect a
 <br>
 ### 2. LSB replacement and the SPA attack
 
-#### 2.1 LSB replacement of the pixels
+#### 2.1 LSB replacement
 
 A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel, so the capacity of this method is the eighth part of the number of pixels.
 
