@@ -144,6 +144,12 @@ This example image of Homer has a transparent background:
 
 ![bender]({{ site.baseurl }}/images/hns_homer.png)
 
+If we read, for examle, the data from the upper left corner we can see how the information data is organized:
+
+```python
+import scipy
+
+```
 
 
 
