@@ -19,8 +19,11 @@ The main objective of steganalysis is to detect hidden information. If the infor
 1. [Naive techniques](#1-naive-techniques)
 
    1.1. [Append one file to another](#11-append-one-file-to-another)
-   1.2. [Writting text with similar colors](#12-Writting-text with-similar-colors)
-   1.3. [Using the alpha channel](#13-Using-the-alpha-channel)
+   
+   1.2. [Writing text with similar colors](#12-writing-text with-similar-colors)
+   
+   1.3. [Using the alpha channel](#13-using-the-alpha-channel)
+
 
 2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
 
@@ -88,7 +91,7 @@ The same method can be used using different file formats which could be images o
 
 
 <br>
-#### 1.2. Writting text with similar colors
+#### 1.2. Writing text with similar colors
 
 Other naive technique consist on writing text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
 
