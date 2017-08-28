@@ -207,7 +207,9 @@ After executing this script we obtain the following image:
 
 ![bender]({{ site.baseurl }}/images/hns_homer_stego_broken.png)
 
-This image has a black background. But there is a section at the begining where we see random colors. This is the result of hidding our secret pixels. This is enough to detect and extract the secret data.
+This image has a black background. But there is a section at the begining where we see random colors. This is the result of hidding our secret bytes as a pixels. 
+
+If an attacker performs this operation he/she has enough information to detect and extract the secret data.
 
 
 
