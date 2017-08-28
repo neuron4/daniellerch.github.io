@@ -20,7 +20,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
    1.1. [Append one file to another](#11-append-one-file-to-another)
    
-   1.2. [Writing text with similar colors](#12-writing-text with-similar-colors)
+   1.2. [Writing text with similar colors](#12-writing-text-with-similar-colors)
    
    1.3. [Using the alpha channel](#13-using-the-alpha-channel)
 
@@ -93,7 +93,7 @@ The same method can be used using different file formats which could be images o
 <br>
 #### 1.2. Writing text with similar colors
 
-Other naive technique consist on writing text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
+Other naive technique consist of writing text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
 
 
 See for example this image of Bender:
@@ -138,7 +138,11 @@ As you can see in the result image a simple filter can detect the hidden message
 <br>
 #### 1.3. Using the alpha channel
 
-Other naive technique consist on hiding information into the alpha channel. That is, the channel dedicated to transparency. 
+Other naive technique consist of hiding information into the alpha channel. That is, the channel dedicated to transparency. 
+
+This example image of Homer has a transparent background:
+
+![bender]({{ site.baseurl }}/images/hns_homer.png)
 
 
 
