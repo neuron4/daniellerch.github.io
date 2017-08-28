@@ -89,9 +89,7 @@ Hello World!
 The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
 
 
-``` 
-Tip #1: Do not hide information by appending a file. It is easy to detect and easy to extract
-``` 
+| Tip #1: Do not hide information by appending a file. It is easy to detect and easy to extract | 
 
 
 <br>
