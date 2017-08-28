@@ -86,7 +86,7 @@ The same method can be used using different file formats which could be images o
 <br>
 #### Writting text with similar colors
 
-Other naive technique consist on writting text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
+Other naive technique consist on writing text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
 
 
 See for example this image of Bender:
@@ -100,7 +100,7 @@ And, the same image with some extra information:
 
 Do you see any difference? I don't think so. But it is not difficult to uncover the secret. 
 
-The following Python code applies a high-pass-filter using [convolution](https://en.wikipedia.org/wiki/Kernel_(image_processing)). Usually, this filter is used to detect edges. This is adequated for our purposes because we want to highlight these parts of the image with a change in the color. 
+The following Python code applies a high-pass-filter using [convolution](https://en.wikipedia.org/wiki/Kernel_(image_processing)). Usually, this filter is used to detect edges. This is adequate for our purposes because we want to highlight these parts of the image with a change in the color. 
 
 
 ```python
