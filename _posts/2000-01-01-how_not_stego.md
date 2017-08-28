@@ -61,6 +61,7 @@ And, the same GIF image with a ZIP file at the end:
 ![groot-stego]({{ site.baseurl }}/images/hns_groot_stego.gif)
 
 
+Do you see any difference? I'm sure you do not. But it doesn't mean the method is secure. Actually, this is like hiding a safe behind a picture in the real world. 
 
 
 ### 2. Sequential LSB replacement and the histogram attack
