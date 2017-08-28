@@ -323,9 +323,9 @@ No!, it is not. LSB replacement is an asymmetrical operation and it can be detec
 
 When we replace the LSB of a pixel with an even vallue this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of a pixel with an odd value this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. 
 
-Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [1](9-references) and later by the RS attack [2](#9-references) and the SPA attack [3](#9-references).
+Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [[1](9-references)] and later by the RS attack [[2](#9-references)] and the SPA attack [[3](#9-references)].
 
-The Sample Pair Analysis (SPA) is detailed in [3](#9-references) so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
+The Sample Pair Analysis (SPA) is detailed in [[3](#9-references)] so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
 
 The following code implements the SPA attack:
 
