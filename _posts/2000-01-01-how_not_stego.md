@@ -18,7 +18,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
 1. [Naive techniques](#1-naive-techniques)
 
-1.1 [Append one file to another](#1.1-append-one-file-to-another)
+[Append one file to another](#append-one-file-to-another)
 
 2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
 
@@ -41,7 +41,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
 <br>
-#### 1.1 Append one file to another
+#### Append one file to another
 
 One of these techniques is to hide one file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
 
