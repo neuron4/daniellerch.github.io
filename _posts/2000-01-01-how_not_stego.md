@@ -242,7 +242,7 @@ In this example We are going to use the Baboon image:
 
 Let's see how to implement this technique in Python:
 
-```Python
+```python
 import sys
 from scipy import ndimage, misc
 
@@ -271,7 +271,7 @@ The first we do is to get secret data from 'secret_data.txt'. Then we split each
 
 Finally we get each pixel and remove the LSB. Then we put into the LSB the bit of the message. This is done by these operations:
 
-```Python
+```python
 I[i][j][k]&=0xFE
 I[i][j][k]+=bits[idx]
 ```
@@ -287,7 +287,7 @@ But how can we know if there is a hiden message? we will see in the next section
 But before, I'm sure you want to know how to extract the message. Here you have the Python code:
 
 
-```Python
+```python
 import sys
 from scipy import ndimage, misc
 
