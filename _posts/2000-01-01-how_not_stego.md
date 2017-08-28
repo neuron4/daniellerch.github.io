@@ -18,7 +18,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
 1. [Naive techniques](#1-naive-techniques)
 
-   1.1 [Append one file to another](#append-one-file-to-another)
+   1.1. [Append one file to another](#11-append-one-file-to-another)
 
 2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
 
