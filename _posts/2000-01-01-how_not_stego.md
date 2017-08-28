@@ -25,7 +25,12 @@ The main objective of steganalysis is to detect hidden information. If the infor
    1.3. [Using the alpha channel](#13-using-the-alpha-channel)
 
 
-2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
+2. [LSB replacement and the histogram attack](#2-lsb-replacement-and-the-histogram-attack])
+
+   2.1 [LSB replacement of the pixels](#21-LSB-replacement-of-the-pixels)
+
+   2.2 [LSB replacement of the DCT coefficients](#21-lsb-replacement-of-the-dct-coefficients)
+
 
 3. [Random LSB replacement and the SPA attack](#3-random-lsb-replacement-and-the-spa-attack)
 
@@ -223,9 +228,29 @@ If an attacker performs this operation he/she has enough information to detect a
 
 
 
-
 <br>
-### 2. Sequential LSB replacement and the histogram attack
+### 2. LSB replacement and the histogram attack
+
+#### 2.1 LSB replacement of the pixels
+
+A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel. 
+
+
+PENDING ...
+
+
+#### 2.2 LSB replacement of the DCT coefficients
+
+PENDING ...
+
+
+
+By the other side, the replacement of the LSB is an asymmetrical operation. When we replace the LSB of an even pixel this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of an odd pixel this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. If we plot an histogram of the pixel intensities we can see the effects of the embedding. This is because the bars that represent the number of pixels of an even value grow, and the bars that represent the number of pixels of an odd value grow. Therefore, if we hide enough data, for example using bitrate 1, the bars tend to have the same height. This is how the Histogram Attack works [[3](#5-references)] and it is the basis for subsequent attacks that knocked out LSB replacement [[1](#5-references),[2](#5-references)]. So, we are not going to use LSB replacement. Instead we are going to use LSB matching. LSB matching is very similar to LSB replacement, our target is to change the value of the LSB. But in LSB matching, instead of replacing the LSB we change it adding or substracting one. The only difference is that we are using an operation with carriage that is symmetrical. These small variation makes LSB matching much harder to detect.
+
+
+
+
+
 
 PENDING...
 
@@ -262,6 +287,12 @@ PENDING...
 <br>
 ### 9. References
 
-PENDING...
+[1]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
+Proc. of the ACM Workshop on Multimedia and Security, Ottawa, Canada, October 5, 2001, pp. 27-30. 
+
+[2]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
+
+[3]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
+
 
 
