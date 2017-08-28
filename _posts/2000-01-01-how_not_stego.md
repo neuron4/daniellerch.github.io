@@ -60,8 +60,21 @@ And, the same GIF image with a ZIP file at the end:
 
 ![groot-stego]({{ site.baseurl }}/images/hns_groot_stego.gif)
 
-
 Do you see any difference? I'm sure you do not. But it doesn't mean the method is secure. Actually, this is like hiding a safe behind a picture in the real world. 
+
+
+Obviously, the ZIP file can be extracted. For example, using Linux:
+
+```bash
+$ unzip hns_groot_stego.gif
+Archive:  hns_groot_stego.gif
+warning [hns_groot_stego.gif]:  4099685 extra bytes at beginning or within zipfile
+  (attempting to process anyway)
+ extracting: hw.txt                  
+$ cat hw.txt 
+Hello World!
+```
+
 
 
 ### 2. Sequential LSB replacement and the histogram attack
