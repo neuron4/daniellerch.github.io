@@ -144,13 +144,20 @@ This example image of Homer has a transparent background:
 
 ![bender]({{ site.baseurl }}/images/hns_homer.png)
 
-If we read, for examle, the data from the upper left corner we can see how the information data is organized:
+If we read, for example, the data from the upper left corner we can see how the information data is organized:
 
-```python
-import scipy
-
+```bash
+$ python -i -c ""
+>>> from scipy import ndimage, misc
+>>> I = misc.imread('hns_homer.png')
+>>> I[0,0]
+array([0, 0, 0, 0], dtype=uint8)
+>>> 
 ```
 
+Every pixel is represented by four values: RGBA. The first byte corresponds to red color, the second byte to green color, the third byte to blue color and the fourth byte represents the alpha channel (the opacity). Zero opacity means a transparent pixel. 
+
+The upper left corner pixel is transparent, so the value of RGB bytes is ignored. This provides an easy way to hide data. 
 
 
 <br>
