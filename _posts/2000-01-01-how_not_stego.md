@@ -29,7 +29,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
    2.1 [LSB replacement](#21-lsb-replacement)
 
-   2.2 [The SPA Attack](#21-the-spa-attack)
+   2.2 [The SPA Attack](#22-the-spa-attack)
 
 
 3. [XXX](#3-xxx)
@@ -325,20 +325,91 @@ When we replace the LSB of a pixel with an even vallue this produces the same ef
 
 Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [1](9-references) and later by the RS attack [2](#9-references) and the SPA attack [3](#9-references).
 
+The Sample Pair Analysis (SPA) is detailed in [3](#9-references) so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
+
+The following code implements the SPA attack:
+
+```python
+import sys
+from scipy import ndimage, misc
+from cmath import sqrt
+
+if len(sys.argv) < 2:
+    print "%s <img>\n" % sys.argv[0]
+    sys.exit(1)
+
+channel_map={0:'R', 1:'G', 2:'B'}
+
+I3d = misc.imread(sys.argv[1])
+width, height, channels = I3d.shape
+
+for ch in range(3):
+    I = I3d[:,:,ch]
+
+    x=0; y=0; k=0
+    for j in range(height):
+        for i in range(width-1):
+            r = I[i, j]
+            s = I[i+1, j]
+            if (s%2==0 and r<s) or (s%2==1 and r>s):
+                x+=1
+            if (s%2==0 and r>s) or (s%2==1 and r<s):
+                y+=1
+            if round(s/2)==round(r/2):
+                k+=1
+
+    if k==0:
+        print "ERROR"
+        sys.exit(0)
+
+    a=2*k
+    b=2*(2*x-width*(height-1))
+    c=y-x
+
+    bp=(-b+sqrt(b**2-4*a*c))/(2*a)
+    bm=(-b-sqrt(b**2-4*a*c))/(2*a)
+
+    beta=min(bp.real, bm.real)
+    if beta > 0.05:
+        print channel_map[ch]+": stego", beta
+    else:
+        print channel_map[ch]+": cover"
+
+```
+
+This SPA implementation provides the estimated embedding rate. If the predicted bit rate is too low we consider the analyzed image as cover. Otherwise we consider it as stego.
+
+Note we analize each channel (R, G and B) separately. So we can detect if there is information only in one channel.
+
+Let's try our program with the cover image:
+
+```bash
+$ python spa.py hns_lena.png
+R: cover
+G: stego
+B: stego
+```
+
+And now, let's try with the stego image.
+
+```bash
+$ python spa.py hns_lena_stego.png 
+R: stego 0.0930809062336
+G: stego 0.0923858529528
+B: stego 0.115466382367
+```
+
+That means the program detects aproximately a bitrate of 0.10. This is almost correct.
+
+The SPA attack can detect reliably images embedded with bitrates over 0.05 but it also works fairly well witht lower bitrates (~0.03). These are very low bitrates so we can consider the LSB replacement practically broken. 
 
 
+| Tip #4: Use LSB replacement only if you hide a few bytes (as in some watermarking applications) |
 
 
-
-
-
-
-
-
-PENDING...
 
 <br>
-### 3. Random LSB replacement and the SPA attack
+### 3. XXX
 
 PENDING...
 
