@@ -25,7 +25,12 @@ The main objective of steganalysis is to detect hidden information. If the infor
    1.3. [Using the alpha channel](#13-using-the-alpha-channel)
 
 
-2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
+2. [LSB replacement and the histogram attack](#2-lsb-replacement-and-the-histogram-attack])
+
+   2.1 [LSB replacement](#21-LSB-replacement)
+
+   2.2 [The Histogram Attack](#21-the-histogram-attack)
+
 
 3. [Random LSB replacement and the SPA attack](#3-random-lsb-replacement-and-the-spa-attack)
 
@@ -35,9 +40,11 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
 6. [Dealing with CSM](#6-dealing-with-csm)
 
-7. [So, what can I do?](#7-so-what-can-i-do)
+7. [Tips](#7-tips)
 
-5. [References](#5-references)
+8. [So, what can I do?](#8-so-what-can-i-do)
+
+9. [References](#9-references)
 
 <br>
 
@@ -89,6 +96,8 @@ Hello World!
 The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
 
 
+| Tip #1: Do not hide information by appending a file. |
+
 
 <br>
 #### 1.2. Writing text with similar colors
@@ -134,6 +143,9 @@ As you can see in the result image a simple filter can detect the hidden message
 ![bender]({{ site.baseurl }}/images/hns_bender_stego_broken.png)
 
 
+| Tip #2: Do not hide information by drawing shapes, letters or simila ideas. |
+
+
 
 <br>
 #### 1.3. Using the alpha channel
@@ -152,6 +164,7 @@ I = misc.imread('hns_homer.png')
 print I[0,0]
 ```
 
+<br>
 After executing the script we see this:
 
 ```bash
@@ -168,7 +181,7 @@ The following code reads secret data from file "secret_data.txt" and hide it int
 from scipy import ndimage, misc
 
 f=open('secret_data.txt', 'r')
-blist = list((ord(b) for b in f.read()))
+blist = [ord(b) for b in f.read()]
 
 I = misc.imread('hns_homer.png')
 
@@ -183,6 +196,7 @@ for i in xrange(I.shape[0]):
 misc.imsave('hns_homer_stego.png', I)
 ```
 
+<br>
 As a result, we obtain the following image:
 
 ![bender]({{ site.baseurl }}/images/hns_homer_stego.png)
@@ -200,23 +214,123 @@ for i in xrange(I.shape[0]):
 misc.imsave('hns_homer_stego_broken.png', I)
 ```
 
-As a result, we obtain the following image:
+<br>
+After executing this script we obtain the following image:
 
 ![bender]({{ site.baseurl }}/images/hns_homer_stego_broken.png)
 
-This image has a black background. But there is a section at the begining where we see random colors. This is the result of hidding our secret pixels. This is enough to detect and extract the secret data.
+This image has a black background. But there is a section at the beginning where we see random colors. This is the result of hiding our secret bytes as a pixels. 
+
+If an attacker performs this operation he/she has enough information to detect and extract the secret data.
 
 
-
-
-
-
-
+| Tip #3: Do not hide information using the alpha channel. |
 
 
 
 <br>
-### 2. Sequential LSB replacement and the histogram attack
+### 2. LSB replacement and the histogram attack
+
+#### 2.1 LSB replacement of the pixels
+
+A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel, so the capacity of this method is the eighth part of the number of pixels.
+
+In this example We are going to use the Baboon image:
+
+![baboon]({{ site.baseurl }}/images/hns_baboon.png)
+
+
+Let's see how to implement this technique in Python:
+
+```python
+import sys
+from scipy import ndimage, misc
+
+bits=[]
+f=open('secret_data.txt', 'r')
+blist = [ord(b) for b in f.read()]
+for b in blist:
+    for i in xrange(8):
+        bits.append((b >> i) & 1)
+
+I = misc.imread('hns_baboon.png')
+
+idx=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if idx<len(bits):
+                I[i][j][k]&=0xFE
+                I[i][j][k]+=bits[idx]
+                idx+=1
+
+misc.imsave('hns_baboon_stego.png', I)
+```
+
+The first we do is to get secret data from 'secret_data.txt'. Then we split each pixel into bits and we store this in a list. This bits is what we want to hide in the LSB of the pixels.
+
+Finally we get each pixel and remove the LSB. Then we put into the LSB the bit of the message. This is done by these operations:
+
+```python
+I[i][j][k]&=0xFE
+I[i][j][k]+=bits[idx]
+```
+
+As a result, we get the following image:
+
+![baboon-stego]({{ site.baseurl }}/images/hns_baboon_stego.png)
+
+As usual, there is no difference for the human eye.
+
+But how can we know if there is a hiden message? we will see in the next section. 
+
+But before, I'm sure you want to know how to extract the message. Here you have the Python code:
+
+
+```python
+import sys
+from scipy import ndimage, misc
+
+I=misc.imread('hns_baboon_stego.png')
+f = open('output_secret_data.txt', 'w')
+
+idx=0
+bitidx=0
+bitval=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if bitidx==8:
+                f.write(chr(bitval))
+                bitidx=0
+                bitval=0
+            bitval |= (I[i, j, k]%2)<<bitidx
+            bitidx+=1
+
+f.close()
+```
+
+What we do is to extract every pixel reading the LSB. Every time we have 8 bits we save the whole byte into the output file.
+
+
+#### 2.2 The Histogram Attack
+
+LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. So, we have a secure steganongraphic method. Isn't it? 
+
+No!, it is not. LSB replacement is an asymmetric operation.
+
+
+
+PENDING ...
+
+
+
+By the other side, the replacement of the LSB is an asymmetrical operation. When we replace the LSB of an even pixel this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of an odd pixel this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. If we plot an histogram of the pixel intensities we can see the effects of the embedding. This is because the bars that represent the number of pixels of an even value grow, and the bars that represent the number of pixels of an odd value grow. Therefore, if we hide enough data, for example using bitrate 1, the bars tend to have the same height. This is how the Histogram Attack works [[3](#5-references)] and it is the basis for subsequent attacks that knocked out LSB replacement [[1](#5-references),[2](#5-references)]. So, we are not going to use LSB replacement. Instead we are going to use LSB matching. LSB matching is very similar to LSB replacement, our target is to change the value of the LSB. But in LSB matching, instead of replacing the LSB we change it adding or substracting one. The only difference is that we are using an operation with carriage that is symmetrical. These small variation makes LSB matching much harder to detect.
+
+
+
+
+
 
 PENDING...
 
@@ -241,13 +355,24 @@ PENDING...
 PENDING...
 
 <br>
-### 7. So, what can I do?
+### 7. Tips
 
 PENDING...
 
 <br>
-### 5. References
+### 8. So, what can I do?
 
 PENDING...
+
+<br>
+### 9. References
+
+[1]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
+Proc. of the ACM Workshop on Multimedia and Security, Ottawa, Canada, October 5, 2001, pp. 27-30. 
+
+[2]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
+
+[3]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
+
 
 
