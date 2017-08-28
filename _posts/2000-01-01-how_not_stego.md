@@ -11,6 +11,8 @@ hiding a safe behind a picture: it is not exactly the safest option. In this art
 
 The criteria for deciding whether a method is adequate or not is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacker: this is unacceptable. So, the same can be applied to steganography.
 
+The main objective of steganalysis is to detect hidden information. If the information is detected we consider the steganographic method broken. Sometimes we can also extract the message but this is not so important because if we want to keep secret the message we have cryptography (Actually is usual to encrypt a message before hiding it). Steganography wants to keep secrect the existence of the comunication. So, if the communicacion is detectable the steganographic method is not acceptable. 
+
 
 <br>
 
@@ -36,6 +38,7 @@ The criteria for deciding whether a method is adequate or not is its detectabili
 
 In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
+<br>
 #### Append a file at the end of other file
 
 One of these techniques is to hide a file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
@@ -80,7 +83,7 @@ The same method can be used using different file formats which could be images o
 
 
 
-
+<br>
 #### Writting text with similar colors
 
 Other naive technique consist on writting text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
@@ -119,13 +122,13 @@ highpass_3x3 = ndimage.convolve(I, kernel)
 misc.imsave('hns_bender_stego_broken.png', highpass_3x3)
 ```
 
-As you can see in the result image, although the human eye can not detect the differences but a simple filter can. 
+As you can see in the result image a simple filter can detect the hidden message. 
 
 ![bender]({{ site.baseurl }}/images/hns_bender_stego_broken.png)
 
 
 
-
+<br>
 #### Using the alpha channel
 
 Other naive technique consist on hiding information into the alpha channel. That is, the channel dedicated to transparency. 
