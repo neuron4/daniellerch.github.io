@@ -83,7 +83,46 @@ The same method can be used using different file formats which could be images o
 
 #### Writting text with similar colors
 
-Other naive technique consist on writting text with a similar color, for example using 1px of difference from the original color. This can be detected by the human eye.
+Other naive technique consist on writting text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
+
+
+See for example this image of Bender:
+
+![bender]({{ site.baseurl }}/images/hns_bender.png)
+
+
+And, the same image with some extra information:
+
+![bender]({{ site.baseurl }}/images/hns_bender_stego.png)
+
+Do you see any difference? I don't think so. But this is not difficult to uncover the secret. 
+
+The following Python code applies a high-pass-filter using [convolution](https://en.wikipedia.org/wiki/Kernel_(image_processing)). Usually, this filter is used to detect edges. This is adequated for our purposes because we want to highlight these parts of the image with a change in the color. 
+
+
+```python
+import numpy as np
+from scipy import ndimage, misc
+
+I = misc.imread('hns_bender_stego.png')
+kernel = np.array([[[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]],
+                   [[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]],
+                   [[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]]])
+
+highpass_3x3 = ndimage.convolve(I, kernel)
+misc.imsave('hns_bender_stego_broken.png', highpass_3x3)
+```
+
+As you can see in the result image, although the human eye can not detect the differences but a simple filter can. 
+
+![bender]({{ site.baseurl }}/images/hns_bender_broken.png)
+
 
 
 
