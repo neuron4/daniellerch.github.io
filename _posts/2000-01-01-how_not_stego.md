@@ -95,7 +95,7 @@ And, the same image with some extra information:
 
 ![bender]({{ site.baseurl }}/images/hns_bender_stego.png)
 
-Do you see any difference? I don't think so. But this is not difficult to uncover the secret. 
+Do you see any difference? I don't think so. But it is not difficult to uncover the secret. 
 
 The following Python code applies a high-pass-filter using [convolution](https://en.wikipedia.org/wiki/Kernel_(image_processing)). Usually, this filter is used to detect edges. This is adequated for our purposes because we want to highlight these parts of the image with a change in the color. 
 
