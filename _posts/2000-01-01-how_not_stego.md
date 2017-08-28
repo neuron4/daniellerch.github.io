@@ -92,7 +92,6 @@ The same method can be used using different file formats which could be images o
 
 
 | Tip #1: Do not hide information by appending a file. |
-| It is easy to detect and easy to extract | 
 
 
 <br>
