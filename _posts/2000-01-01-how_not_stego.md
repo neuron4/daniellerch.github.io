@@ -312,14 +312,20 @@ f.close()
 
 What we do is to extract every pixel reading the LSB. Every time we have 8 bits we save the whole byte into the output file.
 
-
+<br>
 #### 2.2 The Histogram Attack
 
 LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. So, we have a secure steganongraphic method. Isn't it? 
 
-No!, it is not. LSB replacement is an asymmetrical operation. Let's analyze what is happening when we replace the LSB.
+No!, it is not. LSB replacement is an asymmetrical operation. To see what it means, let's analyze what is happening when we replace the LSB.
 
-When we replace the LSB of an even pixel this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of an odd pixel this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. If we plot an histogram of the pixel intensities we can see the effects of the embedding. This is because the bars that represent the number of pixels of an even value grow, and the bars that represent the number of pixels of an odd value grow. 
+When we replace the LSB of a pixel with an even vallue this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of a pixel with an odd value this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. 
+
+Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before. And if we plot an histogram of the pixel intensities we can see the effects of the embedding. 
+
+In a histogram of the pixel intensities each bin represents the number of pixels with a given value. Let's start with the histogram of the original Baboon image without any hiden data. 
+
+![baboon-histogram]({{ site.baseurl }}/images/hns_baboon_histogram.png)
 
 
 
