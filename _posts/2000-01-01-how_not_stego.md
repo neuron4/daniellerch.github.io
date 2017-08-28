@@ -36,7 +36,9 @@ The criteria for deciding whether a method is adequate or not is its detectabili
 
 In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
-One of these techniques is __to hide a file at the end of other file__. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
+## Append a file at the end of other file
+
+One of these techniques is to hide a file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
 
 We can do this in Linux/Mac with:
 
@@ -77,7 +79,18 @@ Hello World!
 The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
 
 
-Other naive technique consist on __hiding information into the alpha channel__.
+
+
+## Writting text with similar colors
+
+Other naive technique consist on writting text with a similar color, for example using 1px of difference from the original color. This can be detected by the human eye.
+
+
+
+## Using the alpha channel
+
+Other naive technique consist on hiding information into the alpha channel. That is, the channel dedicated to transparency. 
+
 
 
 
