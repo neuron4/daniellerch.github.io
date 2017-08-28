@@ -51,6 +51,11 @@ Or in Windows:
 copy /B file.gif+file.zip file.gif
 ```
 
+See for example a GIF image of Groot:
+
+![groot]({{ site.baseurl }}/images/hns_groot.gif)
+
+
 
 
 
