@@ -25,14 +25,14 @@ The main objective of steganalysis is to detect hidden information. If the infor
    1.3. [Using the alpha channel](#13-using-the-alpha-channel)
 
 
-2. [LSB replacement and the histogram attack](#2-lsb-replacement-and-the-histogram-attack])
+2. [LSB replacement and the SPA attack](#2-lsb-replacement-and-the-spa-attack])
 
    2.1 [LSB replacement](#21-LSB-replacement)
 
-   2.2 [The Histogram Attack](#21-the-histogram-attack)
+   2.2 [The SPA Attack](#21-the-spa-attack)
 
 
-3. [Random LSB replacement and the SPA attack](#3-random-lsb-replacement-and-the-spa-attack)
+3. [XXX](#3-xxx)
 
 4. [LSB Matching and Machine Learning](#4-lsb-matching-and-machine-learning)
 
@@ -229,7 +229,7 @@ If an attacker performs this operation he/she has enough information to detect a
 
 
 <br>
-### 2. LSB replacement and the histogram attack
+### 2. LSB replacement and the SPA attack
 
 #### 2.1 LSB replacement of the pixels
 
@@ -313,27 +313,20 @@ f.close()
 What we do is to extract every pixel reading the LSB. Every time we have 8 bits we save the whole byte into the output file.
 
 <br>
-#### 2.2 The Histogram Attack
+#### 2.2 The SPA Attack
 
-LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. So, we have a secure steganongraphic method. Isn't it? 
+LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. Other option is to use a [PRNG](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) to choose which pixels we want to use to hide information. In this case we do not use all the pixels we are embedding information using a bitrate smaller than one. For example, if we hide information using a 25% of the pixels we say we are using a bitrate 0.25. This reduces capacity increasing security, because less information is more difficult to detect.
 
-No!, it is not. LSB replacement is an asymmetrical operation. To see what it means, let's analyze what is happening when we replace the LSB.
+So, we have a  mostly secure steganongraphic method. Isn't it? 
+
+No!, it is not. LSB replacement is an asymmetrical operation and it can be detected. To see what it means an asymmetrical operation, let's analyze what is happening when we replace the LSB.
 
 When we replace the LSB of a pixel with an even vallue this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of a pixel with an odd value this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. 
 
-Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before. And if we plot an histogram of the pixel intensities we can see the effects of the embedding. 
-
-In a histogram of the pixel intensities each bin represents the number of pixels with a given value. Let's start with the histogram of the original Baboon image without any hiden data. 
-
-![baboon-histogram]({{ site.baseurl }}/images/hns_baboon_histogram.png)
+Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [1](9-references) and later by the RS attack [2](#9-references) and the SPA attack [3](#9-references).
 
 
 
-
-
-
-
-Therefore, if we hide enough data, for example using bitrate 1, the bars tend to have the same height. This is how the Histogram Attack works [[3](#9-references)] and it is the basis for subsequent attacks that knocked out LSB replacement [[1](#5-references),[2](#5-references)]. 
 
 
 
@@ -377,12 +370,12 @@ PENDING...
 <br>
 ### 9. References
 
-[1]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
+[1]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
+
+[2]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
 Proc. of the ACM Workshop on Multimedia and Security, Ottawa, Canada, October 5, 2001, pp. 27-30. 
 
-[2]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
-
-[3]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
+[3]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
 
 
 
