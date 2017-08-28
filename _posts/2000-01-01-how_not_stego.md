@@ -9,6 +9,7 @@ comments: true
 You can find a lot of tools on  Internet to hide information inside an image. Unfortunately, most of them are like 
 hiding a safe behind a picture: it is not exactly the safest option. In this article I will try to show which steganographic techniques you should not use. 
 
+The criteria for deciding whether a method is adequate is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacking part. Nowadays this is unacceptable. So, the same can be applied to steganography.
 
 
 [ Updated on 2017-xx-xx ]
@@ -74,6 +75,9 @@ warning [hns_groot_stego.gif]:  4099685 extra bytes at beginning or within zipfi
 $ cat hw.txt 
 Hello World!
 ```
+
+The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
+
 
 
 
