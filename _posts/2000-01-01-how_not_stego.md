@@ -9,7 +9,7 @@ comments: true
 You can find a lot of tools on the Internet to hide information inside an image. Unfortunately, most of them are like 
 hiding a safe behind a picture: it is not exactly the safest option. In this article I will try to show which steganographic techniques you should not use. 
 
-The criteria for deciding whether a method is adequate or not is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacking part. Nowadays this is unacceptable. So, the same can be applied to steganography.
+The criteria for deciding whether a method is adequate or not is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacker: this is unacceptable. So, the same can be applied to steganography.
 
 
 <br>
@@ -36,7 +36,7 @@ The criteria for deciding whether a method is adequate or not is its detectabili
 
 In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
-One of these techniques is to hide a file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
+One of these techniques is __to hide a file at the end of other file__. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
 
 We can do this in Linux/Mac with:
 
@@ -75,6 +75,9 @@ Hello World!
 ```
 
 The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
+
+
+Other naive technique consist on __hiding information into the alpha channel__.
 
 
 
