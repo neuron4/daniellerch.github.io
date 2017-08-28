@@ -121,7 +121,7 @@ misc.imsave('hns_bender_stego_broken.png', highpass_3x3)
 
 As you can see in the result image, although the human eye can not detect the differences but a simple filter can. 
 
-![bender]({{ site.baseurl }}/images/hns_bender_broken.png)
+![bender]({{ site.baseurl }}/images/hns_bender_stego_broken.png)
 
 
 
