@@ -89,6 +89,8 @@ Hello World!
 The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
 
 
+``` #Tip 1: Do not hide information by appending a file. It is easy to detect and easy to extract``` 
+
 
 <br>
 #### 1.2. Writing text with similar colors
@@ -207,7 +209,7 @@ After executing this script we obtain the following image:
 
 ![bender]({{ site.baseurl }}/images/hns_homer_stego_broken.png)
 
-This image has a black background. But there is a section at the begining where we see random colors. This is the result of hidding our secret bytes as a pixels. 
+This image has a black background. But there is a section at the beginning where we see random colors. This is the result of hiding our secret bytes as a pixels. 
 
 If an attacker performs this operation he/she has enough information to detect and extract the secret data.
 
