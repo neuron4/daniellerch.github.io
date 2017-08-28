@@ -11,10 +11,19 @@ hiding a safe behind a picture: it is not exactly the safest option. In this art
 
 The criteria for deciding whether a method is adequate or not is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacker: this is unacceptable. So, the same can be applied to steganography.
 
+The main objective of steganalysis is to detect hidden information. If the information is detected we consider the steganographic method broken. Sometimes we can also extract the message but this is not so important because if we want to keep secret the message we have cryptography (Actually is usual to encrypt a message before hiding it). Steganography wants to keep secret the existence of the communication. So, if the communication is detectable the steganographic method is not acceptable. 
+
 
 <br>
 
 1. [Naive techniques](#1-naive-techniques)
+
+   1.1. [Append one file to another](#11-append-one-file-to-another)
+   
+   1.2. [Writing text with similar colors](#12-writing-text-with-similar-colors)
+   
+   1.3. [Using the alpha channel](#13-using-the-alpha-channel)
+
 
 2. [Sequential LSB replacement and the histogram attack](#2-sequential-lsb-replacement-and-the-histogram-attack])
 
@@ -36,9 +45,10 @@ The criteria for deciding whether a method is adequate or not is its detectabili
 
 In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
-#### Append a file at the end of other file
+<br>
+#### 1.1. Append one file to another
 
-One of these techniques is to hide a file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
+One of these techniques is to hide one file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
 
 We can do this in Linux/Mac with:
 
@@ -80,10 +90,10 @@ The same method can be used using different file formats which could be images o
 
 
 
+<br>
+#### 1.2. Writing text with similar colors
 
-#### Writting text with similar colors
-
-Other naive technique consist on writting text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
+Other naive technique consist of writing text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
 
 
 See for example this image of Bender:
@@ -97,7 +107,7 @@ And, the same image with some extra information:
 
 Do you see any difference? I don't think so. But it is not difficult to uncover the secret. 
 
-The following Python code applies a high-pass-filter using [convolution](https://en.wikipedia.org/wiki/Kernel_(image_processing)). Usually, this filter is used to detect edges. This is adequated for our purposes because we want to highlight these parts of the image with a change in the color. 
+The following Python code applies a high-pass-filter using [convolution](https://en.wikipedia.org/wiki/Kernel_(image_processing)). Usually, this filter is used to detect edges. This is adequate for our purposes because we want to highlight these parts of the image with a change in the color. 
 
 
 ```python
@@ -119,16 +129,20 @@ highpass_3x3 = ndimage.convolve(I, kernel)
 misc.imsave('hns_bender_stego_broken.png', highpass_3x3)
 ```
 
-As you can see in the result image, although the human eye can not detect the differences but a simple filter can. 
+As you can see in the result image a simple filter can detect the hidden message. 
 
-![bender]({{ site.baseurl }}/images/hns_bender_broken.png)
-
-
+![bender]({{ site.baseurl }}/images/hns_bender_stego_broken.png)
 
 
-#### Using the alpha channel
 
-Other naive technique consist on hiding information into the alpha channel. That is, the channel dedicated to transparency. 
+<br>
+#### 1.3. Using the alpha channel
+
+Other naive technique consist of hiding information into the alpha channel. That is, the channel dedicated to transparency. 
+
+This example image of Homer has a transparent background:
+
+![bender]({{ site.baseurl }}/images/hns_homer.png)
 
 
 
