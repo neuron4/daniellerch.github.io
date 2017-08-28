@@ -56,6 +56,10 @@ See for example a GIF image of Groot:
 ![groot]({{ site.baseurl }}/images/hns_groot.gif)
 
 
+And, the same GIF image with a ZIP file at the end:
+
+![groot-stego]({{ site.baseurl }}/images/hns_groot_stego.gif)
+
 
 
 
