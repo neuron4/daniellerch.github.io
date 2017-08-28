@@ -235,9 +235,9 @@ If an attacker performs this operation he/she has enough information to detect a
 
 A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel, so the capacity of this method is the eighth part of the number of pixels.
 
-In this example We are going to use the Baboon image:
+In this example We are going to use the Lena image, a common image in steganography and watermarking:
 
-![baboon]({{ site.baseurl }}/images/hns_baboon.png)
+![lena]({{ site.baseurl }}/images/hns_lena.png)
 
 
 Let's see how to implement this technique in Python:
@@ -253,7 +253,7 @@ for b in blist:
     for i in xrange(8):
         bits.append((b >> i) & 1)
 
-I = misc.imread('hns_baboon.png')
+I = misc.imread('hns_lena.png')
 
 idx=0
 for i in xrange(I.shape[0]):
@@ -264,7 +264,7 @@ for i in xrange(I.shape[0]):
                 I[i][j][k]+=bits[idx]
                 idx+=1
 
-misc.imsave('hns_baboon_stego.png', I)
+misc.imsave('hns_lena_stego.png', I)
 ```
 
 The first we do is to get secret data from 'secret_data.txt'. Then we split each pixel into bits and we store this in a list. This bits is what we want to hide in the LSB of the pixels.
@@ -278,7 +278,7 @@ I[i][j][k]+=bits[idx]
 
 As a result, we get the following image:
 
-![baboon-stego]({{ site.baseurl }}/images/hns_baboon_stego.png)
+![lena-stego]({{ site.baseurl }}/images/hns_lena_stego.png)
 
 As usual, there is no difference for the human eye.
 
@@ -291,7 +291,7 @@ But before, I'm sure you want to know how to extract the message. Here you have 
 import sys
 from scipy import ndimage, misc
 
-I=misc.imread('hns_baboon_stego.png')
+I=misc.imread('hns_lena_stego.png')
 f = open('output_secret_data.txt', 'w')
 
 idx=0
