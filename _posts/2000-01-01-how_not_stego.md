@@ -56,16 +56,30 @@ copy /B file.gif+file.zip file.gif
 
 ### 2. Sequential LSB replacement and the histogram attack
 
+PENDING...
+
 ### 3. Random LSB replacement and the SPA attack
+
+PENDING...
 
 ### 4. LSB Matching and Machine Learning
 
+PENDING...
+
 ### 5. Minimizing distortion and adaptive algorithms
+
+PENDING...
 
 ### 6. Dealing with CSM
 
+PENDING...
+
 ### 7. So, what can I do?
 
+PENDING...
+
 ### 5. References
+
+PENDING...
 
 
