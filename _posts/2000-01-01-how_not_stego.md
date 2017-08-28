@@ -6,12 +6,11 @@ comments: true
 
 ## How Not to Hide Information Inside an Image. 
 
-You can find a lot of tools on  Internet to hide information inside an image. Unfortunately, most of them are like 
+You can find a lot of tools on the Internet to hide information inside an image. Unfortunately, most of them are like 
 hiding a safe behind a picture: it is not exactly the safest option. In this article I will try to show which steganographic techniques you should not use. 
 
+The criteria for deciding whether a method is adequate or not is its detectability. In steganography and stegaganalysis if a method is detectable we consider it broken. Imagine you use a cryptographic algorithm to perform your online financial transactions that can be decrypted by an attacker: this is unacceptable. So, the same can be applied to steganography.
 
-
-[ Updated on 2017-xx-xx ]
 
 <br>
 
@@ -37,6 +36,8 @@ hiding a safe behind a picture: it is not exactly the safest option. In this art
 
 In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
+#### Append a file at the end of other file
+
 One of these techniques is to hide a file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
 
 We can do this in Linux/Mac with:
@@ -56,33 +57,113 @@ See for example a GIF image of Groot:
 ![groot]({{ site.baseurl }}/images/hns_groot.gif)
 
 
+And, the same GIF image with a ZIP file at the end:
+
+![groot-stego]({{ site.baseurl }}/images/hns_groot_stego.gif)
+
+Do you see any difference? I'm sure you do not. But it doesn't mean the method is secure. Actually, this is like hiding a safe behind a picture in the real world. 
+
+
+Obviously, the ZIP file can be extracted. For example, using Linux:
+
+```bash
+$ unzip hns_groot_stego.gif
+Archive:  hns_groot_stego.gif
+warning [hns_groot_stego.gif]:  4099685 extra bytes at beginning or within zipfile
+  (attempting to process anyway)
+ extracting: hw.txt                  
+$ cat hw.txt 
+Hello World!
+```
+
+The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
 
 
 
+
+#### Writting text with similar colors
+
+Other naive technique consist on writting text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
+
+
+See for example this image of Bender:
+
+![bender]({{ site.baseurl }}/images/hns_bender.png)
+
+
+And, the same image with some extra information:
+
+![bender]({{ site.baseurl }}/images/hns_bender_stego.png)
+
+Do you see any difference? I don't think so. But this is not difficult to uncover the secret. 
+
+The following Python code applies a high-pass-filter using [convolution](https://en.wikipedia.org/wiki/Kernel_(image_processing)). Usually, this filter is used to detect edges. This is adequated for our purposes because we want to highlight these parts of the image with a change in the color. 
+
+
+```python
+import numpy as np
+from scipy import ndimage, misc
+
+I = misc.imread('hns_bender_stego.png')
+kernel = np.array([[[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]],
+                   [[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]],
+                   [[-1, -1, -1],
+                    [-1,  8, -1],
+                    [-1, -1, -1]]])
+
+highpass_3x3 = ndimage.convolve(I, kernel)
+misc.imsave('hns_bender_stego_broken.png', highpass_3x3)
+```
+
+As you can see in the result image, although the human eye can not detect the differences but a simple filter can. 
+
+![bender]({{ site.baseurl }}/images/hns_bender_broken.png)
+
+
+
+
+#### Using the alpha channel
+
+Other naive technique consist on hiding information into the alpha channel. That is, the channel dedicated to transparency. 
+
+
+
+
+<br>
 ### 2. Sequential LSB replacement and the histogram attack
 
 PENDING...
 
+<br>
 ### 3. Random LSB replacement and the SPA attack
 
 PENDING...
 
+<br>
 ### 4. LSB Matching and Machine Learning
 
 PENDING...
 
+<br>
 ### 5. Minimizing distortion and adaptive algorithms
 
 PENDING...
 
+<br>
 ### 6. Dealing with CSM
 
 PENDING...
 
+<br>
 ### 7. So, what can I do?
 
 PENDING...
 
+<br>
 ### 5. References
 
 PENDING...
