@@ -35,9 +35,11 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
 6. [Dealing with CSM](#6-dealing-with-csm)
 
-7. [So, what can I do?](#7-so-what-can-i-do)
+7. [Tips](#7-tips)
 
-5. [References](#5-references)
+8. [So, what can I do?](#8-so-what-can-i-do)
+
+9. [References](#9-references)
 
 <br>
 
@@ -89,7 +91,8 @@ Hello World!
 The same method can be used using different file formats which could be images or not. For example, you can do this with PNG, JPEG and others.
 
 
-| Tip #1: Do not hide information by appending a file. It is easy to detect and easy to extract | 
+| Tip #1: Do not hide information by appending a file. |
+| It is easy to detect and easy to extract | 
 
 
 <br>
@@ -134,6 +137,9 @@ misc.imsave('hns_bender_stego_broken.png', highpass_3x3)
 As you can see in the result image a simple filter can detect the hidden message. 
 
 ![bender]({{ site.baseurl }}/images/hns_bender_stego_broken.png)
+
+
+| Tip #2: Do not hide information by drawing shapes, letters or simila ideas. |
 
 
 
@@ -214,6 +220,10 @@ This image has a black background. But there is a section at the beginning where
 If an attacker performs this operation he/she has enough information to detect and extract the secret data.
 
 
+| Tip #3: Do not hide information using the alpha channel. |
+
+
+
 
 <br>
 ### 2. Sequential LSB replacement and the histogram attack
@@ -241,12 +251,17 @@ PENDING...
 PENDING...
 
 <br>
-### 7. So, what can I do?
+### 7. Tips
 
 PENDING...
 
 <br>
-### 5. References
+### 8. So, what can I do?
+
+PENDING...
+
+<br>
+### 9. References
 
 PENDING...
 
