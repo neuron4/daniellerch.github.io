@@ -415,15 +415,42 @@ The SPA attack can detect reliably images embedded with bitrates over 0.05 but i
 <br>
 ### 3. JPEG images and histogram estimation
 
+We can hide information inside a JPEG image by modifying its bitmat as in the last section. But we can also modify its [DCT](https://en.wikipedia.org/wiki/Discrete_cosine_transform) coefficients. These coefficients are used to represent a compressed version of the image, so when we open an image with a viewer, the viewer uncompress the image using the DCT coefficients. The idea to modify a DCT coefficient is also modifying its LSB. 
 
+<br>
 #### 3.1. Hiding information in DCT coefficients
+
+To hide information into the DCT coefficients we need a JPEG low level library or some JPEG steganography tool. In this case we are going to use an implementation of F5, a known steganographic algorithm. For this example we have used [this implementation](https://code.google.com/archive/p/f5-steganography/downloads).
+
+Our cover image is the Peppers image in JPEG format:
+
+![peppers]({{ site.baseurl }}/images/hns_peppers.jpg)
+
+
+To hide data into this file, we use the following command:
+
+```bash
+java -jar f5.jar e -e secret_data.txt -p password -q 100 hns_peppers.jpg hns_peppers_stego.jpg
+```
+
+And, as a result, we obtain the following image:
+
+![peppers-stego]({{ site.baseurl }}/images/hns_peppers_stego.jpg)
+
+
 
 
 #### 3.2. Histogram estimation
 
 
+gcc dctdump.c -o dctdump -ljpeg
+
+./dctdump hns_peppers_stego.jpg raw > hns_peppers_stego.dct
+
 
 PENDING...
+
+
 
 <br>
 ### 4. LSB Matching and Machine Learning
