@@ -27,12 +27,16 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
 2. [LSB replacement and the SPA attack](#2-lsb-replacement-and-the-spa-attack])
 
-   2.1 [LSB replacement](#21-lsb-replacement)
+   2.1. [LSB replacement](#21-lsb-replacement)
 
-   2.2 [The SPA Attack](#22-the-spa-attack)
+   2.2. [The SPA Attack](#22-the-spa-attack)
 
 
-3. [XXX](#3-xxx)
+3. [JPEG images and the Calibration attack](#3-jpeg-images-and-calibration-attacks)
+
+   3.1. [Hiding information in DCT coefficients](#31-hiding-information-in-dct-coefficients)
+
+   3.2. [The Calibration attack](#32-the-calibration-attack)
 
 4. [LSB Matching and Machine Learning](#4-lsb-matching-and-machine-learning)
 
@@ -409,7 +413,15 @@ The SPA attack can detect reliably images embedded with bitrates over 0.05 but i
 
 
 <br>
-### 3. XXX
+### 3. JPEG images and the Calibration attack
+
+
+#### 3.1. Hiding information in DCT coefficients
+
+
+#### 3.2. The Calibration attack
+
+
 
 PENDING...
 
