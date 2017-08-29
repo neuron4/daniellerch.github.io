@@ -25,14 +25,18 @@ The main objective of steganalysis is to detect hidden information. If the infor
    1.3. [Using the alpha channel](#13-using-the-alpha-channel)
 
 
-2. [LSB replacement and the histogram attack](#2-lsb-replacement-and-the-histogram-attack])
+2. [LSB replacement and the SPA attack](#2-lsb-replacement-and-the-spa-attack])
 
-   2.1 [LSB replacement](#21-LSB-replacement)
+   2.1. [LSB replacement](#21-lsb-replacement)
 
-   2.2 [The Histogram Attack](#21-the-histogram-attack)
+   2.2. [The SPA Attack](#22-the-spa-attack)
 
 
-3. [Random LSB replacement and the SPA attack](#3-random-lsb-replacement-and-the-spa-attack)
+3. [JPEG images and histogram estimation](#3-jpeg-images-and-histogram-estimation)
+
+   3.1. [Hiding information in DCT coefficients](#31-hiding-information-in-dct-coefficients)
+
+   3.2. [Histogram estimation](#32-histogram-estimation)
 
 4. [LSB Matching and Machine Learning](#4-lsb-matching-and-machine-learning)
 
@@ -202,7 +206,7 @@ As a result, we obtain the following image:
 ![bender]({{ site.baseurl }}/images/hns_homer_stego.png)
 
 
-We do not se the message. But again, this is not a secure option. We can unhide the data, simply by removing the transparency. This is a very easy operation that can be done with the following script:
+We do not see the message. But again, this is not a secure option. We can unhide the data, simply by removing the transparency. This is a very easy operation that can be done with the following script:
 
 ```python
 from scipy import ndimage, misc
@@ -229,15 +233,15 @@ If an attacker performs this operation he/she has enough information to detect a
 
 
 <br>
-### 2. LSB replacement and the histogram attack
+### 2. LSB replacement and the SPA attack
 
-#### 2.1 LSB replacement of the pixels
+#### 2.1 LSB replacement
 
 A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel, so the capacity of this method is the eighth part of the number of pixels.
 
-In this example We are going to use the Baboon image:
+In this example We are going to use the Lena image, a common image in steganography and watermarking:
 
-![baboon]({{ site.baseurl }}/images/hns_baboon.png)
+![lena]({{ site.baseurl }}/images/hns_lena.png)
 
 
 Let's see how to implement this technique in Python:
@@ -253,7 +257,7 @@ for b in blist:
     for i in xrange(8):
         bits.append((b >> i) & 1)
 
-I = misc.imread('hns_baboon.png')
+I = misc.imread('hns_lena.png')
 
 idx=0
 for i in xrange(I.shape[0]):
@@ -264,7 +268,7 @@ for i in xrange(I.shape[0]):
                 I[i][j][k]+=bits[idx]
                 idx+=1
 
-misc.imsave('hns_baboon_stego.png', I)
+misc.imsave('hns_lena_stego.png', I)
 ```
 
 The first we do is to get secret data from 'secret_data.txt'. Then we split each pixel into bits and we store this in a list. This bits is what we want to hide in the LSB of the pixels.
@@ -278,7 +282,7 @@ I[i][j][k]+=bits[idx]
 
 As a result, we get the following image:
 
-![baboon-stego]({{ site.baseurl }}/images/hns_baboon_stego.png)
+![lena-stego]({{ site.baseurl }}/images/hns_lena_stego.png)
 
 As usual, there is no difference for the human eye.
 
@@ -291,7 +295,7 @@ But before, I'm sure you want to know how to extract the message. Here you have 
 import sys
 from scipy import ndimage, misc
 
-I=misc.imread('hns_baboon_stego.png')
+I=misc.imread('hns_lena_stego.png')
 f = open('output_secret_data.txt', 'w')
 
 idx=0
@@ -313,39 +317,111 @@ f.close()
 What we do is to extract every pixel reading the LSB. Every time we have 8 bits we save the whole byte into the output file.
 
 <br>
-#### 2.2 The Histogram Attack
+#### 2.2 The SPA Attack
 
-LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. So, we have a secure steganongraphic method. Isn't it? 
+LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. Other option is to use a [PRNG](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) to choose which pixels we want to use to hide information. In this case we do not use all the pixels, we are embedding information using a bitrate smaller than one. For example, if we hide information using a 25% of the pixels we say we are using a bitrate 0.25. This reduces capacity increasing security, because less information is more difficult to detect.
 
-No!, it is not. LSB replacement is an asymmetrical operation. To see what it means, let's analyze what is happening when we replace the LSB.
+So, we have a  mostly secure steganongraphic method. Isn't it? 
+
+No!, it is not. LSB replacement is an asymmetrical operation and it can be detected. To see what it means an asymmetrical operation, let's analyze what is happening when we replace the LSB.
 
 When we replace the LSB of a pixel with an even vallue this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of a pixel with an odd value this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. 
 
-Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before. And if we plot an histogram of the pixel intensities we can see the effects of the embedding. 
+Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [[1](9-references)] and later by the RS attack [[2](#9-references)] and the SPA attack [[3](#9-references)].
 
-In a histogram of the pixel intensities each bin represents the number of pixels with a given value. Let's start with the histogram of the original Baboon image without any hiden data. 
+The Sample Pair Analysis (SPA) is detailed in [[3](#9-references)] so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
 
-![baboon-histogram]({{ site.baseurl }}/images/hns_baboon_histogram.png)
+The following code implements the SPA attack:
+
+```python
+import sys
+from scipy import ndimage, misc
+from cmath import sqrt
+
+if len(sys.argv) < 2:
+    print "%s <img>\n" % sys.argv[0]
+    sys.exit(1)
+
+channel_map={0:'R', 1:'G', 2:'B'}
+
+I3d = misc.imread(sys.argv[1])
+width, height, channels = I3d.shape
+
+for ch in range(3):
+    I = I3d[:,:,ch]
+
+    x=0; y=0; k=0
+    for j in range(height):
+        for i in range(width-1):
+            r = I[i, j]
+            s = I[i+1, j]
+            if (s%2==0 and r<s) or (s%2==1 and r>s):
+                x+=1
+            if (s%2==0 and r>s) or (s%2==1 and r<s):
+                y+=1
+            if round(s/2)==round(r/2):
+                k+=1
+
+    if k==0:
+        print "ERROR"
+        sys.exit(0)
+
+    a=2*k
+    b=2*(2*x-width*(height-1))
+    c=y-x
+
+    bp=(-b+sqrt(b**2-4*a*c))/(2*a)
+    bm=(-b-sqrt(b**2-4*a*c))/(2*a)
+
+    beta=min(bp.real, bm.real)
+    if beta > 0.05:
+        print channel_map[ch]+": stego", beta
+    else:
+        print channel_map[ch]+": cover"
+
+```
+
+This SPA implementation provides the estimated embedding rate. If the predicted bit rate is too low we consider the analyzed image as cover. Otherwise we consider it as stego.
+
+Note we analize each channel (R, G and B) separately. So we can detect if there is information only in one channel.
+
+Let's try our program with the cover image:
+
+```bash
+$ python spa.py hns_lena.png
+R: cover
+G: stego
+B: stego
+```
+
+And now, let's try with the stego image.
+
+```bash
+$ python spa.py hns_lena_stego.png 
+R: stego 0.0930809062336
+G: stego 0.0923858529528
+B: stego 0.115466382367
+```
+
+That means the program detects aproximately a bitrate of 0.10. This is almost correct.
+
+The SPA attack can detect reliably images embedded with bitrates over 0.05 but it also works fairly well witht lower bitrates (~0.03). These are very low bitrates so we can consider the LSB replacement practically broken. 
 
 
+| Tip #4: Use LSB replacement only if you hide a few bytes (as in some watermarking applications) |
 
 
-
-
-
-Therefore, if we hide enough data, for example using bitrate 1, the bars tend to have the same height. This is how the Histogram Attack works [[3](#9-references)] and it is the basis for subsequent attacks that knocked out LSB replacement [[1](#5-references),[2](#5-references)]. 
-
-
-
-
-
-
-
-
-PENDING...
 
 <br>
-### 3. Random LSB replacement and the SPA attack
+### 3. JPEG images and histogram estimation
+
+
+#### 3.1. Hiding information in DCT coefficients
+
+
+#### 3.2. Histogram estimation
+
+
 
 PENDING...
 
@@ -377,12 +453,12 @@ PENDING...
 <br>
 ### 9. References
 
-[1]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
+[1]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
+
+[2]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
 Proc. of the ACM Workshop on Multimedia and Security, Ottawa, Canada, October 5, 2001, pp. 27-30. 
 
-[2]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
-
-[3]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
+[3]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
 
 
 
