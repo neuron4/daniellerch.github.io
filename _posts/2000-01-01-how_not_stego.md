@@ -430,7 +430,8 @@ Our cover image is the Peppers image in JPEG format:
 To hide data into this file, we use the following command:
 
 ```bash
-java -jar f5.jar e -e secret_data.txt -p password -q 100 hns_peppers.jpg hns_peppers_stego.jpg
+java -jar f5.jar e -e secret_data.txt -p password \
+                   -q 100 hns_peppers.jpg hns_peppers_stego.jpg
 ```
 
 And, as a result, we obtain the following image:
