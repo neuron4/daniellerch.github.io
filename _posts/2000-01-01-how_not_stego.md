@@ -591,7 +591,7 @@ Let's suppose now we want to hide the A letter in ASCII code. This, in the binar
 
 
 
-In this example we use the F16 image:
+In this example we are going to use the F16 image:
 
 ![f16]({{ site.baseurl }}/images/hns_f16.png)
 
@@ -670,7 +670,12 @@ As usual there is no difference for the human eye between the cover and the steg
 <br>
 #### 4.2. Machine learning based steganalysis
 
-Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images.  
+Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images. Second we need a feature extractor, that is a programa capable to extract data from the images that could be used to differentiate between cover and stego images. Finally we need a classifier. This classifier receives the features extracted from the cover and stego images and needs to know which images are cover and which images are stego. With this information the classifier will learn how to classify images into cover and stego. This method is not perfect but it can detect LSB matching with accuracy over 90%. 
+
+Let's perform a little experiment. It can take some time but it is very instructive. Firs we need to download a database of images. A good one is the boss database and youn can download it from [here](http://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip). This images are in grayscale, this simplifies the experiment.
+
+This db has 10000 images. We need two groups, one for training and other for testing our experiments are working. Chose 5000 random images for training and left the other 5000 for testing. 
+
 
 
 
