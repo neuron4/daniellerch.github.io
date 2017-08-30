@@ -444,6 +444,10 @@ And, as a result, we obtain the following image:
 #### 3.2. Histogram estimation
 
 
+![histograms]({{ site.baseurl }}/images/hns_histograms.jpg)
+
+
+
 gcc dctdump.c -o dctdump -ljpeg
 
 ./dctdump hns_peppers_stego.jpg raw > hns_peppers_stego.dct
