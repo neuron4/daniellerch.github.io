@@ -256,7 +256,7 @@ If we obtain its binary code, that is:
 | 10100000 | 00111100 | 00110101 | 10000000 | 
 | 01101111 | 00101011 | 01010100 | 01111101 |
 
-Let's suppose now we want to hide the A letter in ASCII code. This, in the binary code, is the number 01000001. So we need to replace the LSB of each pixel whit each one of the bits we want to hide. The result is:
+Let's suppose now we want to hide the A letter in ASCII code. This, in binary code, is the number 01000001. So we need to replace the LSB of each pixel whit each one of the bits we want to hide. The result is:
 
 
 | 1010000**0** | 0011110**1** | 0011010**0** | 1000000**0** | 
@@ -571,6 +571,25 @@ There is not easy statistical attack to detect this operation and, consequently,
 #### 4.1. LSB Matching
 
 Hiding information using LSB matching is very easy. If the value of LSB is the same we want to hide, we do nothing. If not, we increase or decrease by 1 randomly. 
+
+Let's suppose whe have the following fixel values in an image:
+
+| 160 | 60 | 53 | 128 | 111 | 43 | 84 | 125 |
+
+If we obtain its binary code, that is:
+
+| 10100000 | 00111100 | 00110101 | 10000000 | 
+| 01101111 | 00101011 | 01010100 | 01111101 |
+
+Let's suppose now we want to hide the A letter in ASCII code. This, in the binary code, is the number 01000001. So we need to add +1 or -1 randomly if the LSB does not match the value of the pixel we want to hide. A possible result is:
+
+
+| 1010000**0** | 0011110**1** (+1) | 0011010**0** (-1) | 1000000**0** | 
+| 0110111**0** (-1) | 00101**100** (+1) | 0101010**0** | 0111110**1** | 
+
+<br>
+
+
 
 In this example we use the F16 image:
 
