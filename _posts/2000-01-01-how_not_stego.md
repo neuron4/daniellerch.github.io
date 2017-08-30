@@ -459,22 +459,73 @@ After that, you can extract the coefficients of the cover image:
 
 With the list of coefficients we can use a simple Python script to draw the histogram. We will see an example later.
 
+By the moment let me explain what we want to do. The DCT coefficients give a representation of the image. If we draw a histogram using the coefficients of the cover (original) image and we draw other histogram using the coefficients of the image after some type of rotation, we expect both histograms to be similar. We say the second histogram is an estimation of the real histogram.
 
-```python
-
-```
-
-
+But if we modify the DCT coefficients in some sort of steganographic embedding operation we are produciong an unatural result. If we rotate now the image we are generation new DCT coefficients and we do not expectet them to be similar. We can see these histograms in the following image:
 
 ![histograms]({{ site.baseurl }}/images/hns_histograms.png)
 
+To draw the histograms firs we need to generate new images. We rotate the images 1º and we crop the central part to avoid the edges generated after rotation:
 
+```bash
+convert -rotate 1 hns_peppers.jpg hns_peppers_rot.jpg
+convert -crop 500x500+12+12 hns_peppers_rot.jpg hns_peppers_rot_crop.jpg
+convert -rotate 1 hns_peppers_stego.jpg hns_peppers_stego_rot.jpg
+convert -crop 500x500+12+12 hns_peppers_stego_rot.jpg hns_peppers_stego_rot_crop.jpg
+```
 
+Then, we generate files with the DCT coefficients:
 
+```bash
+./dctdump hns_peppers.jpg raw > hns_peppers.dct
 ./dctdump hns_peppers_stego.jpg raw > hns_peppers_stego.dct
+./dctdump hns_peppers_rot_crop.jpg raw > hns_peppers_rot_crop.dct
+./dctdump hns_peppers_stego_rot_crop.jpg raw > hns_peppers_stego_rot_crop.dct
+```
 
+Finally, we use the following Python script to draw the histograms:
 
-PENDING...
+```python
+from scipy import ndimage, misc
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy
+
+def read_values(filename):
+    f = open(filename, "r")
+    lines = f.read().split('\n')
+    values = [int(v) for v in lines if v!='' and v not in ['0', '1', '-1']]
+    return values
+
+values = read_values("hns_peppers.dct")
+values_stego = read_values("hns_peppers_stego.dct")
+values_rot_crop = read_values("hns_peppers_rot_crop.dct")
+values_stego_rot_crop = read_values("hns_peppers_stego_rot_crop.dct")
+
+font = {'size': 6}
+matplotlib.rc('font', **font)
+
+rng=(-50, 50)
+x=plt.subplot(1,4,1)
+x.set_ylim(0, 20000)
+x.set_title("Cover")
+plt.hist(values, bins=256, range=rng, width=1)
+x=plt.subplot(1,4,2)
+x.set_ylim(0, 20000)
+x.set_title("Estim. Cover")
+plt.hist(values_rot_crop, bins=256, range=rng, width=1)
+x=plt.subplot(1,4,3)
+x.set_ylim(0, 20000)
+x.set_title("Stego")
+plt.hist(values_stego, bins=256, range=rng, width=1)
+x=plt.subplot(1,4,4)
+x.set_ylim(0, 20000)
+x.set_title("Estim. Stego")
+plt.hist(values_stego_rot_crop, bins=256, range=rng, width=1)
+plt.show()
+```
+
+| Tip #5: Use DCT steganography only if you hide a few bytes (as in some watermarking applications) |
 
 
 
