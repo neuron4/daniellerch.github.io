@@ -594,6 +594,7 @@ for i in xrange(I.shape[0]):
 misc.imsave('hns_f16_stego.png', I)
 ```
 
+<br>
 The result after embedding is this:
 
 ![f16-stego]({{ site.baseurl }}/images/hns_f16_stego.png)
@@ -625,12 +626,14 @@ for i in xrange(I.shape[0]):
 f.close()
 ```
 
-As usual there is no difference for the human eye between the cover and the stego images. But this time the method is almost secure. Or in any case, much more harder than the methods presented before.
-
+<br>
+As usual there is no difference for the human eye between the cover and the stego images. But this time the method is almost secure. Or in any case, much more harder to detect than the methods presented before. Actually, to deal with LSB matching we need heavy machinery. Let's see how to apply [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to steganalysis.
 
 
 <br>
 #### 4.2. Machine learning based steganalysis
+
+Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images.  
 
 
 
