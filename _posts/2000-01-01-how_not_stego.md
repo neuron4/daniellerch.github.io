@@ -552,12 +552,22 @@ There is not easy statistical attack to detect this operation and, consequently,
 <br>
 #### 4.1. LSB Matching
 
-Hiding information using LSB matching is very easy. If the value of LSB is the same we want to hide, we do nothing. If not, we increase or decrease by 1 randomly. See an example program in python to hide information:
+Hiding information using LSB matching is very easy. If the value of LSB is the same we want to hide, we do nothing. If not, we increase or decrease by 1 randomly. 
+
+In this example we use the F16 image:
+
+![f16]({{ site.baseurl }}/images/hns_f16.png)
+
+<br>
+See an example program in python to hide information:
 
 
 ```python
+#!/usr/bin/python
+
 import sys
 from scipy import ndimage, misc
+import random
 
 bits=[]
 f=open('secret_data.txt', 'r')
@@ -566,32 +576,37 @@ for b in blist:
     for i in xrange(8):
         bits.append((b >> i) & 1)
 
-I = misc.imread('hns_lena.png')
+I = misc.imread('hns_f16.png')
 
-sign=[1, -1]
+sign=[1,-1]
 idx=0
 for i in xrange(I.shape[0]):
     for j in xrange(I.shape[1]):
         for k in xrange(3):
             if idx<len(bits):
                 if I[i][j][k]%2 != bits[idx]:
-                    k=sign[random.randint(0, 1)]
-                    if I[i][j][k]%2==0: k=1
-                    if I[i][j][k]%2==255: k=-1
-                    I[i][j][k]+=k
-                    idx+=1
+                    s=sign[random.randint(0, 1)]
+                    if I[i][j][k]==0: s=1
+                    if I[i][j][k]==255: s=-1
+                    I[i][j][k]+=s
+                idx+=1
 
-misc.imsave('hns_lena_stego.png', I)
+misc.imsave('hns_f16_stego.png', I)
 ```
 
+The result after embedding is this:
 
+![f16-stego]({{ site.baseurl }}/images/hns_f16_stego.png)
+
+
+<br>
 To extract the message we can use the same program we used with LSB replacement:
 
 ```python
 import sys
 from scipy import ndimage, misc
 
-I=misc.imread('hns_lena_stego.png')
+I=misc.imread('hns_f16_stego.png')
 f = open('output_secret_data.txt', 'w')
 
 idx=0
@@ -610,6 +625,7 @@ for i in xrange(I.shape[0]):
 f.close()
 ```
 
+As usual there is no difference for the human eye between the cover and the stego images. But this time the method is almost secure. Or in any case, much more harder than the methods presented before.
 
 
 
