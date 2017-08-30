@@ -245,7 +245,23 @@ If an attacker performs this operation he/she has enough information to detect a
 
 #### 2.1 LSB replacement
 
-A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. By this way we can hide at most one bit per pixel, so the capacity of this method is the eighth part of the number of pixels.
+A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. 
+
+Let's suppose whe have the following fixel values in an image:
+
+| 160 | 60 | 53 | 128 | 111 | 43 | 84 | 125 | 51 |
+
+If we obtain its binary code, that is:
+
+| 10100000 | 00111100 | 00110101 | | 10000000 | 01101111 | 00101011 | | 01010100 | 01111101 | 00110011 |
+
+Let's suppose now we want to hide the A letter in ASCII code. This, in the binary code, is the number 01000001. So we need to replace the LSB of each pixel whit each one of the bits we want to hide. The result is:
+
+
+| 1010000**0** | 0011110**1** | 0011010**0** | 1000000**0** | 0110111**0** | 0010101**0** | 0101010**0** | 0111110**0** | 0011001**1** |
+
+<br>
+By this way we can hide at most one bit per pixel, so the capacity of this method is the eighth part of the number of pixels.
 
 In this example We are going to use the Lena image, a common image in steganography and watermarking:
 
