@@ -38,7 +38,15 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
    3.2. [Histogram estimation](#32-histogram-estimation)
 
+
 4. [LSB Matching and Machine Learning](#4-lsb-matching-and-machine-learning)
+
+   4.1. [LSB Matching](#41-lsb-matching)
+
+   4.2. [Machine learning based steganalysis](#42-machine-learning-based-steganalysis)
+
+   4.3. [The Cover Source Mismatch problem](#43-the-cover-source-mismatch-problem)
+
 
 5. [Minimizing distortion and adaptive algorithms](#5-minimizing-distortion-and-adaptive-algorithms)
 
@@ -534,6 +542,16 @@ plt.show()
 
 <br>
 ### 4. LSB Matching and Machine Learning
+
+
+
+#### 4.1. LSB Matching
+
+#### 4.2. Machine learning based steganalysis
+
+#### 4.3. The Cover Source Mismatch problem
+
+
 
 PENDING...
 
