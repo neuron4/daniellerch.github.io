@@ -584,8 +584,8 @@ If we obtain its binary code, that is:
 Let's suppose now we want to hide the A letter in ASCII code. This, in the binary code, is the number 01000001. So we need to add +1 or -1 randomly if the LSB does not match the value of the pixel we want to hide. A possible result is:
 
 
-| 1010000**0** | 0011110**1** (+1) | 0011010**0** (-1) | 1000000**0** | 
-| 0110111**0** (-1) | 00101**100** (+1) | 0101010**0** | 0111110**1** | 
+| 1010000**0**      | (+1) 0011110**1** | (-1) 0011010**0** | 1000000**0** | 
+| (-1) 0110111**0** | (+1) 00101**100** |      0101010**0** | 0111110**1** | 
 
 <br>
 
