@@ -543,12 +543,80 @@ plt.show()
 <br>
 ### 4. LSB Matching and Machine Learning
 
+As we saw above, LSB replacement is not a secure technique. Nevertheless, there is a very simple modification to the insertion technique that makes the operation simmetrical. If we do this, the method becomes very difficult to detect.
 
+Instead of replacing the LSB of the pixel the right thing to do is increase or decrease randomly by 1. The effect on the LSB is the same but the operation does not introduce so evident anomalies. 
 
+There is not easy statistical attack to detect this operation and, consequently, the security of LSB matching is significantly better than that of LSB replacement. Accually, the only way to deal with steganalysis of LSB matching based techniques is throught machine learning.
+
+<br>
 #### 4.1. LSB Matching
 
+Hiding information using LSB matching is very easy. If the value of LSB is the same we want to hide, we do nothing. If not, we increase or decrease by 1 randomly. See an example program in python to hide information:
+
+
+```python
+import sys
+from scipy import ndimage, misc
+
+bits=[]
+f=open('secret_data.txt', 'r')
+blist = [ord(b) for b in f.read()]
+for b in blist:
+    for i in xrange(8):
+        bits.append((b >> i) & 1)
+
+I = misc.imread('hns_lena.png')
+
+sign=[1, -1]
+idx=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if idx<len(bits):
+                if I[i][j][k]%2 != bits[idx]:
+                    k=sign[random.randint(0, 1)]
+                    if I[i][j][k]%2==0: k=1
+                    if I[i][j][k]%2==255: k=-1
+                    I[i][j][k]+=k
+                    idx+=1
+
+misc.imsave('hns_lena_stego.png', I)
+```
+
+
+To extract the message we can use the same program we used with LSB replacement:
+
+```python
+import sys
+from scipy import ndimage, misc
+
+I=misc.imread('hns_lena_stego.png')
+f = open('output_secret_data.txt', 'w')
+
+idx=0
+bitidx=0
+bitval=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if bitidx==8:
+                f.write(chr(bitval))
+                bitidx=0
+                bitval=0
+            bitval |= (I[i, j, k]%2)<<bitidx
+            bitidx+=1
+
+f.close()
+```
+
+
+
+
+<br>
 #### 4.2. Machine learning based steganalysis
 
+<br>
 #### 4.3. The Cover Source Mismatch problem
 
 
