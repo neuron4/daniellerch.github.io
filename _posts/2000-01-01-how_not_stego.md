@@ -38,7 +38,15 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
    3.2. [Histogram estimation](#32-histogram-estimation)
 
+
 4. [LSB Matching and Machine Learning](#4-lsb-matching-and-machine-learning)
+
+   4.1. [LSB Matching](#41-lsb-matching)
+
+   4.2. [Machine learning based steganalysis](#42-machine-learning-based-steganalysis)
+
+   4.3. [The Cover Source Mismatch problem](#43-the-cover-source-mismatch-problem)
+
 
 5. [Minimizing distortion and adaptive algorithms](#5-minimizing-distortion-and-adaptive-algorithms)
 
@@ -420,7 +428,7 @@ We can hide information inside a JPEG image by modifying its bitmat as in the la
 <br>
 #### 3.1. Hiding information in DCT coefficients
 
-To hide information into the DCT coefficients we need a JPEG low level library or some JPEG steganography tool. In this case we are going to use an implementation of F5, a known steganographic algorithm. For this example we have used [this implementation](https://code.google.com/archive/p/f5-steganography/downloads).
+To hide information into the DCT coefficients we need a JPEG low level library or some JPEG steganography tool. In this case we are going to use an implementation of [F5](https://link.springer.com/chapter/10.1007/3-540-45496-9_21), a known steganographic algorithm. For this example we have used [this implementation](https://code.google.com/archive/p/f5-steganography/downloads).
 
 Our cover image is the Peppers image in JPEG format:
 
@@ -443,18 +451,191 @@ And, as a result, we obtain the following image:
 
 #### 3.2. Histogram estimation
 
+There are different JPEG steganograohy methods and differents attacks to JPEG steganography. Here we are going to see a simple attack that consists of estimating the histogram of DCT coefficients. This histogram is a graph bar in whitch each bar represents the frequency of each DCT value. So the first step is to extract de DCT coefficients. 
 
-gcc dctdump.c -o dctdump -ljpeg
+To extract the DCT coefficients we can use [this tool](http://www.daniellerch.me/snippets/stego/dctdump.c). Download it and compile it with the following command:
 
+```bash
+$ gcc dctdump.c -o dctdump -ljpeg
+```
+
+After that, you can extract the coefficients of the cover image:
+
+```bash
+./dctdump hns_peppers.jpg raw > hns_peppers.dct
+```
+
+With the list of coefficients we can use a simple Python script to draw the histogram. We will see an example later.
+
+By the moment let me explain what we want to do. The DCT coefficients give a representation of the image. If we draw a histogram using the coefficients of the cover (original) image and we draw other histogram using the coefficients of the image after some type of rotation, we expect both histograms to be similar. We say the second histogram is an estimation of the real histogram.
+
+But if we modify the DCT coefficients in some sort of steganographic embedding operation we are produciong an unatural result. If we rotate now the image we are generation new DCT coefficients and we do not expectet them to be similar. We can see these histograms in the following image:
+
+![histograms]({{ site.baseurl }}/images/hns_histograms.png)
+
+If we compare the first and second histograms we can see they are similar. This says us there is no hiden message. But if we compare the third and fourh histograms we see they are very different. This is the result of modify the DCT coefficients.
+
+<br>
+To draw the histograms firs we need to generate new images. We rotate the images 1º and we crop the central part to avoid the edges generated after rotation:
+
+```bash
+convert -rotate 1 hns_peppers.jpg hns_peppers_rot.jpg
+convert -crop 500x500+12+12 hns_peppers_rot.jpg hns_peppers_rot_crop.jpg
+convert -rotate 1 hns_peppers_stego.jpg hns_peppers_stego_rot.jpg
+convert -crop 500x500+12+12 hns_peppers_stego_rot.jpg hns_peppers_stego_rot_crop.jpg
+```
+
+Then, we generate files with the DCT coefficients:
+
+```bash
+./dctdump hns_peppers.jpg raw > hns_peppers.dct
 ./dctdump hns_peppers_stego.jpg raw > hns_peppers_stego.dct
+./dctdump hns_peppers_rot_crop.jpg raw > hns_peppers_rot_crop.dct
+./dctdump hns_peppers_stego_rot_crop.jpg raw > hns_peppers_stego_rot_crop.dct
+```
 
+Finally, we use the following Python script to draw the histograms:
 
-PENDING...
+```python
+from scipy import ndimage, misc
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy
+
+def read_values(filename):
+    f = open(filename, "r")
+    lines = f.read().split('\n')
+    values = [int(v) for v in lines if v!='' and v not in ['0', '1', '-1']]
+    return values
+
+values = read_values("hns_peppers.dct")
+values_stego = read_values("hns_peppers_stego.dct")
+values_rot_crop = read_values("hns_peppers_rot_crop.dct")
+values_stego_rot_crop = read_values("hns_peppers_stego_rot_crop.dct")
+
+font = {'size': 6}
+matplotlib.rc('font', **font)
+
+rng=(-50, 50)
+x=plt.subplot(1,4,1)
+x.set_ylim(0, 20000)
+x.set_title("Cover")
+plt.hist(values, bins=256, range=rng, width=1)
+x=plt.subplot(1,4,2)
+x.set_ylim(0, 20000)
+x.set_title("Estim. Cover")
+plt.hist(values_rot_crop, bins=256, range=rng, width=1)
+x=plt.subplot(1,4,3)
+x.set_ylim(0, 20000)
+x.set_title("Stego")
+plt.hist(values_stego, bins=256, range=rng, width=1)
+x=plt.subplot(1,4,4)
+x.set_ylim(0, 20000)
+x.set_title("Estim. Stego")
+plt.hist(values_stego_rot_crop, bins=256, range=rng, width=1)
+plt.show()
+```
+
+| Tip #5: Use DCT steganography only if you hide a few bytes (as in some watermarking applications) |
 
 
 
 <br>
 ### 4. LSB Matching and Machine Learning
+
+As we saw above, LSB replacement is not a secure technique. Nevertheless, there is a very simple modification to the insertion technique that makes the operation simmetrical. If we do this, the method becomes very difficult to detect.
+
+Instead of replacing the LSB of the pixel the right thing to do is increase or decrease randomly by 1. The effect on the LSB is the same but the operation does not introduce so evident anomalies. 
+
+There is not easy statistical attack to detect this operation and, consequently, the security of LSB matching is significantly better than that of LSB replacement. Accually, the only way to deal with steganalysis of LSB matching based techniques is throught machine learning.
+
+<br>
+#### 4.1. LSB Matching
+
+Hiding information using LSB matching is very easy. If the value of LSB is the same we want to hide, we do nothing. If not, we increase or decrease by 1 randomly. 
+
+In this example we use the F16 image:
+
+![f16]({{ site.baseurl }}/images/hns_f16.png)
+
+<br>
+See an example program in python to hide information:
+
+
+```python
+#!/usr/bin/python
+
+import sys
+from scipy import ndimage, misc
+import random
+
+bits=[]
+f=open('secret_data.txt', 'r')
+blist = [ord(b) for b in f.read()]
+for b in blist:
+    for i in xrange(8):
+        bits.append((b >> i) & 1)
+
+I = misc.imread('hns_f16.png')
+
+sign=[1,-1]
+idx=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if idx<len(bits):
+                if I[i][j][k]%2 != bits[idx]:
+                    s=sign[random.randint(0, 1)]
+                    if I[i][j][k]==0: s=1
+                    if I[i][j][k]==255: s=-1
+                    I[i][j][k]+=s
+                idx+=1
+
+misc.imsave('hns_f16_stego.png', I)
+```
+
+The result after embedding is this:
+
+![f16-stego]({{ site.baseurl }}/images/hns_f16_stego.png)
+
+
+<br>
+To extract the message we can use the same program we used with LSB replacement:
+
+```python
+import sys
+from scipy import ndimage, misc
+
+I=misc.imread('hns_f16_stego.png')
+f = open('output_secret_data.txt', 'w')
+
+idx=0
+bitidx=0
+bitval=0
+for i in xrange(I.shape[0]):
+    for j in xrange(I.shape[1]):
+        for k in xrange(3):
+            if bitidx==8:
+                f.write(chr(bitval))
+                bitidx=0
+                bitval=0
+            bitval |= (I[i, j, k]%2)<<bitidx
+            bitidx+=1
+
+f.close()
+```
+
+As usual there is no difference for the human eye between the cover and the stego images. But this time the method is almost secure. Or in any case, much more harder than the methods presented before.
+
+
+
+<br>
+#### 4.2. Machine learning based steganalysis
+
+<br>
+#### 4.3. The Cover Source Mismatch problem
+
+
 
 PENDING...
 
