@@ -443,9 +443,9 @@ And, as a result, we obtain the following image:
 
 #### 3.2. Histogram estimation
 
-There are different attacks to JPEG steganography. Here we are going to see how to detect this type of steganography by estimating its histogram of DCT coefficients. That is, a bar graph in whitch each bar represents the frequency of each DCT value. 
+There are different JPEG steganograohy methods and differents attacks to JPEG steganography. Here we are going to see a simple attack that consists of estimating the histogram of DCT coefficients. This histogram is a graph bar in whitch each bar represents the frequency of each DCT value. So the first step is to extract de DCT coefficients. 
 
-To extract the DCT coefficients we can use [this tool](http://www.daniellerch.me/snippets/stego/dctdump.c). You can download and compile it with:
+To extract the DCT coefficients we can use [this tool](http://www.daniellerch.me/snippets/stego/dctdump.c). Download it and compile it with the following command:
 
 ```bash
 $ gcc dctdump.c -o dctdump -ljpeg
@@ -457,6 +457,12 @@ After that, you can extract the coefficients of the cover image:
 ./dctdump hns_peppers.jpg raw > hns_peppers.dct
 ```
 
+With the list of coefficients we can use a simple Python script to draw the histogram. We will see an example later.
+
+
+```python
+
+```
 
 
 
