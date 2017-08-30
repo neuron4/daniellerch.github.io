@@ -444,7 +444,7 @@ And, as a result, we obtain the following image:
 #### 3.2. Histogram estimation
 
 
-![histograms]({{ site.baseurl }}/images/hns_histograms.jpg)
+![histograms]({{ site.baseurl }}/images/hns_histograms.png)
 
 
 
