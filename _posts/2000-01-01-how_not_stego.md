@@ -559,7 +559,7 @@ In this example we use the F16 image:
 ![f16]({{ site.baseurl }}/images/hns_f16.png)
 
 <br>
-See an example program in python to hide information:
+See an example program in Python to hide information:
 
 
 ```python
@@ -631,6 +631,9 @@ As usual there is no difference for the human eye between the cover and the steg
 
 <br>
 #### 4.2. Machine learning based steganalysis
+
+
+
 
 <br>
 #### 4.3. The Cover Source Mismatch problem
