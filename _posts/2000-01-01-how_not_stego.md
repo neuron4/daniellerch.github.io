@@ -465,6 +465,9 @@ But if we modify the DCT coefficients in some sort of steganographic embedding o
 
 ![histograms]({{ site.baseurl }}/images/hns_histograms.png)
 
+If we compare the first and second histograms we can see they are similar. This says us there is no hiden message. But if we compare the third and fourh histograms we see they are very different. This is the result of modify the DCT coefficients.
+
+<br>
 To draw the histograms firs we need to generate new images. We rotate the images 1º and we crop the central part to avoid the edges generated after rotation:
 
 ```bash
