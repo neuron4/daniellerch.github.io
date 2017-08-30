@@ -420,7 +420,7 @@ We can hide information inside a JPEG image by modifying its bitmat as in the la
 <br>
 #### 3.1. Hiding information in DCT coefficients
 
-To hide information into the DCT coefficients we need a JPEG low level library or some JPEG steganography tool. In this case we are going to use an implementation of F5, a known steganographic algorithm. For this example we have used [this implementation](https://code.google.com/archive/p/f5-steganography/downloads).
+To hide information into the DCT coefficients we need a JPEG low level library or some JPEG steganography tool. In this case we are going to use an implementation of [F5](https://link.springer.com/chapter/10.1007/3-540-45496-9_21), a known steganographic algorithm. For this example we have used [this implementation](https://code.google.com/archive/p/f5-steganography/downloads).
 
 Our cover image is the Peppers image in JPEG format:
 
@@ -443,12 +443,27 @@ And, as a result, we obtain the following image:
 
 #### 3.2. Histogram estimation
 
+There are different attacks to JPEG steganography. Here we are going to see how to detect this type of steganography by estimating its histogram of DCT coefficients. That is, a bar graph in whitch each bar represents the frequency of each DCT value. 
+
+To extract the DCT coefficients we can use [this tool](http://www.daniellerch.me/snippets/stego/dctdump.c). You can download and compile it with:
+
+```bash
+$ gcc dctdump.c -o dctdump -ljpeg
+```
+
+After that, you can extract the coefficients of the cover image:
+
+```bash
+./dctdump hns_peppers.jpg raw > hns_peppers.dct
+```
+
+
+
 
 ![histograms]({{ site.baseurl }}/images/hns_histograms.png)
 
 
 
-gcc dctdump.c -o dctdump -ljpeg
 
 ./dctdump hns_peppers_stego.jpg raw > hns_peppers_stego.dct
 
