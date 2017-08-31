@@ -866,11 +866,15 @@ Let's perform a little experiment. It can take some time but it is very instruct
 
 This db has 10000 images. We need two groups, one for training and other for testing our experiments are working. Chose 5000 random images for training and leave the other 5000 for testing. 
 
-
+PENDING ...
 
 
 <br>
 #### 4.4. Adaptive algorithms
+
+
+
+
 
 <br>
 #### 4.5. Deep learning based steganalysis
