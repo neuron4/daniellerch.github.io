@@ -687,7 +687,7 @@ We do not need to use the third pixel.
 
 Now the trick. We can hide the same information modifying only one pixel using the following formula:
 
-$\pm 1$
+$$\pm 1$$
 
 
 
