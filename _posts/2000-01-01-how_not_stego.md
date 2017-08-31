@@ -53,7 +53,7 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
    4.6. [The Cover Source Mismatch problem](#46-the-cover-source-mismatch-problem)
 
-   5.7. [Dealing with CSM](#47-dealing-with-csm)
+   4.7. [Dealing with CSM](#47-dealing-with-csm)
 
 5. [Tips](#5-tips)
 
@@ -669,16 +669,18 @@ f.close()
 <br>
 As usual there is no difference for the human eye between the cover and the stego images. 
 
-The presented program has some limitations. The first one is we are hiding information in a sequantial manner and consequently we hide all the information in the beginning of the image. Second, we are hiding information in all the pixels. This is very disruptive but can be easily improved. For exaple, we can choose part of the pixels where we want to hide information using a key known only by the sender and the receiver. We can do this using a low bitrate because this is harder to detect than a higher bitrate. 
-
-But this time the method is almost secure. Or in any case, much more harder to detect than the methods presented before. Actually, to deal with LSB matching we need heavy machinery. Let's see how to apply [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to steganalysis.
+The presented program has some limitations. The first one is we are hiding information in a sequantial manner and consequently we hide all the information in the beginning of the image. Second, we are hiding information in all the pixels. This is very disruptive but can be easily improved. For exaple, we can choose part of the pixels where we want to hide information using a key known only by the sender and the receiver. We can do this using a low bitrate because this is harder to detect than a higher bitrate. But his unfortunately decreases the capacity. we can deal with this problem thanks to different techniques that try to minimize distortion.
 
 
 <br>
 #### 4.2. Minimizing distortion
 
+
 <br>
 #### 4.3. Machine learning based steganalysis
+
+
+The methods based on matrix embedding are harder to detect than the methods presented before. Actually, to deal with LSB matching base methods we need heavy machinery. Let's see how to apply [machine learning (https://en.wikipedia.org/wiki/Machine_learning) to steganalysis.
 
 Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images. Second we need a feature extractor, that is a programa capable to extract data from the images that could be used to differentiate between cover and stego images. Finally we need a classifier. This classifier receives the features extracted from the cover and stego images and needs to know which images are cover and which images are stego. With this information the classifier will learn how to classify images into cover and stego. This method is not perfect but it can detect LSB matching with accuracy over 90%. 
 
