@@ -6,7 +6,7 @@ comments: false
 
 [Preface](http://pages.daniellerch.me/stego_preface/)
 
-1. [Naive techniques](http://pages.daniellerch.me/stego_naive/))
+1. [Naive techniques](http://pages.daniellerch.me/stego_naive/)
 
    1.1. [Append one file to another](http://pages.daniellerch.me/stego_naive/#11-append-one-file-to-another)
    
