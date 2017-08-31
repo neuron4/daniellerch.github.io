@@ -719,11 +719,42 @@ And finally, if we want to hide $$11$$ one possible result is:
 <br>
 This simple idea can be generalized using binary [Hamming codes](https://en.wikipedia.org/wiki/Hamming_code).
 
-Let's suppose we want to hide bits in blocks of $$p$$ pixels. The first we need is a $$H$$ matrix that contains all non zero binary vectors with $$p$$ elements in its columns. For example, if we want to hide information in blocks of 3 pixels, as before, one possible $$H$$ matrix is:
+Let's suppose we want to hide $$p$$ bits in a block of pixels by modifying only one bit. The first we need is a $$H$$ matrix that contains all non zero binary vectors with $$p$$ elements in its columns. For example, if we want to hide information in blocks of 3 pixels, as before, one possible $$H$$ matrix is:
 
-$$
-H=\begin{pmatrix} 1010101\\0110011\\0001111 \end{pmatrix} 
-$$
+$$ H=\begin{pmatrix} 0001111\\0110011\\1010101 \end{pmatrix} $$
+
+We can use this python code to generate an $$H$$ matrix:
+
+```python
+import numpy
+import sys
+
+def prepare_M(n_bits):
+    M=[]
+    l=len(bin(2**n_bits-1)[2:])
+    for i in range(1, 2**n_bits):
+        string=bin(i)[2:].zfill(l)
+        V=[]
+        for c in string:
+            V.append(int(c))
+        M.append(V)
+    M=numpy.array(M).T
+    return M
+ ```
+
+For $$p=3$$ we get the matrix:
+
+```bash
+>>> prepare_M(3)
+array([[0, 0, 0, 1, 1, 1, 1],
+       [0, 1, 1, 0, 0, 1, 1],
+       [1, 0, 1, 0, 1, 0, 1]])
+```
+
+
+The number of pixels we need in each block is $$2^p-1$$. Following the example, if $$p=3$$ we need blocks of 7 pixels. 
+
+
 
 
 
