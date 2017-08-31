@@ -1,5 +1,6 @@
+[ [Index - Steganography in Images](http://pages.daniellerch.me/stego_index) ]<br><br>
 
-<br>
+
 ### 3. JPEG images and histogram estimation
 
 We can hide information inside a JPEG image by modifying its bitmat as in the last section. But we can also modify its [DCT](https://en.wikipedia.org/wiki/Discrete_cosine_transform) coefficients. These coefficients are used to represent a compressed version of the image, so when we open an image with a viewer, the viewer uncompress the image using the DCT coefficients. The idea to modify a DCT coefficient is also modifying its LSB. 
