@@ -675,7 +675,7 @@ The presented program has some limitations. The first one is we are hiding infor
 <br>
 #### 4.2. Minimizing distortion
 
-The idea behing minimizing distortion is to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with a simple trick. 
+The idea behing minimizing distortion is to use matrix embedding to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with a simple trick. 
 
 Let's suppose you want to hide two bits. Using LSB matching as we shown before we have to modify the pixel 50% of the time, because the other 50% of the time the value of the LSB is already the same we want to hide. This means the effectivity of our method is 1/2.
 
@@ -758,7 +758,7 @@ Now, our formula to calculate the message is:
 
 $$ m = Mc $$
 
-where $$c$$ is the vector of bits in the cover image. Lets suppose we want to hide the message m={1,1,0} in the following pixels:
+where $$c$$ is the vector of bits in the cover image. Lets suppose we want to hide the message m=(1,1,0) in the following pixels:
 
 | 11011010 | 11011011 | 11011011 | 11011010 | 11011011 | 11011010 | 11011010 |
 
@@ -768,19 +768,19 @@ We only want the LSBs:
 
 So, in the example the value of c is:
 
-$$ c={0,1,1,0,1,1,0,0} $$
+$$ c=(0,1,1,0,1,1,0,0) $$
 
 If we apply the formula:
 
-$$ m = Mc = {1, 0, 0} $$
+$$ m = Mc = (1, 0, 0) $$
 
-This is not the message we want to hide, so we want to hide m={1,1,0}. We need to find how to modify $$c$$, that is, we need to find the stego version in which $$ m = Mc = {1, 1, 0} $$.
+This is not the message we want to hide, so we want to hide m=(1,1,0). We need to find how to modify $$c$$, that is, we need to find the stego version in which $$ m = Mc = (1, 1, 0) $$.
 
 Ee need to find the column of M that is different. We can do this with a simple substraction $$ m-Mc $$. After that, we only have to change the value of the corresponding pixel.
 
 Following our example:
 
-$$ m-Mc = {0, 1, 0} $$
+$$ m-Mc = (0, 1, 0) $$
 
 The column:
 
@@ -792,13 +792,13 @@ $$ M=\begin{pmatrix} 0001111\\0110011\\1010101 \end{pmatrix} $$
 
 That means we have to change the second pixel of $$c$$ to obtain the stego block $$s$$:
 
-$$ c={0,1,1,0,1,1,0,0} $$
+$$ c=(0,1,1,0,1,1,0,0) $$
 
-$$ s={0,0,1,0,1,1,0,0} $$
+$$ s=(0,0,1,0,1,1,0,0) $$
 
 And in this case, our previous formula works:
 
-$$ m = Ms = {1, 1, 0} $$
+$$ m = Ms = (1, 1, 0) $$
 
 This time, we get the message we want to hide. So our stego pixels are:
 
@@ -839,7 +839,7 @@ def ME_hide_block(M, c, m):
     return m
  ```
 
-Let's suppose now we want to hide 4 bits in blocs of $$2^4-1=15$$ pixels. For example with m={1, 1, 0, 0} and c={0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0}. We only have to do this:
+Let's suppose now we want to hide 4 bits in blocs of $$2^4-1=15$$ pixels. For example with m=(1, 1, 0, 0) and c=(0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0). We only have to do this:
 
 ```python
 n_bits=4
@@ -858,14 +858,14 @@ We can use blocks of diferents sizes but if the number of bit we want to hide in
 <br>
 #### 4.3. Machine learning based steganalysis
 
+To deal with LSB matching based methods we need heavy machinery. Let's see how to apply [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to steganalysis).
 
-The methods based on matrix embedding are harder to detect than the methods presented before. Actually, to deal with LSB matching base methods we need heavy machinery. Let's see how to apply [machine learning (https://en.wikipedia.org/wiki/Machine_learning) to steganalysis.
-
-Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images. Second we need a feature extractor, that is a programa capable to extract data from the images that could be used to differentiate between cover and stego images. Finally we need a classifier. This classifier receives the features extracted from the cover and stego images and needs to know which images are cover and which images are stego. With this information the classifier will learn how to classify images into cover and stego. This method is not perfect but it can detect LSB matching with accuracy over 90%. 
+Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images. Second we need a feature extractor, that is a program capable to extract data from the images that could be used to differentiate between cover and stego images. Finally we need a classifier. This classifier receives the features extracted from the cover and stego images and needs to know which images are cover and which images are stego. With this information the classifier will learn how to classify images into cover and stego. This method is not perfect but it can detect LSB matching with accuracy over 90%. 
 
 Let's perform a little experiment. It can take some time but it is very instructive. Firs we need to download a database of images. A good one is the boss database and youn can download it from [here](http://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip). This images are in grayscale, this simplifies the experiment.
 
 This db has 10000 images. We need two groups, one for training and other for testing our experiments are working. Chose 5000 random images for training and leave the other 5000 for testing. 
+
 
 
 
