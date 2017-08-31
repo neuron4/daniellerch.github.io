@@ -1,3 +1,6 @@
+[ [Index - Steganography in Images](http://pages.daniellerch.me/stego_index) ]<br><br>
+
+
 ### 4. LSB Matching and Machine Learning
 
 As we saw above, LSB replacement is not a secure technique. Nevertheless, there is a very simple modification to the insertion technique that makes the operation simmetrical. If we do this, the method becomes very difficult to detect.
