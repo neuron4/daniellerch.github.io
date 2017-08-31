@@ -1,5 +1,5 @@
 
-[Steganography in Images - Index](http://pages.daniellerch.com/stego_index)
+[ [Index - Steganography in Images](http://pages.daniellerch.me/stego_index) ]<br>
 
 
 ### 1. Naive techniques
