@@ -675,6 +675,24 @@ The presented program has some limitations. The first one is we are hiding infor
 <br>
 #### 4.2. Minimizing distortion
 
+The idea behing minimizing distortion is to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with the following simple trick. Let's supposo you want to hide two bits. If we use LSB matching as we shown before, we need to modify two pixels. For example, let's suppose whe have the following pixels:
+
+| 10010101 | 10010100 | 10010111 |
+
+An we want to hide bits 01. One possible resput using LSB matching could be the following:
+
+| (-1) 1001010**0** | (+1) 1001010**1** | 10010111 |
+
+We do not need to use the third pixel.
+
+Now the trick. We can hide the same information modifying only one pixel using the following formula:
+
+$\pm 1$
+
+
+
+
+
 
 <br>
 #### 4.3. Machine learning based steganalysis
