@@ -790,9 +790,10 @@ Corresponds to the second column of $$M$$:
 
 $$ M=\begin{pmatrix} 0001111\\0110011\\1010101 \end{pmatrix} $$
 
-That means we have to change the second pixel of $$c$$ to obtain the stego block $s$:
+That means we have to change the second pixel of $$c$$ to obtain the stego block $$s$$:
 
 $$ c={0,1,1,0,1,1,0,0} $$
+
 $$ s={0,0,1,0,1,1,0,0} $$
 
 And in this case, our previous formula works:
@@ -850,6 +851,9 @@ print s
 m_recovered=ME_unhide_block(M, s)
 print m_recovered
 ```
+
+We can use blocks of diferents sizes but if the number of bit we want to hide in each block is too high the number of pixels we need en each block could be prohibitive (remember we need $$2^p-1$$ pixels). As a consequence, a high undetectability suppose a very low capacity because the big size of the blocks.
+
 
 <br>
 #### 4.3. Machine learning based steganalysis
