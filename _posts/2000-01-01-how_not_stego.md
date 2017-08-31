@@ -712,11 +712,11 @@ We do not need to use the third pixel.
 
 Now the trick. We can hide the same information modifying only one pixel. To hide the first bit we can use the following formula:
 
-$$ M_1 = LSB_1 \xor LSB_2 1$$
+$$ M_1 = LSB_1 \oplus LSB_2 1$$
 
 And to hide the second bit we can use:
 
-$$ M_2 = LSB_2 \xor LSB_3 1$$
+$$ M_2 = LSB_2 \oplus LSB_3 1$$
 
 Let's apply this idea to the previous example:
 
