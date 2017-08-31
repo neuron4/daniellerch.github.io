@@ -685,45 +685,36 @@ Suppose now we use LSB matching by hiding two bits in groups of three pixels:
 
 And that we use the following for the first bit we want to hide:
 
-$$ M_1 = LSB(P_1) \xor LSB(P_2) 1$$
+$$ M_1 = LSB(P_1) \oplus LSB(P_2) 1$$
 
 And the following formula for the second bit we want to hide:
 
-$$ M_2 = LSB(P_2) \xor LSB(P_3) 1$$
+$$ M_2 = LSB(P_2) \oplus LSB(P_3) 1$$
 
-Using this formulas there are three cases:
-* The bits match the current value of the pixels and there is no change to do.
-* It is enough to change the value of one pixel.
-* We have to change the value of two pixels.
+Note this method is very easy to apply. If $$M_1$$ and $$M_2$$ match the bits we want to hide we do nothing. If none of $$M_1$$ and $$M_2$$ match the bits, we have to change the value of $$LSB(P_2)$$. If $$M_1$$ match but $$M_2$$ does not match we change the value of $$LSB(P_3)$$ and if $$M_2$$ match but $$M_1$$ does not match we change the value of $$LSB(P_1)$$. With this metodology we hide two bits and we only have to modify one. 
 
-This means efficiency of our method is ... 
+Let's see an example. We have the follogin pixels:
 
+| 10010100 | 10010101 | 10010111 |
 
+If we want to hide 00 one possible result is:
 
-If we use LSB matching as we shown before, we need to modify two pixels. For example, let's suppose whe have the following pixels:
-
-| 10010101 | 10010100 | 10010111 |
-
-An we want to hide bits 01. One possible resput using LSB matching could be the following:
-
-| (-1) 1001010**0** | (+1) 1001010**1** | 10010111 |
-
-We do not need to use the third pixel.
-
-Now the trick. We can hide the same information modifying only one pixel. To hide the first bit we can use the following formula:
-
-$$ M_1 = LSB_1 \oplus LSB_2 1$$
-
-And to hide the second bit we can use:
-
-$$ M_2 = LSB_2 \oplus LSB_3 1$$
-
-Let's apply this idea to the previous example:
-
-| (-1) 1001010**0** | (+1) 1001010**1** | 10010111 |
+| (+1) 1001010**1** | 10010101 | 10010111 |
 
 
+If we want to hide 01 one possible result is:
 
+| 10010100 | (-1) 1001010**0** | 10010111 |
+
+
+If we want to hide 10, we do not need to change anything:
+
+| 10010100 | 10010101 | 10010111 |
+
+
+And finally, if we want to hide 11 one possible result is:
+
+| 10010100 | 10010101 | (-1) 1001011**0** |
 
 
 
