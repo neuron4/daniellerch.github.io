@@ -719,9 +719,9 @@ And finally, if we want to hide $$11$$ one possible result is:
 <br>
 This simple idea can be generalized using binary [Hamming codes](https://en.wikipedia.org/wiki/Hamming_code).
 
-Let's suppose we want to hide $$p$$ bits in a block of pixels by modifying only one bit. The first we need is a $$H$$ matrix that contains all non zero binary vectors with $$p$$ elements in its columns. For example, if we want to hide information in blocks of 3 pixels, as before, one possible $$H$$ matrix is:
+Let's suppose we want to hide $$p$$ bits in a block of pixels by modifying only one bit. The first we need is a $$M$$ matrix that contains all non zero binary vectors with $$p$$ elements in its columns. For example, if we want to hide information in blocks of 3 pixels, as before, one possible $$M$$ matrix is:
 
-$$ H=\begin{pmatrix} 0001111\\0110011\\1010101 \end{pmatrix} $$
+$$ M=\begin{pmatrix} 0001111\\0110011\\1010101 \end{pmatrix} $$
 
 We can use this python code to generate an $$H$$ matrix:
 
@@ -754,9 +754,102 @@ array([[0, 0, 0, 1, 1, 1, 1],
 
 The number of pixels we need in each block is $$2^p-1$$. Following the example, if $$p=3$$ we need blocks of 7 pixels. 
 
+Now, our formula to calculate the message is:
+
+$$ m = Mc $$
+
+where $$c$$ is the vector of bits in the cover image. Lets suppose we want to hide the message m={1,1,0} in the following pixels:
+
+| 11011010 | 11011011 | 11011011 | 11011010 | 11011011 | 11011010 | 11011010 |
+
+We only want the LSBs:
+
+| 0 | 1 | 1 | 0 | 1 | 1 | 0 | 0 |
+
+So, in the example the value of c is:
+
+$$ c={0,1,1,0,1,1,0,0} $$
+
+If we apply the formula:
+
+$$ m = Mc = {1, 0, 0} $$
+
+This is not the message we want to hide, so we want to hide m={1,1,0}. We need to find how to modify $$c$$, that is, we need to find the stego version in which $$ m = Mc = {1, 1, 0} $$.
+
+Ee need to find the column of M that is different. We can do this with a simple substraction $$ m-Mc $$. After that, we only have to change the value of the corresponding pixel.
+
+Following our example:
+
+$$ m-Mc = {0, 1, 0} $$
+
+The column:
+
+$$ \begin{pmatrix} 0\\1\\0 \end{pmatrix} $$
+
+Corresponds to the second column of $$M$$:
+
+$$ M=\begin{pmatrix} 0001111\\0110011\\1010101 \end{pmatrix} $$
+
+That means we have to change the second pixel of $$c$$ to obtain the stego block $s$:
+
+$$ c={0,1,1,0,1,1,0,0} $$
+$$ s={0,0,1,0,1,1,0,0} $$
+
+And in this case, our previous formula works:
+
+$$ m = Ms = {1, 1, 0} $$
+
+This time, we get the message we want to hide. So our stego pixels are:
+
+| 11011010 | 11011010 | 11011011 | 11011010 | 11011011 | 11011010 | 11011010 |
 
 
 
+As a summary, we have hidden three bits in a block of seven pixels by modifying only one bit.
+
+These operation can be easily automated in Python using the following functions to hide and to unhide data:
+
+```python
+def ME_hide_block(M, c, m):
+    r=m-M.dot(c)
+    r=r%2
+
+    idx=0
+    found=False
+    for i in M.T:
+        if numpy.array_equal(i, r):
+            found=True
+            break
+        idx+=1
+
+    # the block does not need to be modified
+    if not found:
+        return c
+
+    s=numpy.array(c)
+    if s[idx]==0: s[idx]=1
+    else: s[idx]=0
+
+    return s
+    
+ def ME_unhide_block(M, s):
+    m=M.dot(s)
+    m=m%2
+    return m
+ ```
+
+Let's suppose now we want to hide 4 bits in blocs of $$2^4-1=15$$ pixels. For example with m={1, 1, 0, 0} and c={0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0}. We only have to do this:
+
+```python
+n_bits=4
+M=prepare_M(n_bits)
+m=numpy.array([1, 1, 0, 0])
+c=numpy.array([0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0])
+s=ME_hide_block(M, c, m)
+print s
+m_recovered=ME_unhide_block(M, s)
+print m_recovered
+```
 
 <br>
 #### 4.3. Machine learning based steganalysis
