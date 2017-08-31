@@ -721,7 +721,9 @@ This simple idea can be generalized using binary [Hamming codes](https://en.wiki
 
 Let's suppose we want to hide bits in blocks of $$p$$ pixels. The first we need is a $$H$$ matrix that contains all non zero binary vectors with $$p$$ elements in its columns. For example, if we want to hide information in blocks of 3 pixels, as before, one possible $$H$$ matrix is:
 
-$$H=\left( 0001111\\0001111 \right)$$
+$$
+H=\begin{matrix} 0001111\\0001111 \end{matrix} 
+$$
 
 
 
