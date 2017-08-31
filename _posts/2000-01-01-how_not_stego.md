@@ -697,25 +697,31 @@ Let's see an example. We have the follogin pixels:
 
 | 10010100 | 10010101 | 10010111 |
 
-If we want to hide 00 one possible result is:
+If we want to hide $$00$$ one possible result is:
 
 | (+1) 1001010**1** | 10010101 | 10010111 |
 
 
-If we want to hide 01 one possible result is:
+If we want to hide $$01$$ one possible result is:
 
 | 10010100 | (-1) 1001010**0** | 10010111 |
 
 
-If we want to hide 10, we do not need to change anything:
+If we want to hide $$10$$, we do not need to change anything:
 
 | 10010100 | 10010101 | 10010111 |
 
 
-And finally, if we want to hide 11 one possible result is:
+And finally, if we want to hide $$11$$ one possible result is:
 
 | 10010100 | 10010101 | (-1) 1001011**0** |
 
+<br>
+This simple idea can be generalized using binary [Hamming codes](https://en.wikipedia.org/wiki/Hamming_code).
+
+Let's suppose we want to hide bits in blocks of $$p$$ pixels. The first we need is a $$H$$ matrix that contains all non zero binary vectors with $$p$$ elements in its columns. For example, if we want to hide information in blocks of 3 pixels, as before, one possible $$H$$ matrix is:
+
+$$H=(0001111\\0001111)$$
 
 
 
