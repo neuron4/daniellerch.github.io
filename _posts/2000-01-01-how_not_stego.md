@@ -43,20 +43,23 @@ The main objective of steganalysis is to detect hidden information. If the infor
 
    4.1. [LSB Matching](#41-lsb-matching)
 
-   4.2. [Machine learning based steganalysis](#42-machine-learning-based-steganalysis)
+   4.2. [Minimizing distortion](#42-minimizing-distortion)
 
-   4.3. [The Cover Source Mismatch problem](#43-the-cover-source-mismatch-problem)
+   4.3. [Machine learning based steganalysis](#43-machine-learning-based-steganalysis)
 
+   4.4. [Adaptive algorithms](#44-adaptive algorithms)
 
-5. [Minimizing distortion and adaptive algorithms](#5-minimizing-distortion-and-adaptive-algorithms)
+   4.5. [Deep learning based steganalysis](#45-deep-learning-based-steganalysis)
 
-6. [Dealing with CSM](#6-dealing-with-csm)
+   4.6. [The Cover Source Mismatch problem](#46-the-cover-source-mismatch-problem)
 
-7. [Tips](#7-tips)
+   5.7. [Dealing with CSM](#47-dealing-with-csm)
 
-8. [So, what can I do?](#8-so-what-can-i-do)
+5. [Tips](#5-tips)
 
-9. [References](#9-references)
+6. [So, what can I do?](#6-so-what-can-i-do)
+
+7. [References](#7-references)
 
 <br>
 
@@ -353,9 +356,9 @@ No!, it is not. LSB replacement is an asymmetrical operation and it can be detec
 
 When we replace the LSB of a pixel with an even vallue this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of a pixel with an odd value this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. 
 
-Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [[1](9-references)] and later by the RS attack [[2](#9-references)] and the SPA attack [[3](#9-references)].
+Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [[1](7-references)] and later by the RS attack [[2](#7-references)] and the SPA attack [[3](#7-references)].
 
-The Sample Pair Analysis (SPA) is detailed in [[3](#9-references)] so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
+The Sample Pair Analysis (SPA) is detailed in [[3](#7-references)] so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
 
 The following code implements the SPA attack:
 
@@ -664,11 +667,18 @@ f.close()
 ```
 
 <br>
-As usual there is no difference for the human eye between the cover and the stego images. But this time the method is almost secure. Or in any case, much more harder to detect than the methods presented before. Actually, to deal with LSB matching we need heavy machinery. Let's see how to apply [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to steganalysis.
+As usual there is no difference for the human eye between the cover and the stego images. 
+
+The presented program has some limitations. The first one is we are hiding information in a sequantial manner and consequently we hide all the information in the beginning of the image. Second, we are hiding information in all the pixels. This is very disruptive but can be easily improved. For exaple, we can choose part of the pixels where we want to hide information using a key known only by the sender and the receiver. We can do this using a low bitrate because this is harder to detect than a higher bitrate. 
+
+But this time the method is almost secure. Or in any case, much more harder to detect than the methods presented before. Actually, to deal with LSB matching we need heavy machinery. Let's see how to apply [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to steganalysis.
 
 
 <br>
-#### 4.2. Machine learning based steganalysis
+#### 4.2. Minimizing distortion
+
+<br>
+#### 4.3. Machine learning based steganalysis
 
 Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images. Second we need a feature extractor, that is a programa capable to extract data from the images that could be used to differentiate between cover and stego images. Finally we need a classifier. This classifier receives the features extracted from the cover and stego images and needs to know which images are cover and which images are stego. With this information the classifier will learn how to classify images into cover and stego. This method is not perfect but it can detect LSB matching with accuracy over 90%. 
 
@@ -678,37 +688,35 @@ This db has 10000 images. We need two groups, one for training and other for tes
 
 
 
+<br>
+#### 4.4. Adaptive algorithms
+
+<br>
+#### 4.5. Deep learning based steganalysis
+
+<br>
+#### 4.6. The Cover Source Mismatch problem
+
+<br>
+#### 4.7. Dealing with CSM
+
+
+
+
 
 
 <br>
-#### 4.3. The Cover Source Mismatch problem
-
-
+### 5. Tips
 
 PENDING...
 
 <br>
-### 5. Minimizing distortion and adaptive algorithms
+### 6. So, what can I do?
 
 PENDING...
 
 <br>
-### 6. Dealing with CSM
-
-PENDING...
-
-<br>
-### 7. Tips
-
-PENDING...
-
-<br>
-### 8. So, what can I do?
-
-PENDING...
-
-<br>
-### 9. References
+### 7. References
 
 [1]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
 
