@@ -4,47 +4,43 @@ title: Index
 ---
 
 
-1. [Naive techniques](#1-naive-techniques)
+1. [Naive techniques](http://pages.daniellerch.me/stego_naive/))
 
-   1.1. [Append one file to another](#11-append-one-file-to-another)
+   1.1. [Append one file to another](http://pages.daniellerch.me/stego_naive/#11-append-one-file-to-another)
    
-   1.2. [Writing text with similar colors](#12-writing-text-with-similar-colors)
+   1.2. [Writing text with similar colors](http://pages.daniellerch.me/stego_naive/#12-writing-text-with-similar-colors)
    
-   1.3. [Using the alpha channel](#13-using-the-alpha-channel)
+   1.3. [Using the alpha channel](http://pages.daniellerch.me/stego_naive/#13-using-the-alpha-channel)
 
 
-2. [LSB replacement and the SPA attack](#2-lsb-replacement-and-the-spa-attack])
+2. [LSB replacement and the SPA attack](http://pages.daniellerch.me/stego_lsbr/)
 
-   2.1. [LSB replacement](#21-lsb-replacement)
+   2.1. [LSB replacement](http://pages.daniellerch.me/stego_lsbr/#21-lsb-replacement)
 
-   2.2. [The SPA Attack](#22-the-spa-attack)
-
-
-3. [JPEG images and histogram estimation](#3-jpeg-images-and-histogram-estimation)
-
-   3.1. [Hiding information in DCT coefficients](#31-hiding-information-in-dct-coefficients)
-
-   3.2. [Histogram estimation](#32-histogram-estimation)
+   2.2. [The SPA Attack](http://pages.daniellerch.me/stego_lsbr/#22-the-spa-attack)
 
 
-4. [LSB Matching and Machine Learning](#4-lsb-matching-and-machine-learning)
+3. [JPEG images and histogram estimation](http://pages.daniellerch.me/stego_jpeg/)
 
-   4.1. [LSB Matching](#41-lsb-matching)
+   3.1. [Hiding information in DCT coefficients](http://pages.daniellerch.me/stego_jpeg/#31-hiding-information-in-dct-coefficients)
 
-   4.2. [Minimizing distortion](#42-minimizing-distortion)
+   3.2. [Histogram estimation](http://pages.daniellerch.me/stego_jpeg/#32-histogram-estimation)
 
-   4.3. [Machine learning based steganalysis](#43-machine-learning-based-steganalysis)
 
-   4.4. [Adaptive algorithms](#44-adaptive algorithms)
+4. [LSB Matching and Machine Learning](http://pages.daniellerch.me/stego_lsbm/)
 
-   4.5. [Deep learning based steganalysis](#45-deep-learning-based-steganalysis)
+   4.1. [LSB Matching](http://pages.daniellerch.me/stego_lsbm/#41-lsb-matching)
 
-   4.6. [The Cover Source Mismatch problem](#46-the-cover-source-mismatch-problem)
+   4.2. [Minimizing distortion](http://pages.daniellerch.me/stego_lsbm/#42-minimizing-distortion)
 
-   4.7. [Dealing with CSM](#47-dealing-with-csm)
+   4.3. [Machine learning based steganalysis](http://pages.daniellerch.me/stego_lsbm/#43-machine-learning-based-steganalysis)
 
-5. [Tips](#5-tips)
+   4.4. [Adaptive algorithms](http://pages.daniellerch.me/stego_lsbm/#44-adaptive algorithms)
 
-6. [So, what can I do?](#6-so-what-can-i-do)
+   4.5. [Deep learning based steganalysis](http://pages.daniellerch.me/stego_lsbm/#45-deep-learning-based-steganalysis)
 
-7. [References](#7-references)
+   4.6. [The Cover Source Mismatch problem](http://pages.daniellerch.me/stego_lsbm/#46-the-cover-source-mismatch-problem)
+
+   4.7. [Dealing with CSM](http://pages.daniellerch.me/stego_lsbm/#47-dealing-with-csm)
+
+5. [References](#5-references)
