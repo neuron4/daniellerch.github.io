@@ -4,6 +4,9 @@ title: Index
 comments: false
 ---
 
+# Steganography in Images
+
+
 [Preface](http://pages.daniellerch.me/stego_preface/)
 
 1. [Naive techniques](http://pages.daniellerch.me/stego_naive/)
