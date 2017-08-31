@@ -4,7 +4,7 @@ title: Index
 comments: false
 ---
 
-# Practical Image Steganography and Steganalysis
+## Practical Image Steganography and Steganalysis
 
 
 [Preface](http://pages.daniellerch.me/stego_preface/)
