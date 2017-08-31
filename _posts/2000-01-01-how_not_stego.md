@@ -674,7 +674,7 @@ Machine learning was applied succesfuly to many applications and steganalysis is
 
 Let's perform a little experiment. It can take some time but it is very instructive. Firs we need to download a database of images. A good one is the boss database and youn can download it from [here](http://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip). This images are in grayscale, this simplifies the experiment.
 
-This db has 10000 images. We need two groups, one for training and other for testing our experiments are working. Chose 5000 random images for training and left the other 5000 for testing. 
+This db has 10000 images. We need two groups, one for training and other for testing our experiments are working. Chose 5000 random images for training and leave the other 5000 for testing. 
 
 
 
