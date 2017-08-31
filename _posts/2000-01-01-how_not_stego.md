@@ -675,7 +675,32 @@ The presented program has some limitations. The first one is we are hiding infor
 <br>
 #### 4.2. Minimizing distortion
 
-The idea behing minimizing distortion is to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with the following simple trick. Let's supposo you want to hide two bits. If we use LSB matching as we shown before, we need to modify two pixels. For example, let's suppose whe have the following pixels:
+The idea behing minimizing distortion is to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with a simple trick. 
+
+Let's suppose you want to hide two bits. Using LSB matching as we shown before we have to modify the pixel 50% of the time, because the other 50% of the time the value of the LSB is already the same we want to hide. This means the effectivity of our method is 1/2.
+
+Suppose now we use LSB matching by hiding two bits in groups of three pixels:
+
+| P1 | P2 | P3 |
+
+And that we use the following for the first bit we want to hide:
+
+$$ M_1 = LSB(P_1) \xor LSB(P_2) 1$$
+
+And the following formula for the second bit we want to hide:
+
+$$ M_2 = LSB(P_2) \xor LSB(P_3) 1$$
+
+Using this formulas there are three cases:
+* The bits match the current value of the pixels and there is no change to do.
+* It is enough to change the value of one pixel.
+* We have to change the value of two pixels.
+
+This means efficiency of our method is ... 
+
+
+
+If we use LSB matching as we shown before, we need to modify two pixels. For example, let's suppose whe have the following pixels:
 
 | 10010101 | 10010100 | 10010111 |
 
@@ -685,9 +710,18 @@ An we want to hide bits 01. One possible resput using LSB matching could be the 
 
 We do not need to use the third pixel.
 
-Now the trick. We can hide the same information modifying only one pixel using the following formula:
+Now the trick. We can hide the same information modifying only one pixel. To hide the first bit we can use the following formula:
 
-$$\pm 1$$
+$$ M_1 = LSB_1 \xor LSB_2 1$$
+
+And to hide the second bit we can use:
+
+$$ M_2 = LSB_2 \xor LSB_3 1$$
+
+Let's apply this idea to the previous example:
+
+| (-1) 1001010**0** | (+1) 1001010**1** | 10010111 |
+
 
 
 
