@@ -1,4 +1,4 @@
-[ [Index - Steganography in Images](http://pages.daniellerch.me/stego_index) ]<br><br>
+[ [Index - Practical Image Steganography and Steganalysis](http://pages.daniellerch.me/stego_index) ]<br><br>
 
 
 ### 3. JPEG images and histogram estimation
