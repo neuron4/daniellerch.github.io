@@ -48,4 +48,4 @@ comments: false
 
    4.7. [Dealing with CSM](http://pages.daniellerch.me/stego_lsbm/#47-dealing-with-csm)
 
-[References](#references)
+[References](ttp://pages.daniellerch.me/stego_references)
