@@ -12,9 +12,9 @@ The criteria for deciding whether a method is adequate or not is its detectabili
 
 The techniques used to detect hiden information are known as steganalysis. Although they are usually used to detect hidden information, in some cases we can also extract the message. This is an interesting result but this is not so important because there exists other tools to keep the message secret: cryptography. Actually it is usual to encrypt a message before hiding it. Steganography wants to keep secret the existence of the communication. So, if the communication is detectable the steganographic method is not acceptable. 
 
-----
+<br>
 
-References: 
+### References: 
 
 [1] G. J. Simmons. “The prisoner’s problem and the subliminal channel”. In D. Chaum, editor, Advances in Criptology, CRYPTO 83, pages 51-67, Santa Barbara, CA, August 22-24, 1983. New York: Plenum Press.
 
