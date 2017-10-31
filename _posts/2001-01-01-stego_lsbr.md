@@ -8,6 +8,7 @@ In this article we are going to deal with LSB replacement, one of the most used 
 
 2. [The SPA Attack](#2-the-spa-attack)
 
+<br>
 
 #### 1. LSB replacement
 
