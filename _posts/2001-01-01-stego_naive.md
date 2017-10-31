@@ -1,6 +1,6 @@
 
 
-## Steganalysis in images I: Naive techniques
+## Steganography and stegangalysis in images I: Naive techniques
 <br>
 
 This is the first of several articles about steganalysis in images. In this article we are going to deal with some techniques too naive to be taken seriously but still being used frequently.
