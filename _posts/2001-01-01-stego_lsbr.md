@@ -1,9 +1,14 @@
-[ [Index - Practical Image Steganography and Steganalysis](http://pages.daniellerch.me/stego_index) ]<br><br>
+## Steganalysis in images II: LSB replacement and the SPA attack
+<br>
+
+In this article we are going to deal with LSB replacement, one of the most used techniques in image steganography. Unfortunately this technique was broken many years ago. First we present the technique and after that we show how to detect it.
+
+1. [LSB replacement](#1-lsb-replacement)
+
+2. [The SPA Attack](#2-the-spa-attack)
 
 
-### 2. LSB replacement and the SPA attack
-
-#### 2.1 LSB replacement
+#### 1. LSB replacement
 
 A basic technique to hide information in the bitmap of the image is to replace the Least Significant Bit (LSB) of the pixel by a bit of the message we whant to hide. 
 
@@ -103,7 +108,7 @@ f.close()
 What we do is to extract every pixel reading the LSB. Every time we have 8 bits we save the whole byte into the output file.
 
 <br>
-#### 2.2 The SPA Attack
+#### 2. The SPA Attack
 
 LSB replacement seems a good steganographic technique. An attacker can extract and read the message but this is easy to solve. we only have to encrypt it and if the attacker extracts the message he/she will think this is garbage. Other option is to use a [PRNG](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) to choose which pixels we want to use to hide information. In this case we do not use all the pixels, we are embedding information using a bitrate smaller than one. For example, if we hide information using a 25% of the pixels we say we are using a bitrate 0.25. This reduces capacity increasing security, because less information is more difficult to detect.
 
