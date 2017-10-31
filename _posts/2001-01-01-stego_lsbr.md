@@ -1,6 +1,7 @@
-## LSB replacement and the SPA attack
+## Steganography and Steganalysis II
 <br>
 
+### LSB replacement and the SPA attack
 In this article we are going to deal with LSB replacement, one of the most used techniques in image steganography. Unfortunately this technique was broken many years ago. First we present the technique and after that we show how to detect it.
 
 1. [LSB replacement](#1-lsb-replacement)
