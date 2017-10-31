@@ -1,16 +1,21 @@
-[ [Index - Practical Image Steganography and Steganalysis](http://pages.daniellerch.me/stego_index) ]<br><br>
+## Steganography and Steganalysis in Images III
 
+### LSB Matching and Matrix Embedding
 
-### 4. LSB Matching and Machine Learning
-
-As we saw above, LSB replacement is not a secure technique. Nevertheless, there is a very simple modification to the insertion technique that makes the operation simmetrical. If we do this, the method becomes very difficult to detect.
+As we saw before, [LSB replacement is not a secure technique](pages.daniellerch.me/stego_lsbr). Nevertheless, there is a very simple modification to the insertion technique that makes the operation simmetrical. If we do this, the method becomes very difficult to detect.
 
 Instead of replacing the LSB of the pixel the right thing to do is increase or decrease randomly by 1. The effect on the LSB is the same but the operation does not introduce so evident anomalies. 
 
 There is not easy statistical attack to detect this operation and, consequently, the security of LSB matching is significantly better than that of LSB replacement. Accually, the only way to deal with steganalysis of LSB matching based techniques is throught machine learning.
 
+1. [LSB matching](#1-lsb-matching)
+
+2. [Matrix embedding](#2-matrix-embedding)
+
+
+
 <br>
-#### 4.1. LSB Matching
+#### 1. LSB Matching
 
 Hiding information using LSB matching is very easy. If the value of LSB is the same we want to hide, we do nothing. If not, we increase or decrease by 1 randomly. 
 
@@ -112,9 +117,9 @@ The presented program has some limitations. The first one is we are hiding infor
 
 
 <br>
-#### 4.2. Minimizing distortion
+#### 2. Matrix embedding
 
-The idea behing minimizing distortion is to use matrix embedding to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with a simple trick. 
+To minimize the distortion introduced hiding data a common approach is to use matrix embedding to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with a simple trick. 
 
 Let's suppose you want to hide two bits. Using LSB matching as we shown before we have to modify the pixel 50% of the time, because the other 50% of the time the value of the LSB is already the same we want to hide. This means the effectivity of our method is 1/2.
 
@@ -293,34 +298,4 @@ print m_recovered
 
 We can use blocks of diferents sizes but if the number of bit we want to hide in each block is too high the number of pixels we need en each block could be prohibitive (remember we need $$2^p-1$$ pixels). As a consequence, a high undetectability suppose a very low capacity because the big size of the blocks.
 
-
-<br>
-#### 4.3. Machine learning based steganalysis
-
-To deal with LSB matching based methods we need heavy machinery. Let's see how to apply [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to steganalysis).
-
-Machine learning was applied succesfuly to many applications and steganalysis is not an exception. To apply machine learning to steganalysis the first we need is a training database, that is a database of cover and stego images. Second we need a feature extractor, that is a program capable to extract data from the images that could be used to differentiate between cover and stego images. Finally we need a classifier. This classifier receives the features extracted from the cover and stego images and needs to know which images are cover and which images are stego. With this information the classifier will learn how to classify images into cover and stego. This method is not perfect but it can detect LSB matching with accuracy over 90%. 
-
-Let's perform a little experiment. It can take some time but it is very instructive. Firs we need to download a database of images. A good one is the boss database and youn can download it from [here](http://dde.binghamton.edu/download/ImageDB/BOSSbase_1.01.zip). This images are in grayscale, this simplifies the experiment.
-
-This db has 10000 images. We need two groups, one for training and other for testing our experiments are working. Chose 5000 random images for training and leave the other 5000 for testing. 
-
-PENDING ...
-
-
-<br>
-#### 4.4. Adaptive algorithms
-
-
-
-
-
-<br>
-#### 4.5. Deep learning based steganalysis
-
-<br>
-#### 4.6. The Cover Source Mismatch problem
-
-<br>
-#### 4.7. Dealing with CSM
 
