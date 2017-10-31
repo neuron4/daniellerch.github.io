@@ -1,6 +1,4 @@
 
-
-### Steganography and stegangalysis in images I
 ## Naive techniques
 <br>
 
