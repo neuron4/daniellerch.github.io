@@ -1,13 +1,19 @@
 
-[ [Index - Practical Image Steganography and Steganalysis](http://pages.daniellerch.me/stego_index) ]<br><br>
+
+### Steganalysis in images I: Naive techniques
+
+This is the first of several articles about steganalysis in images. In this article we are going to deal with some techniques too naive to be taken seriously but still being used frequently.
 
 
-### 1. Naive techniques
+1. [Append one file to another](#1-append-one-file-to-another)
+   
+2. [Writing text with similar colors](#2-writing-text-with-similar-colors)
+   
+3. [Using the alpha channel](#3-using-the-alpha-channel)
 
-In this section we are going to deal with these techniques too naive to be taken seriously but still being used frequently.
 
 <br>
-#### 1.1. Append one file to another
+#### 1. Append one file to another
 
 One of these techniques is to hide one file at the end of other file. Some image formats allow this operation without breaking things. For example the GIF image format. If we hide a ZIP file at the end of a GIF file, we can view the image without noticing any different.
 
@@ -53,7 +59,7 @@ The same method can be used using different file formats which could be images o
 
 
 <br>
-#### 1.2. Writing text with similar colors
+#### 2. Writing text with similar colors
 
 Other naive technique consist of writing text with a similar color, for example using 1px of difference from the original color. This can't be detected by the human eye.
 
@@ -100,7 +106,7 @@ As you can see in the result image a simple filter can detect the hidden message
 
 
 <br>
-#### 1.3. Using the alpha channel
+#### 3. Using the alpha channel
 
 Other naive technique consist of hiding information into the alpha channel. That is, the channel dedicated to transparency. 
 
