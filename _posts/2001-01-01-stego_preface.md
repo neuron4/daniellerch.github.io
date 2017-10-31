@@ -4,7 +4,7 @@
 You can find a lot of tools on the Internet to hide information inside an image. Unfortunately, most of them are like 
 hiding a safe behind a picture: it is not exactly the safest option. In this serie of articles I will try to shed some light on it.
 
-But first, let me give give you a brief introduction to the field using **the prisoners' problem**. The prisoners' problem was first introduced by G. J. Simmons in 1983 [1] and tells the history of Alice and Bob, two prisoners working on an escape plan. They are allowed to communicate, but their communications pass through the warden, Eve. Eve will attempt to find any hidden communication between Alice and Bob, and if she finds one, she will cut the communication channel. 
+But first, let me give you a brief introduction to the field using **the prisoners' problem**. The prisoners' problem was first introduced by G. J. Simmons in 1983 [1] and tells the history of Alice and Bob, two prisoners working on an escape plan. They are allowed to communicate, but their communications pass through the warden, Eve. Eve will attempt to find any hidden communication between Alice and Bob, and if she finds one, she will cut the communication channel. 
 
 The prisoners problem is an example of the need of techniques for sending information in a cover manner. This is frequently used for presenting Data Hiding. Data hiding is a collection of techniques to embed secret data into digital media such that its existence becomes undetectable. These techniques can be used in different application scenarios, such as secret communications (Steganography) or copyright protection (Watermarking), among others. 
 
