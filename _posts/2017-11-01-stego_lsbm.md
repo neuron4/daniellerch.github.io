@@ -4,7 +4,7 @@
 
 As we saw before, [LSB replacement is not a secure technique](http://pages.daniellerch.me/stego_lsbr). Nevertheless, there is a very simple modification to the insertion technique that makes the operation simmetrical. If we do this, the method becomes very difficult to detect.
 
-Instead of replacing the LSB of the pixel the right thing to do is increase or decrease randomly by 1. The effect on the LSB is the same but the operation does not introduce so evident anomalies. 
+Instead of replacing the LSB of the pixel the right thing to do is to increase or to decrease randomly by 1. The effect on the LSB is the same but the operation does not introduce so evident anomalies. 
 
 There is not easy statistical attack to detect this operation and, consequently, the security of LSB matching is significantly better than that of LSB replacement. Accually, the only way to deal with steganalysis of LSB matching based techniques is throught machine learning.
 
