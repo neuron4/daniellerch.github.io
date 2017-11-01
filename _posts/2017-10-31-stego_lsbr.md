@@ -119,9 +119,9 @@ No!, it is not. LSB replacement is an asymmetrical operation and it can be detec
 
 When we replace the LSB of a pixel with an even vallue this produces the same effect of adding one when we replace by one or does not produce any effect when we replace by zero. Similarly, when we replace the LSB of a pixel with an odd value this produces the same effect of subtracting one when we replace by zero or does not produce any effect when we replace by one. 
 
-Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [[1](7-references)] and later by the RS attack [[2](#7-references)] and the SPA attack [[3](#7-references)].
+Think a litle bit about this. When we hide data, the value of the even pixels increases or remains the same and the value of odd pixels decrease or remains the same. This is the asymmetrical operation I said before and this type of operation introduces statistical anomalies into the image. This fact was exploited first by the histogram attack [[1](#references)] and later by the RS attack [[2](#references)] and the SPA attack [[3](#references)].
 
-The Sample Pair Analysis (SPA) is detailed in [[3](#7-references)] so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
+The Sample Pair Analysis (SPA) is detailed in [[3](#references)] so we refer the reader to the original paper for a detailed explanation and its corresponding maths. 
 
 The following code implements the SPA attack:
 
@@ -199,6 +199,16 @@ That means the program detects aproximately a bitrate of 0.10. This is almost co
 
 The SPA attack can detect reliably images embedded with bitrates over 0.05 but it also works fairly well witht lower bitrates (~0.03). These are very low bitrates so we can consider the LSB replacement practically broken. 
 
+
+
+### References
+
+[1]. Attacks on Steganographic Systems. A. Westfeld and A. Pfitzmann. Lecture Notes in Computer Science, vol.1768, Springer-Verlag, Berlin, 2000, pp. 61−75. 
+
+[2]. Reliable Detection of LSB Steganography in Color and Grayscale Images. Jessica Fridrich, Miroslav Goljan and Rui Du.
+Proc. of the ACM Workshop on Multimedia and Security, Ottawa, Canada, October 5, 2001, pp. 27-30. 
+
+[3]. Detection of LSB steganography via sample pair analysis. S. Dumitrescu, X. Wu and Z. Wang. IEEE Transactions on Signal Processing, 51 (7), 1995-2007.
 
 
 
