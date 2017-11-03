@@ -113,15 +113,15 @@ f.close()
 <br>
 As usual there is no difference for the human eye between the cover and the stego images. 
 
-The presented program has some limitations. The first one is we are hiding information in a sequantial manner and consequently we hide all the information in the beginning of the image. Second, we are hiding information in all the pixels. This is very disruptive but can be easily improved. For exaple, we can choose part of the pixels where we want to hide information using a key known only by the sender and the receiver. We can do this using a low bitrate because this is harder to detect than a higher bitrate. But his unfortunately decreases the capacity. we can deal with this problem thanks to different techniques that try to minimize distortion.
+The presented program has some limitations. The first one is we are hiding information in a sequential manner and consequently we hide all the information in the beginning of the image. Second, we are hiding information in all the pixels. This is very disruptive but can be easily improved. For example, we can choose part of the pixels where we want to hide information using a key known only by the sender and the receiver. We can do this using a low bitrate because this is harder to detect than a higher bitrate. But his unfortunately decreases the capacity. we can deal with this problem thanks to different techniques that try to minimize distortion.
 
 
 <br>
 #### 2. Matrix embedding
 
-To minimize the distortion introduced hiding data a common approach is to use matrix embedding to hide the same data modifying less pixels of the image. It can seem a little bit extrange at the beginning, but this is possible with a simple trick. 
+To minimize the distortion introduced hiding data a common approach is to use matrix embedding to hide the same data modifying less pixels of the image. It can seem a little bit strange at the beginning, but this is possible with a simple trick. 
 
-Let's suppose you want to hide two bits. Using LSB matching as we shown before we have to modify the pixel 50% of the time, because the other 50% of the time the value of the LSB is already the same we want to hide. This means the effectivity of our method is 1/2.
+Let's suppose you want to hide two bits. Using LSB matching as we shown before we have to modify the pixel 50% of the time, because the other 50% of the time the value of the LSB is already the same we want to hide. This means the effectiveness of our method is 1/2.
 
 Suppose now we use LSB matching by hiding two bits in groups of three pixels:
 
@@ -137,7 +137,7 @@ $$ M_2 = LSB(P_2) \oplus LSB(P_3) 1$$
 
 Note this method is very easy to apply. If $$M_1$$ and $$M_2$$ match the bits we want to hide we do nothing. If none of $$M_1$$ and $$M_2$$ match the bits, we have to change the value of $$LSB(P_2)$$. If $$M_1$$ match but $$M_2$$ does not match we change the value of $$LSB(P_3)$$ and if $$M_2$$ match but $$M_1$$ does not match we change the value of $$LSB(P_1)$$. With this metodology we hide two bits and we only have to modify one. 
 
-Let's see an example. We have the follogin pixels:
+Let's see an example. We have the following pixels:
 
 | 10010100 | 10010101 | 10010111 |
 
