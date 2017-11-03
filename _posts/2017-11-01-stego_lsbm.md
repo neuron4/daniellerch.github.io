@@ -6,7 +6,7 @@ As we saw before, [LSB replacement is not a secure technique](http://pages.danie
 
 Instead of replacing the LSB of the pixel the right thing to do is to increase or to decrease randomly by 1. The effect on the LSB is the same but the operation does not introduce so evident anomalies. 
 
-There is not easy statistical attack to detect this operation and, consequently, the security of LSB matching is significantly better than that of LSB replacement. Accually, the only way to deal with steganalysis of LSB matching based techniques is throught machine learning.
+There is not easy statistical attack to detect this operation and, consequently, the security of LSB matching is significantly better than that of LSB replacement. Actually, the only way to deal with steganalysis of LSB matching based techniques is through machine learning.
 
 1. [LSB matching](#1-lsb-matching)
 
