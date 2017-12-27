@@ -1,3 +1,7 @@
+---
+layout: post
+title: Steganography and Steganalysis in Images I
+---
 
 ## Steganography and Steganalysis in Images I
 
