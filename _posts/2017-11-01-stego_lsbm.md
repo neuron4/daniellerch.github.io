@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Steganography and Steganalysis in Images III
+title: Steganography and Steganalysis in Images III: LSB Matching and Matrix Embedding
 ---
 
 ## Steganography and Steganalysis in Images III
