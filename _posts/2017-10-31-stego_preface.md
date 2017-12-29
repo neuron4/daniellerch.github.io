@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Steganography and Steganalysis in Images
+title: Steganography and Steganalysis in Images: Preface
 ---
 
 
