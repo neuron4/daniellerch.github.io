@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Steganography and Steganalysis in Images I
+title: Steganography and Steganalysis in Images I: Naive techniques
 ---
 
 ## Steganography and Steganalysis in Images I
