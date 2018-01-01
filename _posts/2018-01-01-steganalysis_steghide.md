@@ -1,6 +1,11 @@
-## Steganography and Steganalysis in Images IV
+---
+layout: post
+title: Steganalysis of Steghide
+---
 
-### Machine Learning based Detectors
+## Steganalysis of Steghide
+
+### Introduction
 
 To deal with LSB matching based methods we need heavy machinery. In this article we will see how to apply [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to steganalysis).
 
