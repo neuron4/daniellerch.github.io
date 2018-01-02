@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Steganalysis of OpenStego
@@ -15,9 +14,9 @@ This post is based on OpenStego v0.7.2.
 
 1. [Using the tool from command line](#1-using-the-tool-from-command-line)
 
-2. [Detecting OpenStego](#2-detecting-openstego)
+2. [Preparing a testing set](#2-preparing-a-testing-set)
 
-3. [Extract the message](#3-extract-the-message)
+3. [Steganalysis](#3-steganalysis)
 
 
 <br>
@@ -25,11 +24,30 @@ This post is based on OpenStego v0.7.2.
 
 OpenStego has a graphical user interface but it can be used also from command line. We are going to use this feature.
 
-Yo hide information we can use the following command:
+To hide information we can use the following command:
 
 ```bash
 java -jar openstego.jar embed -a randomlsb -mf secret.txt -cf cover.png -sf stego.png -p mypassword
+```
 
-java -jar openstego.jar extract -a randomlsb -sf stego.png -xd /tmp/
+To unhide our data we can use the following command:
+```bash
+java -jar openstego.jar extract -a randomlsb -sf stego.png -xd /tmp/ -p mypassword
 
 ```
+
+For our purposes we only need the first command.
+
+
+
+<br>
+#### 2. Preparing a testing set
+
+
+
+
+
+
+
+
+
