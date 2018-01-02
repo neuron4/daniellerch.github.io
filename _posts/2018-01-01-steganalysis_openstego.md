@@ -11,7 +11,7 @@ title: Steganalysis of OpenStego
 
 This post is based on OpenStego v0.7.2.
 
-
+<br>
 1. [Using the tool from command line](#1-using-the-tool-from-command-line)
 
 2. [Preparing a testing set](#2-preparing-a-testing-set)
