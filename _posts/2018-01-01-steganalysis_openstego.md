@@ -27,13 +27,14 @@ OpenStego has a graphical user interface but it can be used also from command li
 To hide information we can use the following command:
 
 ```bash
-java -jar openstego.jar embed -a randomlsb -mf secret.txt -cf cover.png -sf stego.png -p mypassword
+java -jar openstego.jar embed -a randomlsb -mf secret.txt \
+                        -cf cover.png -sf stego.png -p mypassword
 ```
 
 To unhide our data we can use the following command:
 ```bash
-java -jar openstego.jar extract -a randomlsb -sf stego.png -xd /tmp/ -p mypassword
-
+java -jar openstego.jar extract -a randomlsb -sf stego.png \
+                        -xd /tmp/ -p mypassword
 ```
 
 For our purposes we only need the first command.
