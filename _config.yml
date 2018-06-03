@@ -97,3 +97,5 @@ exclude:
   
 future: true
 timezone: Europe/Madrid
+
+theme: jekyll-theme-minimal
