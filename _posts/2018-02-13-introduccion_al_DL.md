@@ -14,7 +14,7 @@ No sin motivo es una de las herramientas preferidas en las competiciones de [Kag
 La base de datos MINST es un conjunto de dígitos escritos a mano que ha sido usado durante años para la investigación en machine learning. Contiene un conjunto de entrenamiento de 60.000 muestras y un conjunto de test de 10.000.
 
 
-![MNIST]({{ site.baseurl }}/images/mnist.png)
+<img class="image" src="{{ site.baseurl }}/images/mnist.png"/>
 <p class="image-cite">Wikipedia contributors. “MNIST database.” Wikipedia, The Free Encyclopedia.</p>
 
 
