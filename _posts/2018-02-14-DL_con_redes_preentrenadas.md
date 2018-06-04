@@ -56,6 +56,50 @@ img = image.load_img('aguila.jpg', target_size=(224, 224))
 
 Para el ejemplo he usado la siguiente imagen:
 
+![MNIST]({{ site.baseurl }}/images/eagle.jpeg)
+
+A continuación, preparamos la imagen para pasársela a la red.
+
+```python
+model = InceptionResNetV2(weights='imagenet')
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
+```
+
+Finalmente, realizamos la predicción:
+
+```python
+>>> model.predict(x)
+(u'n01614925', u'bald_eagle', 1.0)
+```
+
+## La receta
+
+Aquí dejo la receta completa.
+
+```python
+from keras.applications.inception_resnet_v2 import InceptionResNetV2             
+from keras.preprocessing import image                                            
+from keras.applications.inception_resnet_v2 import preprocess_input, decode_predictions
+import numpy as np                                                               
+                                                                                 
+model = InceptionResNetV2(weights='imagenet')                                    
+                                                                                 
+img_path = 'aguila.jpg'                                                          
+img = image.load_img(img_path, target_size=(224, 224))                           
+x = image.img_to_array(img)                                                      
+x = np.expand_dims(x, axis=0)                                                    
+x = preprocess_input(x)                                                          
+                                                                                 
+preds = model.predict(x)                                                         
+print 'Prediction:', decode_predictions(preds, top=1)[0][0] 
+```
+
+
+
+
 
 
 
