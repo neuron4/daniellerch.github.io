@@ -4,7 +4,6 @@ layout: default
 
 <div class="posts">
   {% for post in site.posts %}
-    aa
     {% if post.tags contains 'draft' %}
 
     {% else % }
@@ -13,7 +12,7 @@ layout: default
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
       <div class="entry">
-        {{ post.excerpt }}
+        {{ post.excerpt }} xxxx
       </div>
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Leer m&aacute;s</a>
