@@ -14,9 +14,7 @@ Partiremos de un conjunto de datos de imágenes de flores. Puedes descargarlo [a
 
 Este tipo de imágenes no es detectado por las redes entrenadas con ImageNet. Usemos como ejemplo la siguiente imagen:
 
-<center>
 ![flower]({{ site.baseurl }}/images/flower.jpeg| width=600)
-</center>
 
 Partiendo del ejemplo usado en la receta [“Deep Learning con redes pre-entrenadas en ImageNet”](http://http://blog.neuron4.com/DL_con_redes_preentrenadas/) podemos ver que predice la red.
 
