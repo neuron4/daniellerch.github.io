@@ -4,7 +4,7 @@ layout: default
 
 <div class="posts">
   {% for post in site.posts %}
-    aa{{ post }}bb
+    aa{{ post.title }}bb
     {% if post.tags contains 'draft' %}
 
     {% else % }
