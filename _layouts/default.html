@@ -47,16 +47,12 @@
       </div>
     </div>
     
-    
-
-
     <div class="frame">
       <div id="main" role="main" class="container">
-        {{ content }}
+        {% if page.draft %}{{ content }}{% endif %}
       </div>
     </div>
     <br><br>
-
     
     <div class='client-section'>                                                 
       <div class='container text-center'>                                        
