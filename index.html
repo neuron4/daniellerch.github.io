@@ -4,7 +4,8 @@ layout: default
 
 <div class="posts">
   {% for post in site.posts %}
-    {% if post.draft %}
+    {% if post.tags contains 'draft' %}
+
     {% else % }
     <article class="post">
       
