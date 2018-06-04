@@ -39,11 +39,11 @@ Si disponemos de acceso a una red pre-entrenada que resuelva un problema similar
 ## Técnicas de fine-tuning
 Si disponemos de una red pre-entrenada para un problema similar y disponemos de muchos datos de entrenamiento para nuestro problema concreto, estamos ante el caso ideal. Simplemente usaremos la red pre-entrenada como punto de partida y continuaremos el entrenamiento con nuestros datos.
 
-Si disponemos de una red pre-entrenada para un problema similar pero tenemos pocos datos de entrenamiento debemos proceder diferente. Entrenar una red con pocos datos nos llevará fácilmente a una situación de overfitting, donde la red aprende a clasificar los datos de entrenamiento pero no los de test (las redes neuronales suelen necesitar muchos datos para poder aprender a generalizar). En este caso entrenaremos solo las últimas capas de la red, congelando el resto. La red ya está entrenada para un problema similar, por lo que la usaremos principalmente como extractor de características.
+Si disponemos de una red pre-entrenada para un problema similar pero tenemos pocos datos de entrenamiento debemos proceder diferente. Entrenar una red con pocos datos nos llevará fácilmente a una situación de *overfitting*, donde la red aprende a clasificar los datos de entrenamiento pero no los de test (las redes neuronales suelen necesitar muchos datos para poder aprender a generalizar). En este caso entrenaremos solo las últimas capas de la red, congelando el resto. La red ya está entrenada para un problema similar, por lo que la usaremos principalmente como extractor de características.
 
 Si, por otra parte, la red de partida no es todo lo similar a nuestro problema que nos gustaría, la situación se complica. Si disponemos de muchos datos de entrenamiento, la mejor solución suele ser entrenar la red desde cero.
 
-Pero si disponemos de pocos datos de entrenamiento la opción anterior no suele se viable debido al overfitting, a menos que podamos usar con éxito alguna técnica de [data augmentation](https://keras.io/preprocessing/image/#imagedatagenerator). Ante esta situación, una opción suele ser congelar únicamente las primeras capas de la red. Estas capas han aprendido a extraer características universales por lo que pueden ser aprovechadas.
+Pero si disponemos de pocos datos de entrenamiento la opción anterior no suele se viable debido al *overfitting*, a menos que podamos usar con éxito alguna técnica de [data augmentation](https://keras.io/preprocessing/image/#imagedatagenerator). Ante esta situación, una opción suele ser congelar únicamente las primeras capas de la red. Estas capas han aprendido a extraer características universales por lo que pueden ser aprovechadas.
 
 Como veremos más adelante, no suele ser fácil determinar si una red pre-entrenada es adecuada para nuestro problema. Por lo tanto, puede ser necesario hacer algunas pruebas hasta dar con los parámetros adecuados.
 
@@ -179,7 +179,7 @@ loss: 0.1274 - acc: 0.9583 - val_loss: 0.6713 - val_acc: 0.8238
 ```
 
 
-En el primer epoch ya vemos síntomas de overfitting. Sin embargo, los resultados del 84% son aceptables. Por lo que el modelo después de entrenar un epoch podría ser un buen candidato para nuestra solución final.
+En el primer epoch ya vemos síntomas de *overfitting*. Sin embargo, los resultados del 84% son aceptables. Por lo que el modelo después de entrenar un epoch podría ser un buen candidato para nuestra solución final.
 
 Veamos que ocurre si congelamos más capas.
 
