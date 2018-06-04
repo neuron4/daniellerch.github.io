@@ -68,7 +68,7 @@ Sin embargo, como hemos visto anteriormente, tal y como tenemos los datos de eti
 
 ```python
 from keras.utils import np_utils
-y_train = np_utils.to_categorical(y_train, 10)                                   
+y_train = np_utils.to_categorical(y_train, 10)
 y_test = np_utils.to_categorical(y_test, 10)
 ```
 
