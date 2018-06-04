@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fine-tuning en reconocimiento de imágenes mediante Deep Learning
-published: false
+published: true
 ---
 
 En esta receta vamos a ver como hacer *fine tuning* de una red pre-entrenada para el reconocimiento de objetos. Nuestro objetivo será adaptarla a un problema diferente.
