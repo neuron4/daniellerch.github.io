@@ -8,12 +8,15 @@ En esta primera receta vamos a ver cómo usar los elementos básicos para constr
 ## ¿Qué es Keras?
 Keras es una API de alto nivel escrita en Python que corre sobre diferentes motores de *deep learning* como [Tensorflow](https://www.tensorflow.org/), [CNTK](https://github.com/Microsoft/CNTK) o [Theano](https://github.com/Theano/Theano). Es la herramienta perfecta para el desarrollo rápido en *deep learning* y corre tanto en CPUs como en GPUs.
 
-No sin motivo es una de las herramientas preferidas en las competiciones de Kaggle.
+No sin motivo es una de las herramientas preferidas en las competiciones de [Kaggle](https://www.kaggle.com/).
+
+## ¿Qué es MNIST?
+La base de datos MINST es un conjunto de dígitos escritos a mano que ha sido usado durante años para la investigación en machine learning. Contiene un conjunto de entrenamiento de 60.000 muestras y un conjunto de test de 10.000.
 
 
 
 
-![peppers]({{ site.baseurl }}/images/hns_peppers.jpg)
+![MNIST]({{ site.baseurl }}/images/mnist.png)
 
 
 
