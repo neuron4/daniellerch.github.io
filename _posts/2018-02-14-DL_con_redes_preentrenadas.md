@@ -56,7 +56,7 @@ img = image.load_img('aguila.jpg', target_size=(224, 224))
 
 Para el ejemplo he usado la siguiente imagen:
 
-![MNIST]({{ site.baseurl }}/images/eagle.jpeg)
+![Eagle]({{ site.baseurl }}/images/eagle.jpeg)
 
 A continuación, preparamos la imagen para pasársela a la red.
 
