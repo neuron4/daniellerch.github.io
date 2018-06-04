@@ -49,7 +49,7 @@ Como veremos más adelante, no suele ser fácil determinar si una red pre-entren
 
 
 ## Redes pre-entrenadas en Keras
-Keras dispone de diferentes redes pre-entrenadas. En esta receta vamos a usar la red Inception Resnet V2. Remito al lector a una receta anterior en la que ya escribí cómo usar una red pre-entrenada de este tipo: [“Deep Learning con redes pre-entrenadas en ImageNet”](http://http://blog.neuron4.com/DL_con_redes_preentrenadas/).
+Keras dispone de diferentes redes pre-entrenadas. En esta receta vamos a usar la red Inception Resnet V2. Remito al lector a una receta anterior en la que ya escribí cómo usar una red pre-entrenada de este tipo: [“Deep Learning con redes pre-entrenadas en ImageNet”](http://blog.neuron4.com/DL_con_redes_preentrenadas/).
 
 
 ## Preparación de los datos
