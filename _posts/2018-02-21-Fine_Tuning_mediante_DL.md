@@ -126,7 +126,7 @@ No entraré en demasiados detalles sobre como cargar una red pre-entrenada en Ke
 Cargamos la red con los pesos de ImageNet:
 
 ```python
-model = InceptionResNetV2(weights=’imagenet’, include_top=False)
+model = InceptionResNetV2(weights="imagenet", include_top=False)
 ```
 
 A destacar el parámetro “include_top=False”. Este parámetro le indica a la red que no debe incluir la última capa de la red, destinada a realizar la predicción final. Esta capa está preparada para realizar las predicciones de todas las clases de ImageNet. Como nosotros queremos predecir únicamente nuestras 5 clases, queremos sustituir esta capa por una capa personalizada.
@@ -138,7 +138,7 @@ La red cargada ya no dispone de la última capa. Por lo que vamos a añadirle un
 ```python
 x = model.output 
 x = GlobalAveragePooling2D()(x) 
-predictions = Dense(5, activation=’softmax’)(x) 
+predictions = Dense(5, activation="softmax")(x) 
 model = Model(input=model.input, output=predictions)
 ```
 
@@ -158,7 +158,7 @@ LAYERS_TO_FREEZE=700
 for layer in model.layers[:LAYERS_TO_FREEZE]:
     layer.trainable = False
 model.compile(optimizer="adam", \
-    loss='categorical_crossentropy', metrics=['accuracy'])
+    loss="categorical_crossentropy", metrics=["accuracy"])
 model.fit(x_train, y_train, batch_size=128, epochs=2, verbose=1, validation_split=0.1)
 ```
 
@@ -270,18 +270,18 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1)
 y_train = np_utils.to_categorical(y_train, num_classes)
 y_test = np_utils.to_categorical(y_test, num_classes)
 
-model = InceptionResNetV2(weights='imagenet', include_top=False)
+model = InceptionResNetV2(weights="imagenet", include_top=False)
 
 x = model.output
 x = GlobalAveragePooling2D()(x)
-predictions = Dense(num_classes, activation='softmax')(x) 
+predictions = Dense(num_classes, activation="softmax")(x) 
 model = Model(input=model.input, output=predictions)
 
 LAYERS_TO_FREEZE=700
 for layer in model.layers[:LAYERS_TO_FREEZE]:
     layer.trainable = False
 
-model.compile(optimizer="adam", loss='categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 
 model.fit(x_train, y_train, batch_size=128, epochs=1, verbose=1, validation_split=0.1)
 score = model.evaluate(x_test, y_test, verbose=0)
