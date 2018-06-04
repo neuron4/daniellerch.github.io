@@ -14,13 +14,13 @@ Partiremos de un conjunto de datos de imágenes de flores. Puedes descargarlo [a
 
 Este tipo de imágenes no es detectado por las redes entrenadas con ImageNet. Usemos como ejemplo la siguiente imagen:
 
-![flower]({{ site.baseurl }}/images/flower.jpeg)
+<center>![flower]({{ site.baseurl }}/images/flower.jpeg| width=600)</center>
 
 Partiendo del ejemplo usado en la receta [“Deep Learning con redes pre-entrenadas en ImageNet”](http://http://blog.neuron4.com/DL_con_redes_preentrenadas/) podemos ver que predice la red.
 
 Nos encontramos con lo siguiente:
 
-```python
+```bash
 $ python inception_resnet_v2.py
 ...
 Prediction: (u'n04286575', u'spotlight', 0.9960238)
@@ -173,7 +173,7 @@ LAYERS_TO_FREEZE=700
 
 Los resultados después de dos epoch son los siguientes:
 
-```python
+```bash
 loss: 0.3671 - acc: 0.8755 - val_loss: 0.8164 - val_acc: 0.8404
 loss: 0.1274 - acc: 0.9583 - val_loss: 0.6713 - val_acc: 0.8238
 ```
@@ -189,7 +189,7 @@ LAYERS_TO_FREEZE=750
 
 Los resultados después de dos epoch son los siguientes:
 
-```python
+```bash
 loss: 0.4001 - acc: 0.8556 - val_loss: 1.0808 - val_acc: 0.7738
 ```
 
@@ -203,7 +203,7 @@ LAYERS_TO_FREEZE=500
 
 Los resultados empeoran:
 
-```python
+```bash
 loss: 0.3714 - acc: 0.8810 - val_loss: 5.4157 - val_acc: 0.5673
 loss: 0.2537 - acc: 0.9361 - val_loss: 3.4444 - val_acc: 0.7224
 ```
@@ -214,7 +214,7 @@ Es hora de probar que resultados obtenemos con el conjunto de test. Usaremos el 
 
 Los resultados obtenidos son:
 
-```python
+```bash
 Testing set accuracy: 0.865122616129
 ```
 
