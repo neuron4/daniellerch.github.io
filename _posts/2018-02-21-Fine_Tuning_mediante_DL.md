@@ -13,3 +13,5 @@ Como ejemplo vamos a usar la red pre-entrenada InceptionResNetV2 con [ImageNet](
 Partiremos de un conjunto de datos de imágenes de flores. Puedes descargarlo [aquí](http://download.tensorflow.org/example_images/flower_photos.tgz).
 
 Este tipo de imágenes no es detectado por las redes entrenadas con ImageNet. Usemos como ejemplo la siguiente imagen:
+
+![flower]({{ site.baseurl }}/images/flower.jpeg)
