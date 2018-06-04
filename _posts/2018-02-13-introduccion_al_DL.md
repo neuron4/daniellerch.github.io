@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Introduccin al Deep Learning con Keras
-draft: false
----
+tags:
+- Deep Learning
+- Keras---
 
 En esta primera receta vamos a ver cómo usar los elementos básicos para construir una red neuronal con [Keras](https://keras.io/). Para ponerlos en práctica usaremos el conocido conjunto de datos [MNIST](http://yann.lecun.com/exdb/mnist/), creando una red de reconocimiento de caracteres.
 
