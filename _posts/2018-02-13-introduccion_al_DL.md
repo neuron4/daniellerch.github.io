@@ -137,7 +137,7 @@ Ha llegado el momento de entrenar la red. Para ello le daremos los datos de entr
 Le informaremos también del *batch size*, es decir, de la cantidad de imágenes que debe usar en cada iteración. Así como del numero de *epochs*, es decir, de cuantas veces va a recorrer el conjunto entero de datos para entrenar.
 
 ```python
-model.fit(x_train, y_train, batch_size=128, epochs=10, verbose=1,                 
+model.fit(x_train, y_train, batch_size=128, epochs=10, verbose=1,
           validation_data=(x_test, y_test))
 ```
 
