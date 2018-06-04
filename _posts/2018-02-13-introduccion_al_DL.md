@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introduccin al Deep Learning con Keras
+draft: false
 ---
 
 En esta primera receta vamos a ver cómo usar los elementos básicos para construir una red neuronal con [Keras](https://keras.io/). Para ponerlos en práctica usaremos el conocido conjunto de datos [MNIST](http://yann.lecun.com/exdb/mnist/), creando una red de reconocimiento de caracteres.
@@ -15,7 +16,7 @@ La base de datos MINST es un conjunto de dígitos escritos a mano que ha sido us
 
 
 ![MNIST]({{ site.baseurl }}/images/mnist.png)
-<center><small>Wikipedia contributors. “MNIST database.” Wikipedia, The Free Encyclopedia.</small></center>
+<p class="image-cite">Wikipedia contributors. “MNIST database.” Wikipedia, The Free Encyclopedia.</p>
 
 
 ## Acceso al conjunto de datos MNIST
