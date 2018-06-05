@@ -208,7 +208,7 @@ loss: 0.3714 - acc: 0.8810 - val_loss: 5.4157 - val_acc: 0.5673
 loss: 0.2537 - acc: 0.9361 - val_loss: 3.4444 - val_acc: 0.7224
 ```
 
-Parece que el valor óptimo podría estar cerca de los 700. Podría hacerse una búsqueda automatizada, pero aquí nos quedaremos con el primer modelo. Puedes experimentar con diferentes parámetros, si lo haces, agradecería comentases tus resultados en la sección de comentarios.
+Parece que el valor óptimo podría estar cerca de los 700. Podría hacerse una búsqueda automatizada, pero aquí nos quedaremos con el primer modelo. El lector puede experimentar con diferentes parámetros.
 
 Es hora de probar que resultados obtenemos con el conjunto de test. Usaremos el modelo obtenido después de entrenar un epoch con 700 capas congeladas.
 
