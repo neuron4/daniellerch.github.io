@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fine-tuning en reconocimiento de imágenes mediante Deep Learning
+author: Daniel Lerch
 published: true
 ---
 
