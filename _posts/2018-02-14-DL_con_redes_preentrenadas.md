@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Deep Learning con redes pre-entrenadas en ImageNet
+author: Daniel Lerch
 published: true
 ---
 
