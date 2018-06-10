@@ -7,8 +7,8 @@ layout: default
     <article class="post">
       
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-      <span class="date"><i class="icon-clock"></i><time datetime="{{page.date|date:"%F"}}">{{page.date|date:" %d %b %Y"}}</time></span>
-      <span class="author"><i class="icon-user"></i> {% if page.author %} - {{page.author}}{% else %}{{site.author}}{% endif%}</span>
+      <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:" %d %b %Y"}}</time></span>
+      <span class="author"><i class="icon-user"></i> {% if post.author %} - {{post.author}}{% else %}{{post.author}}{% endif%}</span>
 
       
       <div class="entry">
